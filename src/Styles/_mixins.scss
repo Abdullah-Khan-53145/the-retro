@@ -1,0 +1,36 @@
+@import "colors";
+@import "fonts";
+@mixin primary_heading($size) {
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: -2.5rem;
+  font-family: $primary_font;
+  font-weight: 300;
+  line-height: 17rem;
+  font-size: $size;
+  font-weight: 400;
+  display: inline-block;
+  span {
+    color: $primary_red;
+  }
+}
+
+@mixin main_bg {
+  background: url("../../public/imgs/main_bg.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+@mixin flex_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin primary_para {
+  font-family: $secondary_font;
+  font-weight: 300;
+  color: $secondary_white;
+  font-size: 2rem;
+  line-height: 2rem;
+}

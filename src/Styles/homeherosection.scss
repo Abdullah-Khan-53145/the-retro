@@ -1,0 +1,109 @@
+@import "imports";
+.home__hero__main {
+  @include flex_container;
+}
+.home__hero__child__main {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  @media (max-width: 965px) {
+    flex-direction: column;
+  }
+}
+.dummy_div {
+  min-width: 25vw;
+  @media (max-width: 965px) {
+    display: none;
+  }
+}
+.home__hero__primary__heading {
+  @media (min-width: 965px) {
+    position: absolute;
+    z-index: 100;
+  }
+  @media (max-width: 965px) {
+    margin-top: 50px;
+    width: 100%;
+  }
+  h1 {
+    @include primary_heading(20rem);
+  }
+}
+
+.home__hero__shoe__image {
+  @include flex_container;
+  position: relative;
+  min-height: 40vw;
+  min-width: 40vw;
+  @media (max-width: 965px) {
+    width: 70rem;
+    height: 70rem;
+  }
+  @media (max-width: 420px) {
+    width: 50rem;
+    height: 50rem;
+  }
+  img {
+    min-height: 30vw;
+    min-width: 30vw;
+    @media (max-width: 965px) {
+      width: 70rem;
+      height: 70rem;
+    }
+    @media (max-width: 420px) {
+      width: 50rem;
+      height: 50rem;
+    }
+  }
+  z-index: 20;
+  background: url("../../public/imgs/orange_ball_bg.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  img {
+    object-fit: contain;
+  }
+}
+.home__here__main_description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 965px) {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+.home__hero__description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  @media (max-width: 965px) {
+    align-items: flex-start;
+    max-width: 55rem;
+  }
+}
+.home__hero__main__description {
+  @include flex_container;
+  flex-direction: column;
+  @media (max-width: 965px) {
+    max-width: 55rem;
+    justify-content: flex-end;
+  }
+  gap: 4rem;
+  p {
+    @include primary_para;
+  }
+}
+.home__hero__top__line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  p {
+    @include primary_para;
+  }
+  img {
+    width: 40rem;
+    object-fit: contain;
+  }
+}
