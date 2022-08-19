@@ -89,7 +89,7 @@
 
 @media (max-width: 965px) {
   .header__main__logo {
-    width: 100px;
+    width: 150px;
   }
 }
 
@@ -100,7 +100,7 @@
 
 @media (max-width: 965px) {
   .header__main__logo img {
-    width: 100px;
+    width: 150px;
   }
 }
 

@@ -63,9 +63,13 @@
 
   img {
     object-fit: contain;
+    overflow-x: hidden;
+    animation: shoe_translator 3s, shoe_rotator 10s ease-in infinite 3s;
+    // animation: shoe_rotator 10s ease-in infinite;
   }
 }
 .home__here__main_description {
+  margin-top: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,5 +109,59 @@
   img {
     width: 40rem;
     object-fit: contain;
+  }
+}
+
+@keyframes shoe_translator {
+  0% {
+    transform: translateX(-200%) rotate(-45deg);
+  }
+  50% {
+    transform: translateX(0%) rotate(-4deg) scale(1.05);
+  }
+  10% {
+    transform: translateX(0%) rotate(0deg) scale(1);
+  }
+}
+@keyframes shoe_rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes light_up {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.3);
+  }
+
+  75% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1.3);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes light_up_shoe {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

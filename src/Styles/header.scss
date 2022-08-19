@@ -42,13 +42,13 @@
 .header__main__logo {
   height: 100%;
   @media (max-width: 965px) {
-    width: 100px;
+    width: 150px;
   }
   transition: 0.2s ease-in-out;
   img {
     object-fit: contain;
     @media (max-width: 965px) {
-      width: 100px;
+      width: 150px;
     }
   }
   &:hover {
