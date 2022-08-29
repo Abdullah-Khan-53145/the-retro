@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
 html {
+  overflow-x: hidden;
   font-size: 65.2%;
 }
 
@@ -50,9 +51,20 @@ html {
 }
 
 .App {
+  position: relative;
+}
+
+.App::before {
+  content: "";
   background: url("../../public/imgs/main_bg.jpg");
   background-position: center;
   background-size: cover;
-  min-height: 100vh;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 /*# sourceMappingURL=main.css.map */

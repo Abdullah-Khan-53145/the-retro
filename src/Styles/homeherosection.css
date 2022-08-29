@@ -12,6 +12,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
 .home__hero__child__main {
@@ -30,6 +31,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -52,7 +54,6 @@
 
 @media (max-width: 965px) {
   .home__hero__primary__heading {
-    margin-top: 50px;
     width: 100%;
   }
 }
@@ -86,7 +87,6 @@
   position: relative;
   min-height: 40vw;
   min-width: 40vw;
-  z-index: 20;
   background: url("../../public/imgs/orange_ball_bg.png");
   background-size: contain;
   background-position: center;
@@ -130,12 +130,9 @@
   -o-object-fit: contain;
      object-fit: contain;
   overflow-x: hidden;
-  -webkit-animation: shoe_translator 3s, shoe_rotator 10s ease-in infinite 3s;
-          animation: shoe_translator 3s, shoe_rotator 10s ease-in infinite 3s;
 }
 
 .home__here__main_description {
-  margin-top: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -190,7 +187,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 @media (max-width: 965px) {
@@ -291,78 +288,6 @@
   100% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
-  }
-}
-
-@-webkit-keyframes light_up {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  70% {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-  }
-  75% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  80% {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-  }
-  90% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes light_up {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  70% {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-  }
-  75% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  80% {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-  }
-  90% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@-webkit-keyframes light_up_shoe {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes light_up_shoe {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 /*# sourceMappingURL=homeherosection.css.map */

@@ -1,0 +1,78 @@
+@import "imports";
+.brands__main {
+  color: white;
+  display: flex;
+  justify-content: center;
+  @media (max-width: 840px) {
+    margin: 53px 0;
+  }
+
+  width: 100%;
+  font-family: $secondary_font;
+  svg {
+    color: white;
+  }
+}
+.brands__child {
+  width: 89%;
+  background: $bg_cards;
+  display: flex;
+  margin: 20px 0;
+  @media (max-width: 840px) {
+    margin: 53px 0;
+  }
+  padding: 20px;
+  @media (max-width: 840px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.brand__card {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  @media (max-width: 840px) {
+    flex-direction: column;
+  }
+}
+
+.brand__card__image {
+  height: 90%;
+  img {
+    height: 100%;
+    object-fit: contain;
+    max-width: 20rem;
+
+    @media (max-width: 840px) {
+      max-width: 25rem;
+    }
+  }
+}
+.brand__card__text {
+  h2 {
+    font-size: 2.5rem;
+  }
+  div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    span {
+      font-size: 2rem;
+    }
+    transition: 0.3s;
+    cursor: pointer;
+    svg {
+      transition: 0.3s;
+    }
+  }
+  &:hover {
+    div {
+      svg {
+        transform: translateX(30%);
+        color: lightgray;
+      }
+      color: lightgray;
+    }
+  }
+}

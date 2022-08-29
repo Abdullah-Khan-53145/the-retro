@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+.brands__main {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 840px) {
+  .brands__main {
+    margin: 53px 0;
+  }
+}
+
+.brands__main svg {
+  color: white;
+}
+
+.brands__child {
+  width: 89%;
+  background: #ffffff32;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+@media (max-width: 840px) {
+  .brands__child {
+    margin: 53px 0;
+  }
+}
+
+@media (max-width: 840px) {
+  .brands__child {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+.brand__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+@media (max-width: 840px) {
+  .brand__card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.brand__card__image {
+  height: 90%;
+}
+
+.brand__card__image img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 20rem;
+}
+
+@media (max-width: 840px) {
+  .brand__card__image img {
+    max-width: 25rem;
+  }
+}
+
+.brand__card__text h2 {
+  font-size: 2.5rem;
+}
+
+.brand__card__text div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.brand__card__text div span {
+  font-size: 2rem;
+}
+
+.brand__card__text div svg {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.brand__card__text:hover div {
+  color: lightgray;
+}
+
+.brand__card__text:hover div svg {
+  -webkit-transform: translateX(30%);
+          transform: translateX(30%);
+  color: lightgray;
+}
+/*# sourceMappingURL=brands.css.map */

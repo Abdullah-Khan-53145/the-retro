@@ -2,6 +2,8 @@
 
 // CSS RESET
 html {
+  overflow-x: hidden;
+
   font-size: 65.2%;
   @media (max-width: 1700px) {
     font-size: 60%;
@@ -31,5 +33,15 @@ html {
 
 //Some generic stylings
 .App {
+  position: relative;
+}
+.App::before {
+  content: "";
   @include main_bg;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
