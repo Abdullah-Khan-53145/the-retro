@@ -176,11 +176,12 @@ svg {
 
 .header__buttons__mobile {
   display: none;
-  background: #380000;
+  background: #881d1d;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 20px;
+  border-radius: 20px;
+  left: 20px;
+  right: 20px;
   z-index: 10000;
   padding: 8px 20px;
   -ms-flex-pack: distribute;
@@ -206,7 +207,6 @@ svg {
 }
 
 .header__buttons__mobile button span {
-  font-size: rem;
   color: white;
 }
 /*# sourceMappingURL=header.css.map */

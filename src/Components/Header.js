@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 // import ShoppingBasketSharpIcon from "@mui/icons-material/ShoppingBasketSharp";
 
@@ -6,6 +7,7 @@ import "../Styles/header.css";
 
 function Header() {
   const [translation, setTranslation] = useState("100%");
+
   const handleClick = () => {
     if (translation === "100%") setTranslation("0%");
     else setTranslation("100%");
@@ -76,7 +78,7 @@ function Header() {
         </div>
       </div>
       <div className="header__buttons__mobile">
-        <button>
+        <button className="active_nav">
           <div className="logo">
             <svg
               xmlns="http://www.w3.org/2000/svg"

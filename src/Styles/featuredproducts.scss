@@ -1,0 +1,121 @@
+@import "imports";
+.featured__products__main {
+  font-family: $secondary_font;
+  color: white;
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.featured__products__child {
+  @media (max-width: 756px) {
+    align-items: flex-start;
+  }
+  width: 89%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+// 1489
+.featured__productsmain__heading {
+  height: 100%;
+  position: relative;
+  @media (max-width: 756px) {
+    height: 120vh;
+    margin-top: 20px;
+    width: 230px;
+  }
+  .featured__productsmain__heading__child {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 100vh;
+    img {
+      width: 30rem;
+      @media (max-width: 756px) {
+        width: 50rem;
+      }
+      @media (max-width: 656px) {
+        width: 45rem;
+      }
+      @media (max-width: 556px) {
+        width: 30rem;
+      }
+    }
+  }
+}
+.featured__products__card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  background-color: $bg-cards;
+  padding: 30px;
+  max-width: 600px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.featured__products__card__heading {
+  font-size: 3rem;
+  font-weight: 600;
+}
+.featured__products__card__info {
+  display: flex;
+  width: 100%;
+  @media (max-width: 756px) {
+    flex-direction: column;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+  .rating {
+    font-size: 2rem;
+  }
+  span {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+}
+.featured__products__main__products {
+  display: flex;
+  flex-direction: column;
+}
+.featured__products__card__row {
+  display: flex;
+  @media (max-width: 756px) {
+    flex-direction: column;
+  }
+}
+.featured__products__card__info__img {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  img {
+    object-fit: contain;
+    height: 100%;
+    width: 20rem;
+    @media (max-width: 756px) {
+      width: 15rem;
+    }
+  }
+}
+.featured__products__card__info__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  button {
+    border: none;
+    background-color: $primary_red;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      background-color: black;
+    }
+  }
+}
