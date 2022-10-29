@@ -3,17 +3,20 @@ import { useEffect, useState } from "react";
 import "../Styles/featuredproducts.css";
 
 function FeaturedProducts() {
-  const [position, setPosition] = useState({ position: "absolute", top: 0 });
+  const [position, setPosition] = useState({});
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY >= 1625) {
-        setPosition({ position: "fixed", top: 0 });
-      } else if (window.scrollY < 1625) {
-        setPosition({ position: "absolute", top: 0 });
-      }
-      if (window.scrollY >= 1816) {
-        setPosition({ position: "absolute", bottom: 0 });
-        console.log(position, "\ndone");
+      if (window.innerWidth <= 756) {
+        if (window.scrollY >= 1625) {
+          setPosition({ position: "fixed", top: 0 });
+        } else if (window.scrollY < 1625) {
+          setPosition({ position: "absolute", top: 0 });
+        }
+        if (window.scrollY >= 1816) {
+          setPosition({ position: "absolute", bottom: 0 });
+        }
+      } else {
+        setPosition({ position: "static" });
       }
     });
   }, []);

@@ -67,4 +67,19 @@ html {
   height: 100%;
   z-index: -1;
 }
+
+.primary-button {
+  border: none;
+  background-color: #ff0000;
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.primary-button:hover {
+  background-color: black;
+}
 /*# sourceMappingURL=main.css.map */

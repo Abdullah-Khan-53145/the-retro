@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
-.featured__products__main {
+.hot_deals__products__main {
   font-family: "Poppins", sans-serif;
   color: white;
   width: 100%;
@@ -10,12 +10,16 @@
   margin-bottom: 100px;
 }
 
-.featured__products__child {
+.hot_deals__products__child {
   width: 89%;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -25,66 +29,39 @@
   height: 100%;
 }
 
-@media (max-width: 756px) {
-  .featured__products__child {
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-}
-
-.featured__productsmain__heading {
+.hot_deals__productsmain__heading {
   height: 100%;
   position: relative;
 }
 
-@media (max-width: 756px) {
-  .featured__productsmain__heading {
-    height: 120vh;
-    margin-top: 20px;
-    width: 230px;
-  }
-}
-
-.featured__productsmain__heading .featured__productsmain__heading__child {
+.hot_deals__productsmain__heading .hot_deals__productsmain__heading__child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100%;
 }
 
-@media (max-width: 756px) {
-  .featured__productsmain__heading .featured__productsmain__heading__child {
-    position: absolute;
-    height: 100vh;
-  }
-}
-
-.featured__productsmain__heading .featured__productsmain__heading__child img {
+.hot_deals__productsmain__heading .hot_deals__productsmain__heading__child img {
   width: 30rem;
+  padding-left: 20px;
 }
 
 @media (max-width: 756px) {
-  .featured__productsmain__heading .featured__productsmain__heading__child img {
-    width: 50rem;
-  }
-}
-
-@media (max-width: 656px) {
-  .featured__productsmain__heading .featured__productsmain__heading__child img {
-    width: 45rem;
-  }
-}
-
-@media (max-width: 556px) {
-  .featured__productsmain__heading .featured__productsmain__heading__child img {
+  .hot_deals__productsmain__heading .hot_deals__productsmain__heading__child img {
     width: 30rem;
   }
 }
 
-.featured__products__card {
+@media (max-width: 656px) {
+  .hot_deals__productsmain__heading .hot_deals__productsmain__heading__child img {
+    width: 20rem;
+  }
+}
+
+.hot_deals__products__card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,21 +69,33 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 20px;
   position: relative;
   background-color: #ffffff32;
   padding: 30px;
+  height: 100%;
   max-width: 600px;
   margin-left: 10px;
   margin-bottom: 10px;
 }
 
-.featured__products__card__heading {
+@media (max-width: 756px) {
+  .hot_deals__products__card {
+    padding: 10px;
+  }
+}
+
+.hot_deals__products__card__heading {
   font-size: 3rem;
   font-weight: 600;
 }
 
-.featured__products__card__info {
+@media (max-width: 756px) {
+  .hot_deals__products__card__heading {
+    font-size: 1.5rem;
+  }
+}
+
+.hot_deals__products__card__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,7 +103,7 @@
 }
 
 @media (max-width: 756px) {
-  .featured__products__card__info {
+  .hot_deals__products__card__info {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -122,20 +111,32 @@
   }
 }
 
-.featured__products__card__info p {
+.hot_deals__products__card__info p {
   font-size: 1.5rem;
 }
 
-.featured__products__card__info .rating {
+@media (max-width: 656px) {
+  .hot_deals__products__card__info p {
+    font-size: 1rem;
+  }
+}
+
+.hot_deals__products__card__info .rating {
   font-size: 2rem;
 }
 
-.featured__products__card__info span {
+@media (max-width: 656px) {
+  .hot_deals__products__card__info .rating {
+    font-size: 1.5rem;
+  }
+}
+
+.hot_deals__products__card__info span {
   font-size: 3rem;
   font-weight: 600;
 }
 
-.featured__products__main__products {
+.hot_deals__products__main__products {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,24 +144,72 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+  height: 100%;
 }
 
-.featured__products__card__row {
+.hot_deals__lock__parent {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  opacity: 0.9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../../public/imgs/hot_deal_lock.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.hot__deals__lock__message {
+  display: block;
+  margin: auto;
+}
+
+.hot__deals__lock__message h2 {
+  font-size: 7rem;
+}
+
+@media (max-width: 756px) {
+  .hot__deals__lock__message h2 {
+    font-size: 4rem;
+  }
+}
+
+.hot__deals__lock__message button {
+  display: block;
+  margin: auto;
+  font-size: 3.5rem;
+}
+
+@media (max-width: 656px) {
+  .hot__deals__lock__message button {
+    font-size: 2.5rem;
+  }
+}
+
+.hot_deals__lock {
+  height: 100%;
+  width: 100%;
+}
+
+.hot_deals__products__card__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 @media (max-width: 756px) {
-  .featured__products__card__row {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .hot_deals__products__card__row:nth-child(3) {
+    display: none;
   }
 }
 
-.featured__products__card__info__img {
+.hot_deals__products__card__info__img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,20 +220,20 @@
       align-self: center;
 }
 
-.featured__products__card__info__img img {
+.hot_deals__products__card__info__img img {
   -o-object-fit: contain;
      object-fit: contain;
   height: 100%;
   width: 20rem;
 }
 
-@media (max-width: 756px) {
-  .featured__products__card__info__img img {
+@media (max-width: 656px) {
+  .hot_deals__products__card__info__img img {
     width: 15rem;
   }
 }
 
-.featured__products__card__info__text {
+.hot_deals__products__card__info__text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -198,7 +247,7 @@
   gap: 1rem;
 }
 
-.featured__products__card__info__text button {
+.hot_deals__products__card__info__text button {
   border: none;
   background-color: #ff0000;
   padding: 1rem 3rem;
@@ -209,7 +258,14 @@
   transition: 0.2s ease-in-out;
 }
 
-.featured__products__card__info__text button:hover {
+@media (max-width: 656px) {
+  .hot_deals__products__card__info__text button {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+.hot_deals__products__card__info__text button:hover {
   background-color: black;
 }
-/*# sourceMappingURL=featuredproducts.css.map */
+/*# sourceMappingURL=hotdeals.css.map */
