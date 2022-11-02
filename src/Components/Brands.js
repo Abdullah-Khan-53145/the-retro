@@ -9,7 +9,7 @@ function Brands() {
             <img src="./imgs/brand_sec_shoe_1.png" alt="" />
           </div>
           <div className="brand__card__text">
-            <h2>Nike Shoes</h2>
+            <h2>Nike </h2>
             <div>
               <span>Shop Now</span>
               <svg
@@ -32,7 +32,7 @@ function Brands() {
             <img src="./imgs/brand_sec_shoe_2.png" alt="" />
           </div>
           <div className="brand__card__text">
-            <h2>Puma Shoes</h2>
+            <h2>Puma </h2>
             <div>
               <span>Shop Now</span>
               <svg
@@ -55,7 +55,7 @@ function Brands() {
             <img src="./imgs/brand_sec_shoe_3.png" alt="" />
           </div>
           <div className="brand__card__text">
-            <h2>Addidas Shoes</h2>
+            <h2>Addidas </h2>
             <div>
               <span>Shop Now</span>
               <svg
@@ -78,7 +78,7 @@ function Brands() {
             <img src="./imgs/brand_sec_shoe_4.png" alt="" />
           </div>
           <div className="brand__card__text">
-            <h2>Under Armour Shoes</h2>
+            <h2>Converse </h2>
             <div>
               <span>Shop Now</span>
               <svg

@@ -16,7 +16,8 @@
 .brands__child {
   width: 89%;
   background: $bg_cards;
-  display: flex;
+  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 20px 0;
   @media (max-width: 840px) {
     margin: 53px 0;
@@ -50,20 +51,33 @@
   }
 }
 .brand__card__text {
+  
   h2 {
-    font-size: 2rem;
+    font-size: 3rem;
+    @media (max-width: 940px) and (min-width : 840px) {
+      font-size: 1.8rem;
+    }
   }
   div {
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
     align-items: center;
+    text-decoration: underline;
+    &:hover{
+      color:darkgray;
+    }
     span {
       font-size: 2rem;
+      @media (max-width: 940px) and (min-width : 840px) {
+        font-size: 1.5rem;
+      }
+     
     }
     transition: 0.3s;
     cursor: pointer;
     svg {
       transition: 0.3s;
+      display:none;
     }
   }
   &:hover {

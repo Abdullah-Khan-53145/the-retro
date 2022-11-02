@@ -27,9 +27,10 @@
 .brands__child {
   width: 89%;
   background: #ffffff32;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 20px 0;
   padding: 20px;
 }
@@ -86,29 +87,49 @@
 }
 
 .brand__card__text h2 {
-  font-size: 2rem;
+  font-size: 3rem;
+}
+
+@media (max-width: 940px) and (min-width: 840px) {
+  .brand__card__text h2 {
+    font-size: 1.8rem;
+  }
 }
 
 .brand__card__text div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-decoration: underline;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer;
+}
+
+.brand__card__text div:hover {
+  color: darkgray;
 }
 
 .brand__card__text div span {
   font-size: 2rem;
 }
 
+@media (max-width: 940px) and (min-width: 840px) {
+  .brand__card__text div span {
+    font-size: 1.5rem;
+  }
+}
+
 .brand__card__text div svg {
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  display: none;
 }
 
 .brand__card__text:hover div {
