@@ -22,8 +22,7 @@
   height: 100%;
   position: relative;
   @media (max-width: 756px) {
-    height: 120vh;
-    margin-top: 20px;
+    height: 140vh;
     width: 230px;
   }
   .featured__productsmain__heading__child {
@@ -61,15 +60,24 @@
 .featured__products__card__heading {
   font-size: 3rem;
   font-weight: 600;
+  @media (max-width: 756px) {
+    font-size: 2rem;
+  
+  }
 }
 .featured__products__card__info {
   display: flex;
   width: 100%;
   @media (max-width: 756px) {
     flex-direction: column;
+  
   }
   p {
     font-size: 1.5rem;
+    @media (max-width: 756px) {
+      font-size: 1rem;
+    
+    }
   }
   .rating {
     font-size: 2rem;
@@ -87,6 +95,8 @@
   display: flex;
   @media (max-width: 756px) {
     flex-direction: column;
+    justify-content: space-around;
+    height: 70vh;
   }
 }
 .featured__products__card__info__img {

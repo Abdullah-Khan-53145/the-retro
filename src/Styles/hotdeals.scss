@@ -8,6 +8,7 @@
 }
 .hot_deals__products__child {
   width: 89%;
+  border:2px solid red;
   margin: auto;
   display: flex;
   flex-direction: row-reverse;
@@ -26,7 +27,6 @@
     height: 100%;
     img {
       width: 30rem;
-      padding-left: 20px;
       @media (max-width: 756px) {
         width: 30rem;
       }
@@ -49,6 +49,9 @@
   @media (max-width: 756px) {
     padding: 10px;
   }
+  @media (max-width: 456px) {
+    padding: 2px;
+  }
 }
 .hot_deals__products__card__heading {
   font-size: 3rem;
@@ -59,7 +62,6 @@
 }
 .hot_deals__products__card__info {
   display: flex;
-  width: 100%;
   @media (max-width: 756px) {
     flex-direction: column;
   }
@@ -68,23 +70,36 @@
     @media (max-width: 656px) {
       font-size: 1rem;
     }
+    @media (max-width: 456px) {
+      font-size: .5rem;
+    }
   }
   .rating {
     font-size: 2rem;
     @media (max-width: 656px) {
       font-size: 1.5rem;
     }
+    @media (max-width: 456px) {
+      font-size: 1rem;
+    }
   }
   span {
     font-size: 3rem;
     font-weight: 600;
+    @media (max-width: 656px) {
+      font-size: 2rem;
+    }
+    @media (max-width: 456px) {
+      font-size: 1.5rem;
+    }
   }
 }
 .hot_deals__products__main__products {
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 100%;
+  border:2px solid red;
+  
 }
 .hot_deals__lock__parent {
   position: absolute;
@@ -103,8 +118,12 @@
   margin: auto;
   h2 {
     font-size: 7rem;
+    
     @media (max-width: 756px) {
       font-size: 4rem;
+    }
+    @media (max-width: 456px) {
+      font-size: 3rem;
     }
   }
   button {
@@ -113,6 +132,9 @@
     font-size: 3.5rem;
     @media (max-width: 656px) {
       font-size: 2.5rem;
+    }
+    @media (max-width: 456px) {
+      font-size: 2rem;
     }
   }
 }

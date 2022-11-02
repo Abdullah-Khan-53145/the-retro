@@ -7,7 +7,7 @@ function HotDeals() {
         <div className="hot_deals__products__child">
           <div className="hot_deals__productsmain__heading">
             <div className="hot_deals__productsmain__heading__child">
-              <img src="./imgs/hot_deal_heading.PNG" alt="" />
+              <img src="./imgs/hot_deal_heading.png" alt="" />
             </div>
           </div>
           <div className="hot_deals__products__main__products">

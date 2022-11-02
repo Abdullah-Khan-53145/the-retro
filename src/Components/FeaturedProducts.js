@@ -7,12 +7,12 @@ function FeaturedProducts() {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.innerWidth <= 756) {
-        if (window.scrollY >= 1625) {
+        if (window.scrollY >= 1485) {
           setPosition({ position: "fixed", top: 0 });
-        } else if (window.scrollY < 1625) {
+        } else if (window.scrollY < 1485) {
           setPosition({ position: "absolute", top: 0 });
         }
-        if (window.scrollY >= 1816) {
+        if (window.scrollY >= 1840) {
           setPosition({ position: "absolute", bottom: 0 });
         }
       } else {
@@ -28,7 +28,7 @@ function FeaturedProducts() {
             className="featured__productsmain__heading__child"
             style={position}
           >
-            <img src="./imgs/featured_products_heading.PNG" alt="" />
+            <img src="./imgs/featured_products_heading.png" alt="" />
           </div>
         </div>
         <div className="featured__products__main__products">
