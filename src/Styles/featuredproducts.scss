@@ -15,9 +15,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 1200px;
+  @media (max-width: 756px) {
+    height: 1200px;
+  }
+ 
   div{
-    height: 100%;
+    @media (max-width: 756px) {
+      height: 100%;
+    }
+   
   }
 }
 // 1489

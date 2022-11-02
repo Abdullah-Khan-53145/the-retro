@@ -22,7 +22,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 1200px;
 }
 
 @media (max-width: 756px) {
@@ -33,8 +32,16 @@
   }
 }
 
-.featured__products__child div {
-  height: 100%;
+@media (max-width: 756px) {
+  .featured__products__child {
+    height: 1200px;
+  }
+}
+
+@media (max-width: 756px) {
+  .featured__products__child div {
+    height: 100%;
+  }
 }
 
 .featured__productsmain__heading {
