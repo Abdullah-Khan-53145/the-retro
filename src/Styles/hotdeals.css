@@ -12,7 +12,6 @@
 
 .hot_deals__products__child {
   width: 89%;
-  border: 2px solid red;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -174,7 +173,6 @@
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
-  border: 2px solid red;
 }
 
 .hot_deals__lock__parent {
