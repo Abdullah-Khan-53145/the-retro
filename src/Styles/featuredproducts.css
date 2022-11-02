@@ -22,7 +22,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 100%;
+  height: 1200px;
 }
 
 @media (max-width: 756px) {
@@ -33,6 +33,10 @@
   }
 }
 
+.featured__products__child div {
+  height: 100%;
+}
+
 .featured__productsmain__heading {
   height: 100%;
   position: relative;
@@ -40,7 +44,7 @@
 
 @media (max-width: 756px) {
   .featured__productsmain__heading {
-    height: 140vh;
+    height: 100%;
     width: 230px;
   }
 }
@@ -170,7 +174,6 @@
             flex-direction: column;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    height: 70vh;
   }
 }
 

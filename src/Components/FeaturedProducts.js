@@ -7,12 +7,27 @@ function FeaturedProducts() {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.innerWidth <= 756) {
-        if (window.scrollY >= 1485) {
+        if (
+          window.scrollY >=
+          document.querySelector(".featured__products__main__products")
+            .offsetTop
+        ) {
           setPosition({ position: "fixed", top: 0 });
-        } else if (window.scrollY < 1485) {
+        } else if (
+          window.scrollY <
+          document.querySelector(".featured__products__main__products")
+            .offsetTop
+        ) {
           setPosition({ position: "absolute", top: 0 });
         }
-        if (window.scrollY >= 1840) {
+        if (
+          window.scrollY >=
+          document.querySelector(".featured__products__main__products")
+            .offsetTop +
+            document.querySelector(".featured__products__main__products")
+              .offsetHeight -
+            window.innerHeight
+        ) {
           setPosition({ position: "absolute", bottom: 0 });
         }
       } else {
