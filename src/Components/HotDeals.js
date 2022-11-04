@@ -31,7 +31,10 @@ function HotDeals() {
                     </div>
                     <p>This will be the short decription of our shoes ...</p>
                     <div className="rating">⭐⭐⭐⭐⭐ </div>
-                    <span>1999$</span>
+                    <div className="hot__deals__price">
+                      <span>1999$</span>
+                      <span>1999$</span>
+                    </div>
                     <button className="primary-button">BUY NOW</button>
                   </div>
                 </div>
@@ -47,7 +50,10 @@ function HotDeals() {
                     </div>
                     <p>This will be the short decription of our shoes ...</p>
                     <div className="rating">⭐⭐⭐⭐⭐ </div>
-                    <span>1999$</span>
+                    <div className="hot__deals__price">
+                      <span>1999$</span>
+                      <span>1999$</span>
+                    </div>
                     <button className="primary-button">BUY NOW</button>
                   </div>
                 </div>
@@ -65,7 +71,10 @@ function HotDeals() {
                     </div>
                     <p>This will be the short decription of our shoes ...</p>
                     <div className="rating">⭐⭐⭐⭐⭐ </div>
-                    <span>1999$</span>
+                    <div className="hot__deals__price">
+                      <span>1999$</span>
+                      <span>1999$</span>
+                    </div>
                     <button className="primary-button">BUY NOW</button>
                   </div>
                 </div>
@@ -81,7 +90,10 @@ function HotDeals() {
                     </div>
                     <p>This will be the short decription of our shoes ...</p>
                     <div className="rating">⭐⭐⭐⭐⭐ </div>
-                    <span>1999$</span>
+                    <div className="hot__deals__price">
+                      <span>1999$</span>
+                      <span>1999$</span>
+                    </div>
                     <button className="primary-button">BUY NOW</button>
                   </div>
                 </div>
