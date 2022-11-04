@@ -43,6 +43,7 @@
     }
     img {
       width: 30rem;
+   
       @media (max-width: 756px) {
         width: 50rem;
       }
@@ -139,6 +140,13 @@
 
   img {
     width: 20rem;
+    transition: .4s transform;
+    @media (min-width: 756px) {
+    &:hover{
+      transform: scale(1.5) rotate(20deg);
+    }
+    
+    }
     object-fit: contain;
     height: 100%;
     @media (max-width: 756px) {

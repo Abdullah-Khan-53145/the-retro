@@ -60,8 +60,8 @@ function FeaturedProducts({ shoes }) {
                         </div>
                         <div className="featured__products__card__info__text">
                           <div className="featured__products__card__heading">
-                            {shoe.name.length > 35
-                              ? shoe.name.slice(0, 35) + " ..."
+                            {shoe.name.length > 55
+                              ? shoe.name.slice(0, 55) + " ..."
                               : shoe.name}
                           </div>
                           <p>
@@ -133,8 +133,8 @@ function FeaturedProducts({ shoes }) {
                         </div>
                         <div className="featured__products__card__info__text">
                           <div className="featured__products__card__heading">
-                            {shoe.name.length > 35
-                              ? shoe.name.slice(0, 35) + " ..."
+                            {shoe.name.length > 56
+                              ? shoe.name.slice(0, 56) + " ..."
                               : shoe.name}
                           </div>
                           <p>
