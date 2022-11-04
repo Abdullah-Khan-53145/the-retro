@@ -34,7 +34,7 @@
 
 @media (max-width: 756px) {
   .featured__products__child {
-    height: 1200px;
+    height: 1500px;
   }
 }
 
@@ -102,18 +102,36 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 20px;
   position: relative;
   background-color: #ffffff32;
-  padding: 30px;
+  padding: 15px;
   max-width: 600px;
   margin-left: 10px;
   margin-bottom: 10px;
 }
 
+@media (max-width: 756px) {
+  .featured__products__card {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .featured__products__card {
+    max-width: 200px;
+  }
+}
+
 .featured__products__card__heading {
-  font-size: 3rem;
+  font-size: 2rem;
+  width: 100%;
   font-weight: 600;
+}
+
+@media (max-width: 756px) {
+  .featured__products__card__heading {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 756px) {
@@ -142,7 +160,7 @@
   font-size: 1.5rem;
 }
 
-@media (max-width: 756px) {
+@media (max-width: 400px) {
   .featured__products__card__info p {
     font-size: 1rem;
   }
@@ -150,6 +168,12 @@
 
 .featured__products__card__info .rating {
   font-size: 2rem;
+}
+
+.featured__products__card__info .rating span {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-left: 5px;
 }
 
 .featured__products__card__info span {
@@ -193,18 +217,25 @@
           justify-content: center;
   -ms-flex-item-align: center;
       align-self: center;
+  margin-right: 15px;
+}
+
+@media (max-width: 756px) {
+  .featured__products__card__info__img {
+    margin-right: 0;
+  }
 }
 
 .featured__products__card__info__img img {
+  width: 20rem;
   -o-object-fit: contain;
      object-fit: contain;
   height: 100%;
-  width: 20rem;
 }
 
 @media (max-width: 756px) {
   .featured__products__card__info__img img {
-    width: 15rem;
+    width: 25rem;
   }
 }
 
@@ -219,6 +250,8 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  gap: 1rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  min-height: 30rem;
 }
 /*# sourceMappingURL=featuredproducts.css.map */
