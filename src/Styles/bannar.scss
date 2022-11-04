@@ -1,0 +1,71 @@
+@import "imports";
+.lul{
+    color: white;
+}
+.main__bannar{
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: $secondary_font;
+    margin-bottom: 100px;
+}
+.main__child{
+    width: 89%;
+    background: $bg_cards;
+    display:grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:10px;
+    @media (max-width: 762px) {
+        display: flex;
+        flex-direction: column;
+        padding-bottom:50px;
+      }
+    margin: 20px 0;
+}
+.img__main__bannar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        object-fit: contain;
+        width: 55rem;
+        @media (max-width: 400px) {
+            width: 45rem;
+          }
+    }
+}
+.sub__main__bannar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2{
+        font-size: 4rem;
+        font-weight: 300;        
+        text-align: center;
+        line-height: 5rem;
+        width: 55rem;
+        @media (max-width: 400px) {
+            width: 45rem;
+            font-size: 3rem;
+          }
+    }
+}
+.cre__bannar{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    width: 55rem;
+    @media (max-width: 400px) {
+        width: 45rem;
+        font-size: 4rem;
+      }
+    
+    input{
+        font-size: 1.5rem;
+        padding: 1rem;
+        width: 70%;
+
+    }
+}

@@ -1,0 +1,99 @@
+@import "imports";
+.lul{
+    color: white;
+}
+.footer__main{
+    background-color: black;
+    padding:20px;
+    border-top:1px solid gray;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    font-family: $secondary_font;
+    @media (max-width: 756px) {
+        padding-bottom: 80px;
+      }
+    h3{
+        font-size: 2rem;
+        @media (max-width: 940px) {
+            font-size: 2.5rem;
+          }
+        @media (max-width: 400px) {
+            font-size: 2rem;
+          }
+    }
+    h2{
+        font-size: 3rem;
+        @media (max-width: 940px) {
+            font-size: 3.5rem;
+          }
+        @media (max-width: 400px) {
+            font-size: 3rem;
+          }
+    }
+    p{
+        font-size: 2rem;
+        @media (max-width: 940px) {
+            font-size: 2.5rem;
+          }
+        @media (max-width: 400px) {
+            font-size: 2rem;
+          }
+    }
+    .footer__main__copyright{
+        font-size: 1.5rem;
+        margin: 3rem 0;
+
+    }
+}
+.footer__main__child{
+    width: 89%;
+    border-bottom:1px solid white;
+    padding: 5rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media (max-width: 940px) {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+      }
+}
+
+.other__links__section__footer{
+    display:flex;
+    justify-content: space-between;
+    margin-left: 4rem;
+    @media (max-width: 940px) {
+        margin-top: 2rem;
+        margin-left: 0rem;
+      }
+      @media (max-width: 570px) {
+        flex-wrap: wrap;
+      }
+ 
+    .links__section__footer{
+        display:flex;
+        flex-direction: column;
+        &:nth-child(1){
+            
+        }
+
+    }
+.Connect__section__footer__subs{
+    // justify-content: space-between;
+    // display:flex;
+    // flex-direction: column;
+    height: 100%;
+    
+}
+}
+.about__logo__section__footer{
+    display:flex;
+    flex-direction: column;
+    .about__logo__section__footer__logo{
+        margin-left: -3px;
+    }
+    
+}

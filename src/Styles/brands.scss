@@ -3,12 +3,12 @@
   color: white;
   display: flex;
   justify-content: center;
+  width: 100%;
+  font-family: $secondary_font;
   @media (max-width: 840px) {
     margin: 53px 0;
   }
 
-  width: 100%;
-  font-family: $secondary_font;
   svg {
     color: white;
   }
@@ -19,10 +19,10 @@
   display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 20px 0;
+  padding: 20px;
   @media (max-width: 840px) {
     margin: 53px 0;
   }
-  padding: 20px;
   @media (max-width: 840px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
