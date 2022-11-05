@@ -40,20 +40,12 @@ function Home() {
       price: "129.00",
     },
     {
-      name: "Under Armour Men's Charged Assert 9 Running Shoe",
-      img: "./imgs/front-page-shoes/shoe_1.png",
+      name: "adidas Men's Kaptir 2.0 Running Shoe",
+      img: "./imgs/front-page-shoes/shoe_5.png",
       description:
-        "These running shoes are built to help anyone go faster-Charged Cushioning® helps protect against impact, leather overlays add durable stability, and a mesh upper keeps your feet cool for miles.. Lightweight mesh upper with 3-color digital print delivers complete breathability. Durable leather overlays for stability & that locks in your midfoot. EVA sockliner provides soft, step-in comfort. Charged Cushioning® midsole uses compression molded foam for ultimate responsiveness & durability. Solid rubber outsole covers high impact zones for greater durability with less weight. Offset: 10mm. NEUTRAL: For runners who need a balance of flexibility & cushioning. Lace type: Standard tie.",
+        "These men's adidas running shoes make comfort the top priority. A stretchy upper gives them a sock-like feel, and the Cloudfoam midsole delivers pillow-soft comfort. The step-in design keeps things casual.",
       rating: "4.6",
-      price: "56.25",
-    },
-    {
-      name: "Under Armour Men's Charged Assert 9 Running Shoe",
-      img: "/imgs/front-page-shoes/shoe1.png",
-      description:
-        "These running shoes are built to help anyone go faster-Charged Cushioning® helps protect against impact, leather overlays add durable stability, and a mesh upper keeps your feet cool for miles.. Lightweight mesh upper with 3-color digital print delivers complete breathability. Durable leather overlays for stability & that locks in your midfoot. EVA sockliner provides soft, step-in comfort. Charged Cushioning® midsole uses compression molded foam for ultimate responsiveness & durability. Solid rubber outsole covers high impact zones for greater durability with less weight. Offset: 10mm. NEUTRAL: For runners who need a balance of flexibility & cushioning. Lace type: Standard tie.",
-      rating: "4.6",
-      price: "56.25",
+      price: "173.99",
     },
   ];
   return (

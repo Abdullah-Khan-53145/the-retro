@@ -25,7 +25,7 @@
     display: flex;
     align-items: center;
     height: 100%;
-    @media (max-width: 756px) {
+    @media (max-width: 800px) {
     }
     @media (max-width: 656px) {
     }
@@ -33,7 +33,7 @@
       width: 30rem;
       padding:20px;
       object-fit: contain;
-      @media (max-width: 756px) {
+      @media (max-width: 800px) {
         width: 30rem;
         padding:15px;
       }
@@ -49,29 +49,29 @@
   flex-direction: column;
   position: relative;
   background-color: $bg-cards;
-  padding: 30px;
+  padding: 10px;
   height: 100%;
   max-width: 600px;
   margin-left: 10px;
   
-  @media (max-width: 756px) {
-    padding: 15px;
+  @media (max-width: 800px) {
+    padding: 10px;
   }
   @media (max-width: 456px) {
-    padding: 15px;
+    padding: 10px;
   }
 }
 .hot_deals__products__card__heading {
-  font-size: 3rem;
+  font-size: 2rem;
 
-  @media (max-width: 756px) {
+  @media (max-width: 800px) {
     font-size: 1.5rem;
   }
   font-weight: 600;
 }
 .hot_deals__products__card__info {
   display: flex;
-  @media (max-width: 756px) {
+  @media (max-width: 800px) {
     flex-direction: column;
   }
   p {
@@ -90,6 +90,12 @@
     }
     @media (max-width: 456px) {
       font-size: 1rem;
+    }
+    span{
+      
+      font-size: 2rem;
+      font-weight: 300;
+      margin-left:5px;
     }
   }
   span {
@@ -127,7 +133,7 @@
   h2 {
     font-size: 7rem;
     
-    @media (max-width: 756px) {
+    @media (max-width: 800px) {
       font-size: 4rem;
     }
     @media (max-width: 456px) {
@@ -151,16 +157,18 @@
   width: 100%;
 }
 .hot_deals__products__card__row {
-  display: flex;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:1fr ;
+ 
   &:nth-child(3) {
-    @media (max-width: 756px) {
+    @media (max-width: 800px) {
       display: none;
     }
   }
   &:nth-child(2) {
     margin-bottom: 10px;
-    @media (max-width: 756px) {
+    @media (max-width: 800px) {
       margin-bottom: 0px;
     }
   }
@@ -169,6 +177,10 @@
   display: flex;
   justify-content: center;
   align-self: center;
+  margin-right: 15px;
+  @media (max-width: 800px) {
+    margin-right: 0;
+  }
   @media (max-width: 656px) {
     padding: 5px 0;
   }
@@ -181,12 +193,19 @@
       width: 10rem;
     }
   }
+
 }
+ 
+ 
+
+
 .hot_deals__products__card__info__text {
-  display: flex;
+  display:flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
+  justify-content: space-around;
+  height: 100%;
+ 
   button {
     border: none;
     background-color: $primary_red;
@@ -204,6 +223,9 @@
       background-color: black;
     }
   }
+
+ 
+  
 }
 .hot__deals__price{
   display:flex;

@@ -78,7 +78,7 @@ function Brands() {
             <img src="./imgs/brand_sec_shoe_4.png" alt="" />
           </div>
           <div className="brand__card__text">
-            <h2>Converse </h2>
+            <h2>Others </h2>
             <div>
               <span>Shop Now</span>
               <svg
