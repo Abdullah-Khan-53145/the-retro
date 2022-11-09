@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "AKAA,OAAO,CAAC,6GAAI;AACZ,OAAO,CAAC,6FAAI;AADZ,OAAO,CAAC,6GAAI;AACZ,OAAO,CAAC,6FAAI",
+    "sources": [
+        "allproducts.scss",
+        "_imports.scss",
+        "_colors.scss",
+        "_mixins.scss",
+        "_colors.scss",
+        "_fonts.scss",
+        "_fonts.scss"
+    ],
+    "names": [],
+    "file": "allproducts.css"
+}

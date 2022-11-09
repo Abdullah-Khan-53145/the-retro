@@ -1,0 +1,134 @@
+@import 'imports';
+.main_product{
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: $secondary_font;   
+    svg {
+      color: white;
+    }
+    h1{
+        font-size: 5rem;
+    }
+    h3{
+        font-size: 3rem;
+    }
+    p{
+        font-size: 2rem;
+    }
+}
+.product_main_child{
+    width: 89%;
+    display:grid;
+    gap:2rem;
+    grid-template-columns: .7fr 1.3fr;
+    margin:auto;
+    @media (max-width:756px){
+        display:flex;
+        flex-direction: column;
+    }
+}
+.product_main_child_images_section{
+   display:flex;
+   flex-direction:column;
+   align-self: start;
+   @media (max-width:756px){
+    align-self: center;
+}
+   
+}
+.product_main_child_images_section_slider{
+    display:flex;
+    align-items: center;
+    .arrow{
+        svg{
+            width: 10rem;
+            color: gray;
+        }
+    }
+    .main_product_image{
+      
+        display:flex;
+        background-color: $bg-cards;
+        align-items: center;
+        justify-content: center;
+        width:45rem;
+        height: 45rem;
+        @media (max-width:756px){
+            width:60vw;
+            height:60vw;
+        }
+        img{
+            @media (max-width:756px){
+                width:50vw;
+                height:50vw;
+            }
+            width: 40rem;
+            object-fit: contain;
+        }
+    }
+}
+.product_main_child_images_section_samples{
+    display:flex;
+    width: 45rem;
+    margin:auto;
+    justify-content: space-around;
+    padding:5rem;
+    .shoe_sample_image{
+        &:nth-child(1){
+            border:3px solid $primary_red;
+        }
+        background-color: $bg-cards;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10rem;
+        width: 10rem;
+        img{
+            width: 7rem;
+            object-fit: contain;
+        }
+    }
+}
+.product_main_child_Info_section{
+    display:flex;
+    flex-direction: column;
+    gap:2rem;
+    align-items: flex-start;
+    button{
+        font-size: 2rem;
+    }
+    margin-bottom:100px;
+}
+
+
+
+.product_size{
+    display:flex;
+    div{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        width: 4rem;
+        height: 4rem;
+        background-color: white;
+        color:black;
+        border:1px solid gray;
+        margin-right:1rem;
+    }
+}
+
+.product_color{
+    display:flex;
+    div{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 4rem;
+        height: 4rem;       
+        border:1px solid gray;
+        margin-right:1rem;
+    }
+}
