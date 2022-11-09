@@ -144,11 +144,12 @@ function Product() {
         document.querySelector(".product_main_child_images_section_parent")
           .offsetTop +
           document.querySelector(".product_main_child_images_section_parent")
-            .offsetHeight -
-          window.innerHeight / 2
+            .offsetHeight
       ) {
         setPosition({ position: "absolute", bottom: 0, width: "100%" });
       }
+    } else {
+      setPosition({ position: "static" });
     }
   });
   useEffect(() => {});
