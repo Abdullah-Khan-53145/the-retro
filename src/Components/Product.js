@@ -74,58 +74,59 @@ function Product() {
   });
   const [position, setPosition] = useState({});
   window.addEventListener("scroll", () => {
-    if (
-      ratings !=
-      {
-        five: "76%",
-        four: "14%",
-        three: "5%",
-        two: "2%",
-        one: "3%",
-      }
-    ) {
-      if (
-        window.scrollY >
-        document.getElementById("5_stars").offsetTop -
-          window.innerHeight +
-          document.getElementById("5_stars").offsetHeight
-      ) {
-        setRatings({ ...ratings, five: "76%" });
-      }
-      if (
-        window.scrollY >
-        document.getElementById("4_stars").offsetTop -
-          window.innerHeight +
-          document.getElementById("4_stars").offsetHeight
-      ) {
-        setRatings({ ...ratings, four: "14%" });
-      }
-      if (
-        window.scrollY >
-        document.getElementById("3_stars").offsetTop -
-          window.innerHeight +
-          document.getElementById("3_stars").offsetHeight
-      ) {
-        setRatings({ ...ratings, three: "5%" });
-      }
-      if (
-        window.scrollY >
-        document.getElementById("2_stars").offsetTop -
-          window.innerHeight +
-          document.getElementById("2_stars").offsetHeight
-      ) {
-        setRatings({ ...ratings, two: "2%" });
-      }
-      if (
-        window.scrollY >
-        document.getElementById("1_stars").offsetTop -
-          window.innerHeight +
-          document.getElementById("1_stars").offsetHeight
-      ) {
-        setRatings({ ...ratings, one: "33%" });
-      }
-    }
     if (window.innerWidth >= 756) {
+      if (
+        ratings !=
+        {
+          five: "76%",
+          four: "14%",
+          three: "5%",
+          two: "2%",
+          one: "3%",
+        }
+      ) {
+        if (
+          window.scrollY >
+          document.getElementById("5_stars").offsetTop -
+            window.innerHeight +
+            document.getElementById("5_stars").offsetHeight
+        ) {
+          setRatings({ ...ratings, five: "76%" });
+        }
+        if (
+          window.scrollY >
+          document.getElementById("4_stars").offsetTop -
+            window.innerHeight +
+            document.getElementById("4_stars").offsetHeight
+        ) {
+          setRatings({ ...ratings, four: "14%" });
+        }
+        if (
+          window.scrollY >
+          document.getElementById("3_stars").offsetTop -
+            window.innerHeight +
+            document.getElementById("3_stars").offsetHeight
+        ) {
+          setRatings({ ...ratings, three: "5%" });
+        }
+        if (
+          window.scrollY >
+          document.getElementById("2_stars").offsetTop -
+            window.innerHeight +
+            document.getElementById("2_stars").offsetHeight
+        ) {
+          setRatings({ ...ratings, two: "2%" });
+        }
+        if (
+          window.scrollY >
+          document.getElementById("1_stars").offsetTop -
+            window.innerHeight +
+            document.getElementById("1_stars").offsetHeight
+        ) {
+          setRatings({ ...ratings, one: "3%" });
+        }
+      }
+
       if (
         window.scrollY >=
         document.querySelector(".product_main_child_images_section_parent")
@@ -150,6 +151,13 @@ function Product() {
       }
     } else {
       setPosition({ position: "static" });
+      setRatings({
+        five: "76%",
+        four: "14%",
+        three: "5%",
+        two: "2%",
+        one: "3%",
+      });
     }
   });
   useEffect(() => {});
