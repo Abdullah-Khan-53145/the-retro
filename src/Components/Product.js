@@ -90,6 +90,83 @@ function Product() {
             </div>
           </div>
           <button className="primary-button">Add To Cart</button>
+          <div className="realted_products">
+            <h3>Related product</h3>
+            <div className="related_products_parent">
+              <div className="related_product">
+                <h4>{dummy_shoe.name}</h4>
+                <div className="product_details">
+                  <div className="related_product_img">
+                    <img src="./imgs/front-page-shoes/shoe_1.png" alt="" />
+                  </div>
+                  <div className="product_info">
+                    <div className="product_description">
+                      <p>
+                        {dummy_shoe.description.length > 60
+                          ? dummy_shoe.description.slice(0, 60) + " ..."
+                          : dummy_shoe.description}
+                      </p>
+                    </div>
+                    <div className="rating">
+                      ⭐⭐⭐⭐⭐<span>{dummy_shoe.rating}</span>
+                    </div>
+                    <div className="price">
+                      <h5>{dummy_shoe.price}</h5>
+                    </div>
+                    <button className="primary-button">Buy Product</button>
+                  </div>
+                </div>
+              </div>
+              <div className="related_product">
+                <h4>{dummy_shoe.name}</h4>
+                <div className="product_details">
+                  <div className="related_product_img">
+                    <img src="./imgs/front-page-shoes/shoe_1.png" alt="" />
+                  </div>
+                  <div className="product_info">
+                    <div className="product_description">
+                      <p>
+                        {dummy_shoe.description.length > 60
+                          ? dummy_shoe.description.slice(0, 60) + " ..."
+                          : dummy_shoe.description}
+                      </p>
+                    </div>
+                    <div className="rating">
+                      ⭐⭐⭐⭐⭐<span>{dummy_shoe.rating}</span>
+                    </div>
+                    <div className="price">
+                      <h5>{dummy_shoe.price}</h5>
+                    </div>
+                    <button className="primary-button">Buy Product</button>
+                  </div>
+                </div>
+              </div>
+              <div className="related_product">
+                <h4>{dummy_shoe.name}</h4>
+                <div className="product_details">
+                  <div className="related_product_img">
+                    <img src="./imgs/front-page-shoes/shoe_1.png" alt="" />
+                  </div>
+                  <div className="product_info">
+                    <div className="product_description">
+                      <p>
+                        {dummy_shoe.description.length > 60
+                          ? dummy_shoe.description.slice(0, 60) + " ..."
+                          : dummy_shoe.description}
+                      </p>
+                    </div>
+                    <div className="rating">
+                      ⭐⭐⭐⭐⭐<span>{dummy_shoe.rating}</span>
+                    </div>
+                    <div className="price">
+                      <h5>{dummy_shoe.price}</h5>
+                    </div>
+                    <button className="primary-button">Buy Product</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

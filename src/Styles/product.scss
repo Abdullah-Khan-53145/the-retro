@@ -9,20 +9,23 @@
       color: white;
     }
     h1{
-        font-size: 5rem;
+        font-size: 4.5rem;
     }
     h3{
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+    h4{
+        font-size: 1.3rem;
     }
     p{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 }
 .product_main_child{
     width: 89%;
     display:grid;
     gap:2rem;
-    grid-template-columns: .7fr 1.3fr;
+    grid-template-columns: 1fr 1fr;
     margin:auto;
     @media (max-width:756px){
         display:flex;
@@ -33,38 +36,43 @@
    display:flex;
    flex-direction:column;
    align-self: start;
-   @media (max-width:756px){
+
+@media (max-width:756px){
     align-self: center;
+   
 }
    
 }
 .product_main_child_images_section_slider{
     display:flex;
     align-items: center;
+  
     .arrow{
         svg{
-            width: 10rem;
+            width: 15rem;
             color: gray;
+           
         }
     }
     .main_product_image{
-      
+       
         display:flex;
         background-color: $bg-cards;
         align-items: center;
         justify-content: center;
-        width:45rem;
-        height: 45rem;
+        width:50rem;
+        height: 50rem;
         @media (max-width:756px){
             width:60vw;
             height:60vw;
         }
+      
         img{
             @media (max-width:756px){
                 width:50vw;
                 height:50vw;
             }
-            width: 40rem;
+            width: 45rem;
             object-fit: contain;
         }
     }
@@ -99,6 +107,7 @@
     button{
         font-size: 2rem;
     }
+ 
     margin-bottom:100px;
 }
 
@@ -130,5 +139,60 @@
         height: 4rem;       
         border:1px solid gray;
         margin-right:1rem;
+    }
+}
+
+.related_products_parent{
+    display:flex;
+    gap:10px;
+    @media (max-width:756px){
+        display:none;
+    }
+    @media (max-width:850px){
+       h4{
+        font-size: 1rem;
+    }
+    p{
+           font-size: .8rem;
+        
+       }
+    }
+
+}
+.related_product{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap:10px;
+    background-color: $bg-cards;
+}
+.product_details{
+    display: flex;
+    gap:8px;
+    @media (max-width:1000px){
+        flex-direction: column;
+    }
+}
+.product_info{
+    button{
+        font-size: 1rem;
+        padding: .3rem .8rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+}
+.related_product_img{
+    img{
+        object-fit: contain;
+        width:10rem;
+        @media (max-width:1000px){
+            width:8vw;
+        }
+        @media (max-width:850px){
+            width:6vw;
+        }
     }
 }

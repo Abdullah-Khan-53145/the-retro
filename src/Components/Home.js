@@ -55,7 +55,6 @@ function Home() {
       <FeaturedProducts shoes={shoeDummyData} />
       <HotDeals shoes={shoeDummyData} />
       <Bannar />
-      <Footer />
     </div>
   );
 }
