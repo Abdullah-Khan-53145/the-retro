@@ -57,10 +57,29 @@
 }
 
 .product_main_child_images_section_parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
 }
 
+.dummy_div {
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
 .product_main_child_images_section_child {
+  position: fixed;
+  width: 43.7%;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,11 +95,25 @@
           justify-content: center;
 }
 
+.product_main_child_images_section_child .product_main_child_images_section_child_image {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 @media (max-width: 756px) {
   .product_main_child_images_section_child {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    position: static;
+    width: inherit;
+    height: inherit;
   }
 }
 
@@ -91,6 +124,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.product_main_child_images_section_slider .arrow {
+  background-color: transparent;
+  border: none;
 }
 
 .product_main_child_images_section_slider .arrow svg {
@@ -109,27 +147,28 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 50rem;
-  height: 50rem;
+  width: 40rem;
+  height: 40rem;
 }
 
 @media (max-width: 756px) {
   .product_main_child_images_section_slider .main_product_image {
-    width: 60vw;
-    height: 60vw;
+    width: 50vw;
+    height: 50vw;
   }
 }
 
 .product_main_child_images_section_slider .main_product_image img {
-  width: 45rem;
+  width: 35rem;
+  height: 35rem;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
 @media (max-width: 756px) {
   .product_main_child_images_section_slider .main_product_image img {
-    width: 50vw;
-    height: 50vw;
+    width: 40vw;
+    height: 40vw;
   }
 }
 
@@ -157,10 +196,6 @@
           justify-content: center;
   height: 10rem;
   width: 10rem;
-}
-
-.product_main_child_images_section_samples .shoe_sample_image:nth-child(1) {
-  border: 3px solid #ff0000;
 }
 
 .product_main_child_images_section_samples .shoe_sample_image img {

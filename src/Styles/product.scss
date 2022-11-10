@@ -35,18 +35,39 @@
 }
 .product_main_child_images_section_parent{
     // border:2px solid red;
-    position:relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    position: relative;
 }
-.product_main_child_images_section_child{
-    
+.dummy_div{
+    // border:2px solid blue;
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    bottom:0;
+}
+.product_main_child_images_section_child{    
+    position:fixed;   
+    width: 43.7%;
+    height: 100vh;    
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     // border:2px solid yellow;
+    justify-content: center;
+    .product_main_child_images_section_child_image{
+        // border:2px solid red;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 @media (max-width:756px){
-    align-self: center;
-   
+    position:static;
+    width: inherit;
+    height: inherit;
 }
    
 }
@@ -55,6 +76,8 @@
     align-items: center;
   
     .arrow{
+        background-color: transparent;
+        border:none;
         svg{
             width: 15rem;
             color: gray;
@@ -67,19 +90,20 @@
         background-color: $bg-cards;
         align-items: center;
         justify-content: center;
-        width:50rem;
-        height: 50rem;
+        width:40rem;
+        height: 40rem;
         @media (max-width:756px){
-            width:60vw;
-            height:60vw;
+            width:50vw;
+            height:50vw;
         }
       
         img{
             @media (max-width:756px){
-                width:50vw;
-                height:50vw;
+                width:40vw;
+                height:40vw;
             }
-            width: 45rem;
+            width: 35rem;
+            height: 35rem;
             object-fit: contain;
         }
     }
@@ -91,9 +115,7 @@
     justify-content: space-around;
     padding:5rem;
     .shoe_sample_image{
-        &:nth-child(1){
-            border:3px solid $primary_red;
-        }
+      
         background-color: $bg-cards;
         display: flex;
         align-items: center;

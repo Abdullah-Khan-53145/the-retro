@@ -1,11 +1,14 @@
-import { WindowSharp } from "@mui/icons-material";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import "../Styles/product.css";
 function Product() {
   const dummy_shoe = {
     name: "Under Armour Men's Charged Assert 9 Running Shoe",
-    img: "imgs/front-page-shoes/shoe_1.png",
+    imgs: [
+      "imgs/product-page-shoes/shoe_1_red_A.png",
+      "imgs/product-page-shoes/shoe_1_red_B.png",
+      "imgs/product-page-shoes/shoe_1_red_C.png",
+    ],
     description:
       "These running shoes are built to help anyone go faster-Charged Cushioning® helps protect against impact, leather overlays add durable stability, and a mesh upper keeps your feet cool for miles.. Lightweight mesh upper with 3-color digital print delivers complete breathability. Durable leather overlays for stability & that locks in your midfoot. EVA sockliner provides soft, step-in comfort. Charged Cushioning® midsole uses compression molded foam for ultimate responsiveness & durability. Solid rubber outsole covers high impact zones for greater durability with less weight. Offset: 10mm. NEUTRAL: For runners who need a balance of flexibility & cushioning. Lace type: Standard tie.",
     rating: "4.6",
@@ -72,7 +75,25 @@ function Product() {
     two: "0%",
     one: "0%",
   });
-  const [position, setPosition] = useState({});
+  const [position, setPosition] = useState({ position: "fixed", top: 0 });
+  const [imgIndex, setImgIndex] = useState(0);
+  //Slider functions
+  const handleRightArrowClick = (e) => {
+    if (imgIndex < 2) {
+      setImgIndex(imgIndex + 1);
+    } else {
+      e.target.disable = true;
+    }
+  };
+  const handleLeftArrowClick = (e) => {
+    if (imgIndex > 0) {
+      setImgIndex(imgIndex - 1);
+    } else {
+      e.target.disable = true;
+    }
+  };
+
+  //scroll Animations
   window.addEventListener("scroll", () => {
     if (window.innerWidth >= 756) {
       if (
@@ -132,22 +153,19 @@ function Product() {
         document.querySelector(".product_main_child_images_section_parent")
           .offsetTop
       ) {
-        setPosition({ position: "fixed", top: 0, width: "43%" });
+        setPosition({ position: "fixed", top: 0 });
       } else if (
         window.scrollY <
         document.querySelector(".product_main_child_images_section_parent")
           .offsetTop
       ) {
-        setPosition({ position: "absolute", top: 0, width: "100%" });
+        setPosition({ position: "fixed", top: 0 });
       }
       if (
         window.scrollY >=
-        document.querySelector(".product_main_child_images_section_parent")
-          .offsetTop +
-          document.querySelector(".product_main_child_images_section_parent")
-            .offsetHeight
+        document.querySelector(".footer__main").offsetTop - window.innerHeight
       ) {
-        setPosition({ position: "absolute", bottom: 0, width: "100%" });
+        setPosition({ position: "absolute", width: "100%", bottom: 0 });
       }
     } else {
       setPosition({ position: "static" });
@@ -160,61 +178,98 @@ function Product() {
       });
     }
   });
-  useEffect(() => {});
+  useEffect(() => {
+    if (window.innerWidth < 756) {
+      setPosition({ position: "static" });
+    }
+  }, [window.innerWidth]);
   return (
     <div className="main_product">
       <div className="product_main_child">
         <div className="product_main_child_images_section_parent">
+          <div className="dummy_div"></div>
           <div
             className="product_main_child_images_section_child"
             style={position}
           >
-            <div className="product_main_child_images_section_slider">
-              <div className="left_arrow arrow">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
+            <div className="product_main_child_images_section_child_image">
+              <div className="product_main_child_images_section_slider">
+                <button
+                  className="left_arrow arrow"
+                  onClick={handleLeftArrowClick}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15.75 19.5L8.25 12l7.5-7.5"
-                  />
-                </svg>
-              </div>
-              <div className="main_product_image">
-                <img src="./imgs/product-page-shoes/shoe_1_red_A.png" alt="" />
-              </div>
-              <div className="right_arrow arrow">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.75 19.5L8.25 12l7.5-7.5"
+                    />
+                  </svg>
+                </button>
+                <div className="main_product_image">
+                  <img src={dummy_shoe.imgs[imgIndex]} alt="" />
+                </div>
+                <button
+                  className="right_arrow arrow"
+                  onClick={handleRightArrowClick}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                  />
-                </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                    />
+                  </svg>
+                </button>
               </div>
-            </div>
-            <div className="product_main_child_images_section_samples">
-              <div className="shoe_sample_image">
-                <img src="./imgs/product-page-shoes/shoe_1_red_A.png" alt="" />
-              </div>
-              <div className="shoe_sample_image">
-                <img src="./imgs/product-page-shoes/shoe_1_red_B.png" alt="" />
-              </div>
-              <div className="shoe_sample_image">
-                <img src="./imgs/product-page-shoes/shoe_1_red_C.png" alt="" />
+              <div className="product_main_child_images_section_samples">
+                <div
+                  className="shoe_sample_image"
+                  style={{
+                    border: imgIndex === 0 ? "3px solid red" : "none",
+                  }}
+                  onClick={() => {
+                    setImgIndex(0);
+                  }}
+                >
+                  <img src={dummy_shoe.imgs[0]} alt="" />
+                </div>
+                <div
+                  className="shoe_sample_image"
+                  style={{
+                    border: imgIndex === 1 ? "3px solid red" : "none",
+                  }}
+                  onClick={() => {
+                    setImgIndex(1);
+                  }}
+                >
+                  <img src={dummy_shoe.imgs[1]} alt="" />
+                </div>
+                <div
+                  className="shoe_sample_image"
+                  style={{
+                    border: imgIndex === 2 ? "3px solid red" : "none",
+                  }}
+                  onClick={() => {
+                    setImgIndex(2);
+                  }}
+                >
+                  <img src={dummy_shoe.imgs[2]} alt="" />
+                </div>
               </div>
             </div>
           </div>
