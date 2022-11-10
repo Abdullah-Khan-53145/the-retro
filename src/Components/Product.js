@@ -5,16 +5,29 @@ function Product() {
   const dummy_shoe = {
     name: "Under Armour Men's Charged Assert 9 Running Shoe",
     imgs: [
-      "imgs/product-page-shoes/shoe_1_red_A.png",
-      "imgs/product-page-shoes/shoe_1_red_B.png",
-      "imgs/product-page-shoes/shoe_1_red_C.png",
+      [
+        "imgs/product-page-shoes/shoe_1/shoe_1_red_A.png",
+        "imgs/product-page-shoes/shoe_1/shoe_1_red_B.png",
+        "imgs/product-page-shoes/shoe_1/shoe_1_red_C.png",
+      ],
+      [
+        "imgs/product-page-shoes/shoe_1/shoe_1_black_A.png",
+        "imgs/product-page-shoes/shoe_1/shoe_1_black_B.png",
+        "imgs/product-page-shoes/shoe_1/shoe_1_black_C.png",
+      ],
+      [
+        "imgs/product-page-shoes/shoe_1/shoe_1_navy_blue_A.png",
+        "imgs/product-page-shoes/shoe_1/shoe_1_navy_blue_B.png",
+        "imgs/product-page-shoes/shoe_1/shoe_1_navy_blue_C.png",
+      ],
     ],
+    colors: ["red", "black", "navy"],
     description:
       "These running shoes are built to help anyone go faster-Charged Cushioning® helps protect against impact, leather overlays add durable stability, and a mesh upper keeps your feet cool for miles.. Lightweight mesh upper with 3-color digital print delivers complete breathability. Durable leather overlays for stability & that locks in your midfoot. EVA sockliner provides soft, step-in comfort. Charged Cushioning® midsole uses compression molded foam for ultimate responsiveness & durability. Solid rubber outsole covers high impact zones for greater durability with less weight. Offset: 10mm. NEUTRAL: For runners who need a balance of flexibility & cushioning. Lace type: Standard tie.",
     rating: "4.6",
     price: "56.25",
     size: [1, 2, 3, 4, 5, 6, 7, 8],
-    color: ["black", "red", "green"],
+
     reviews: [
       {
         name: "Tezza",
@@ -77,6 +90,8 @@ function Product() {
   });
   const [position, setPosition] = useState({ position: "fixed", top: 0 });
   const [imgIndex, setImgIndex] = useState(0);
+  const [imgColorIndex, setImgColorIndex] = useState(0);
+  const [sizeIndex, setSizeIndex] = useState(0);
   //Slider functions
   const handleRightArrowClick = (e) => {
     if (imgIndex < 2) {
@@ -214,7 +229,7 @@ function Product() {
                   </svg>
                 </button>
                 <div className="main_product_image">
-                  <img src={dummy_shoe.imgs[imgIndex]} alt="" />
+                  <img src={dummy_shoe.imgs[imgColorIndex][imgIndex]} alt="" />
                 </div>
                 <button
                   className="right_arrow arrow"
@@ -246,7 +261,7 @@ function Product() {
                     setImgIndex(0);
                   }}
                 >
-                  <img src={dummy_shoe.imgs[0]} alt="" />
+                  <img src={dummy_shoe.imgs[imgColorIndex][0]} alt="" />
                 </div>
                 <div
                   className="shoe_sample_image"
@@ -257,7 +272,7 @@ function Product() {
                     setImgIndex(1);
                   }}
                 >
-                  <img src={dummy_shoe.imgs[1]} alt="" />
+                  <img src={dummy_shoe.imgs[imgColorIndex][1]} alt="" />
                 </div>
                 <div
                   className="shoe_sample_image"
@@ -268,7 +283,7 @@ function Product() {
                     setImgIndex(2);
                   }}
                 >
-                  <img src={dummy_shoe.imgs[2]} alt="" />
+                  <img src={dummy_shoe.imgs[imgColorIndex][2]} alt="" />
                 </div>
               </div>
             </div>
@@ -286,16 +301,34 @@ function Product() {
           <div className="product_sizes">
             <h3>Select Size</h3>
             <div className="product_size">
-              {dummy_shoe.size.map((size) => (
-                <div>{size}</div>
+              {dummy_shoe.size.map((size, index) => (
+                <div
+                  onClick={() => setSizeIndex(index)}
+                  style={{
+                    border: sizeIndex === index ? "2px solid red" : "none",
+                  }}
+                >
+                  {size}
+                </div>
               ))}
             </div>
           </div>
           <div className="product_colors">
             <h3>Select colors</h3>
             <div className="product_color">
-              {dummy_shoe.color.map((color) => (
-                <div style={{ background: color }}></div>
+              {dummy_shoe.colors.map((color, index) => (
+                <div
+                  onClick={() => {
+                    setImgColorIndex(index);
+                  }}
+                  style={{
+                    background: color,
+                    padding: "2px",
+
+                    border:
+                      index === imgColorIndex ? "2px solid white" : "none",
+                  }}
+                ></div>
               ))}
             </div>
           </div>
