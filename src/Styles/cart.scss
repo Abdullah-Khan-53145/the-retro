@@ -49,6 +49,7 @@
         flex-direction: column;
         gap:10px;
         align-items: center;
+        margin-bottom:10px;
         
     }
 
@@ -91,16 +92,14 @@
         span{
             font-size: 2rem;
         }
-        .qty_buttons{
-            display:flex;
-            flex-direction: column;
+       
             button{
                 width:2.5rem;
                 height: 2.5rem;
                 display:flex;
                 justify-content: center;
                 align-items: center;
-            }
+            
         }
     }
     h3{

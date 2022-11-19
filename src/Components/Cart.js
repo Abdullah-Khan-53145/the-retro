@@ -57,11 +57,9 @@ function Cart() {
               </div>
               <div className="cart_product_qty_price">
                 <div className="qty">
+                  <button>+</button>
                   <span>{product.qty}</span>
-                  <div className="qty_buttons">
-                    <button>+</button>
-                    <button>-</button>
-                  </div>
+                  <button>-</button>
                 </div>
                 <h3>${product.price}</h3>
               </div>
