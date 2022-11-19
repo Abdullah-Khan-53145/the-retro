@@ -5,6 +5,7 @@ import AllProducts from "./Components/AllProducts";
 import Product from "./Components/Product";
 import Footer from "./Components/Footer";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import Cart from "./Components/Cart";
 function App() {
   const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ function App() {
     {
       path: "product",
       element: <Product />,
+    },
+    {
+      path: "cart",
+      element: <Cart />,
     },
   ]);
   return (

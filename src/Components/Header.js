@@ -6,16 +6,9 @@ import { useState } from "react";
 import "../Styles/header.css";
 
 function Header() {
-  const [translation, setTranslation] = useState("100%");
-
-  const handleClick = () => {
-    if (translation === "100%") setTranslation("0%");
-    else setTranslation("100%");
-    console.log(translation);
-  };
   return (
     <>
-      <div className="header__main" style={{ overflowX: "hidden" }}>
+      <div className="header__main">
         <div className="header_child_main">
           <div className="header__main__logo">
             <img src="imgs/top_nav_logo.png" alt="" />
