@@ -1,7 +1,9 @@
 @import'imports';
 .all_products_main{
+
     margin-bottom:50px;
 }
+
 .all_products_main_child{
     width: 89%;
     display: block;
@@ -9,6 +11,7 @@
     color:white;
     font-family: $secondary_font;
     display:flex;
+    
     svg{
         color:white;
         width: 3rem;
@@ -23,9 +26,23 @@
     }
 }
 .all_products_filter{
-    max-width:30rem ;
-    width: 100%;
+   width:30rem ;
     margin-right: 3rem;
+    @media (max-width:420px){
+         width:20rem ;
+    }
+    position: relative;
+}
+.all_products_filter_child{
+  width:29.5rem ;
+  @media (max-width:420px){
+    width:19.5rem ;
+}
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
 }
 .all_products_filter_heading{
     display:flex;
@@ -96,7 +113,7 @@
         width: 30rem;
         margin-bottom:20px;
         object-fit: contain;
-        @media (max-width:420px){
+        @media (max-width:480px){
             width: 20rem;
             margin-bottom:10px;
         }
@@ -129,12 +146,11 @@
 .all_products_products{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-    @media (max-width:900px){
+    @media (max-width:1027px){
         grid-template-columns: 1fr 1fr;
     }
-    @media (max-width:620px){
+    @media (max-width:756px){
         grid-template-columns: 1fr;
-        flex:0;
     }
     flex:1;
     gap:3rem;
