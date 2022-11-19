@@ -9,7 +9,7 @@ function HomeHeroSection() {
             The <br /> <span>Retro</span>
           </h1>
         </div>
-        <div className="dummy_div"></div>
+        <div className="dummy_div_hero"></div>
         <div className="home__hero__shoe__image">
           <img src="./imgs/main_shoe_bg.png" alt="" />
         </div>
