@@ -119,6 +119,9 @@ function Product(props) {
       });
     }
   });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="main_product">
@@ -217,7 +220,7 @@ function Product(props) {
           </div>
           <div className="product_average_rating">
             <h3>Average Rating</h3>
-            <p>⭐⭐⭐⭐⭐ {dummy_shoe.rating}</p>
+            <p>⭐⭐⭐⭐⭐ {dummy_shoe.averageRating}</p>
           </div>
           <div className="product_sizes">
             <h3>Select Size</h3>
@@ -272,7 +275,7 @@ function Product(props) {
                       </p>
                     </div>
                     <div className="rating">
-                      ⭐⭐⭐⭐⭐<span>{dummy_shoe.rating}</span>
+                      ⭐⭐⭐⭐⭐<span>{dummy_shoe.averageRating}</span>
                     </div>
                     <div className="price">
                       <h5>{dummy_shoe.price}</h5>
@@ -296,7 +299,7 @@ function Product(props) {
                       </p>
                     </div>
                     <div className="rating">
-                      ⭐⭐⭐⭐⭐<span>{dummy_shoe.rating}</span>
+                      ⭐⭐⭐⭐⭐<span>{dummy_shoe.averageRating}</span>
                     </div>
                     <div className="price">
                       <h5>{dummy_shoe.price}</h5>
@@ -320,7 +323,7 @@ function Product(props) {
                       </p>
                     </div>
                     <div className="rating">
-                      ⭐⭐⭐⭐⭐<span>{dummy_shoe.rating}</span>
+                      ⭐⭐⭐⭐⭐<span>{dummy_shoe.averageRating}</span>
                     </div>
                     <div className="price">
                       <h5>{dummy_shoe.price}</h5>
@@ -334,7 +337,7 @@ function Product(props) {
           <div className="product_rating">
             <h3>Costomer Reviews</h3>
             <span className="product_ratings">
-              ⭐⭐⭐⭐⭐ {dummy_shoe.rating}
+              ⭐⭐⭐⭐⭐ {dummy_shoe.averageRating}
             </span>
             <div className="costomer_ratings">
               <div className="stars 5_stars" id="5_stars">

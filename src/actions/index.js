@@ -7,7 +7,16 @@ export const addToCart = (payload) => ({
 });
 
 // Action to add product info into state to fill the product page
-export const setProduct = (payload) => ({
-  type: SET_PRODUCT,
-  payload: payload,
-});
+export const setProduct = (payload) => {
+  return {
+    type: SET_PRODUCT,
+    payload: payload,
+  };
+};
+
+export function setProductAPI(payload) {
+  return (dispatch) => {
+    console.log(payload);
+    dispatch(setProduct(payload));
+  };
+}

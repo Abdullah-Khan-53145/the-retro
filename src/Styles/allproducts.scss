@@ -1,8 +1,12 @@
 @import'imports';
 .all_products_main{
-
+    a{
+        text-decoration: none;
+      
+    }
     margin-bottom:50px;
 }
+
 
 .all_products_main_child{
     width: 89%;

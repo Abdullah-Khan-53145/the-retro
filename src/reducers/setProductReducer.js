@@ -1,28 +1,28 @@
 import { SET_PRODUCT } from "../actions/actions";
 
 const initialState = {
-  name: "Under Armour Men's Charged Assert 9 Running Shoe",
+  name: "Dummy shoe",
   imgs: [
     [
-      "imgs/product-page-shoes/shoe_1/shoe_1_red_A.png",
-      "imgs/product-page-shoes/shoe_1/shoe_1_red_B.png",
-      "imgs/product-page-shoes/shoe_1/shoe_1_red_C.png",
+      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_A.png?alt=media&token=f851f64c-c346-4c17-9b67-1c5a02573a66",
+      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_B.png?alt=media&token=cc09b746-7292-464e-b012-493df96ac6f8",
+      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_C.png?alt=media&token=c2370e49-6573-4b4b-87d6-2c8dcae61cd4",
     ],
     [
-      "imgs/product-page-shoes/shoe_1/shoe_1_black_A.png",
-      "imgs/product-page-shoes/shoe_1/shoe_1_black_B.png",
-      "imgs/product-page-shoes/shoe_1/shoe_1_black_C.png",
+      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_A.png?alt=media&token=95f2ca35-81b9-4639-be9f-cb503f6c34e6",
+      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_B.png?alt=media&token=4686e7e1-090f-4e34-9586-7f49bb1eb393",
+      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_C.png?alt=media&token=15cd15af-7b0e-4785-8dab-14e2601f05ef",
     ],
     [
-      "imgs/product-page-shoes/shoe_1/shoe_1_navy_blue_A.png",
-      "imgs/product-page-shoes/shoe_1/shoe_1_navy_blue_B.png",
-      "imgs/product-page-shoes/shoe_1/shoe_1_navy_blue_C.png",
+      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_A.png?alt=media&token=5866ac58-9577-44bb-beae-840cff0fe26c",
+      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_B.png?alt=media&token=725b8c29-1791-41b6-8b88-4592092dbd0a",
+      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_C.png?alt=media&token=1a10a2c0-8cb2-42db-8a11-d890bc47ab5a",
     ],
   ],
   colors: ["red", "black", "navy"],
   description:
     "These running shoes are built to help anyone go faster-Charged Cushioning® helps protect against impact, leather overlays add durable stability, and a mesh upper keeps your feet cool for miles.. Lightweight mesh upper with 3-color digital print delivers complete breathability. Durable leather overlays for stability & that locks in your midfoot. EVA sockliner provides soft, step-in comfort. Charged Cushioning® midsole uses compression molded foam for ultimate responsiveness & durability. Solid rubber outsole covers high impact zones for greater durability with less weight. Offset: 10mm. NEUTRAL: For runners who need a balance of flexibility & cushioning. Lace type: Standard tie.",
-  rating: "4.6",
+  averageRating: "4.6",
   price: "56.25",
   size: [1, 2, 3, 4, 5, 6, 7, 8],
 
