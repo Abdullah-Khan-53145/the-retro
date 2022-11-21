@@ -26,6 +26,7 @@ function Cart({ cartItems }) {
 
   useEffect(() => {
     getTotalPrice();
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -57,7 +58,7 @@ function Cart({ cartItems }) {
 
             <div className="cart_close"></div>
           </div>
-          {cartItems.length != 0 ? (
+          {cartItems.length !== 0 ? (
             cartItems.map((product, index) => (
               <div className="cart_item" key={index}>
                 <div className="cart_product_img cart_item_detail cart_item_sap">
@@ -67,11 +68,11 @@ function Cart({ cartItems }) {
                   <p>{product.name}</p>
                 </div>
                 <div className="cart_product_color cart_item_detail cart_item_sap">
-                  <h3 className="cart_item_title">Color: </h3>{" "}
+                  <span className="cart_item_title">Color: </span>{" "}
                   <p>{product.color}</p>
                 </div>
                 <div className="cart_product_size cart_item_detail cart_item_sap">
-                  <h3 className="cart_item_title">Size: </h3>
+                  <span className="cart_item_title">Size: </span>
                   <p>{product.size}</p>
                 </div>
 
@@ -81,7 +82,8 @@ function Cart({ cartItems }) {
                   <button>+</button>
                 </div>
                 <p className="cart_product_price cart_item_detail cart_item_sap">
-                  <h3 className="cart_item_title">Price: </h3>${product.price}
+                  <span className="cart_item_title">Price: </span>$
+                  {product.price}
                 </p>
 
                 <div className="cart_close">

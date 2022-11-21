@@ -1,24 +1,18 @@
+// imports
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { setProductAPI, addToCartAPI } from "../actions";
-
 import "../Styles/product.css";
-function Product(props) {
-  const dummy_shoe = props.product;
-  const addToCart = () => {
-    props.addToCart({
-      name: props.product.name,
-      img: props.product.coverImg,
-      price: props.product.price,
-      qty: 1,
-      size: props.product.size[sizeIndex],
-      color: props.product.colors[imgColorIndex],
-    });
-  };
-  //{five:76,four: 14,three: 5,two: 2,one: 3}
-
+//component
+function Product({ allShoes, product, addToCart, setProduct }) {
+  // States
+  const [position, setPosition] = useState({ position: "fixed", top: 0 });
+  const [imgIndex, setImgIndex] = useState(0);
+  const [relatedProductIndex, setRelatedProductIndex] = useState(0);
+  const [imgColorIndex, setImgColorIndex] = useState(0);
+  const [sizeIndex, setSizeIndex] = useState(0);
   const [ratings, setRatings] = useState({
     five: "0%",
     four: "0%",
@@ -26,12 +20,18 @@ function Product(props) {
     two: "0%",
     one: "0%",
   });
-  const [position, setPosition] = useState({ position: "fixed", top: 0 });
-  const [imgIndex, setImgIndex] = useState(0);
-  const [relatedProductIndex, setRelatedProductIndex] = useState(0);
-  const [imgColorIndex, setImgColorIndex] = useState(0);
-  const [sizeIndex, setSizeIndex] = useState(0);
-  //Slider functions
+
+  // Click Handlers
+  const handleAddToCart = () => {
+    addToCart({
+      name: product.name,
+      img: product.coverImg,
+      price: product.price,
+      qty: 1,
+      size: product.size[sizeIndex],
+      color: product.colors[imgColorIndex],
+    });
+  };
   const handleRightArrowClick = (e) => {
     console.log("done");
     if (imgIndex < 2) {
@@ -47,59 +47,27 @@ function Product(props) {
       e.target.disable = true;
     }
   };
+  const handleClick = (shoe) => {
+    setProduct(shoe);
+  };
 
-  //scroll Animations
-  window.addEventListener("scroll", () => {
+  //functions
+  const scrollAnimator = () => {
     if (window.innerWidth >= 756) {
-      if (
-        ratings !=
-        {
-          five: "76%",
-          four: "14%",
-          three: "5%",
-          two: "2%",
-          one: "3%",
-        }
-      ) {
-        if (
-          window.scrollY >
-          document.getElementById("5_stars").offsetTop -
-            window.innerHeight +
-            document.getElementById("5_stars").offsetHeight
-        ) {
-          setRatings({ ...ratings, five: "76%" });
-        }
-        if (
-          window.scrollY >
-          document.getElementById("4_stars").offsetTop -
-            window.innerHeight +
-            document.getElementById("4_stars").offsetHeight
-        ) {
-          setRatings({ ...ratings, four: "14%" });
-        }
-        if (
-          window.scrollY >
-          document.getElementById("3_stars").offsetTop -
-            window.innerHeight +
-            document.getElementById("3_stars").offsetHeight
-        ) {
-          setRatings({ ...ratings, three: "5%" });
-        }
-        if (
-          window.scrollY >
-          document.getElementById("2_stars").offsetTop -
-            window.innerHeight +
-            document.getElementById("2_stars").offsetHeight
-        ) {
-          setRatings({ ...ratings, two: "2%" });
-        }
+      if (ratings != product.rating) {
         if (
           window.scrollY >
           document.getElementById("1_stars").offsetTop -
             window.innerHeight +
             document.getElementById("1_stars").offsetHeight
         ) {
-          setRatings({ ...ratings, one: "3%" });
+          setRatings({
+            five: product.rating.five,
+            four: product.rating.four,
+            three: product.rating.three,
+            two: product.rating.two,
+            one: product.rating.one,
+          });
         }
       }
 
@@ -123,29 +91,29 @@ function Product(props) {
         setPosition({ position: "absolute", width: "100%", bottom: 0 });
       }
     } else {
+      console.log("run");
       setPosition({ position: "static", top: "0" });
-      setRatings({
-        five: "76%",
-        four: "14%",
-        three: "5%",
-        two: "2%",
-        one: "3%",
-      });
+      setRatings(product.rating);
     }
-  });
-
-  function getRandomInt(min, max) {
+  };
+  const getRandomInt = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  const handleClick = (shoe) => {
-    props.setProduct(shoe);
   };
 
   useEffect(() => {
     setRelatedProductIndex(getRandomInt(0, 5));
     window.scrollTo(0, 0);
+    if (window.innerWidth >= 756) {
+      window.addEventListener("scroll", scrollAnimator);
+      return () => window.removeEventListener("scroll", scrollAnimator);
+    } else {
+      console.log("run");
+      setPosition({ position: "static", top: "0" });
+      setRatings(product.rating);
+    }
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -178,7 +146,7 @@ function Product(props) {
                   </svg>
                 </button>
                 <div className="main_product_image">
-                  <img src={dummy_shoe.imgs[imgColorIndex][imgIndex]} alt="" />
+                  <img src={product.imgs[imgColorIndex][imgIndex]} alt="" />
                 </div>
                 <button
                   className="right_arrow arrow"
@@ -210,7 +178,7 @@ function Product(props) {
                     setImgIndex(0);
                   }}
                 >
-                  <img src={dummy_shoe.imgs[imgColorIndex][0]} alt="" />
+                  <img src={product.imgs[imgColorIndex][0]} alt="" />
                 </div>
                 <div
                   className="shoe_sample_image"
@@ -221,7 +189,7 @@ function Product(props) {
                     setImgIndex(1);
                   }}
                 >
-                  <img src={dummy_shoe.imgs[imgColorIndex][1]} alt="" />
+                  <img src={product.imgs[imgColorIndex][1]} alt="" />
                 </div>
                 <div
                   className="shoe_sample_image"
@@ -232,7 +200,7 @@ function Product(props) {
                     setImgIndex(2);
                   }}
                 >
-                  <img src={dummy_shoe.imgs[imgColorIndex][2]} alt="" />
+                  <img src={product.imgs[imgColorIndex][2]} alt="" />
                 </div>
               </div>
             </div>
@@ -240,19 +208,20 @@ function Product(props) {
         </div>
         <div className="product_main_child_Info_section">
           <div className="product_main_heading_and_info">
-            <h1>{dummy_shoe.name}</h1>
-            <p>{dummy_shoe.description}</p>
+            <h1>{product.name}</h1>
+            <p>{product.description}</p>
           </div>
           <div className="product_average_rating">
             <h3>Average Rating</h3>
-            <p>⭐⭐⭐⭐⭐ {dummy_shoe.averageRating}</p>
+            <p>⭐⭐⭐⭐⭐ {product.averageRating}</p>
           </div>
           <div className="product_sizes">
             <h3>Select Size</h3>
             <div className="product_size">
-              {dummy_shoe.size.map((size, index) => (
+              {product.size.map((size, index) => (
                 <div
                   onClick={() => setSizeIndex(index)}
+                  key={index}
                   style={{
                     border: sizeIndex === index ? "2px solid red" : "none",
                   }}
@@ -265,8 +234,9 @@ function Product(props) {
           <div className="product_colors">
             <h3>Select colors</h3>
             <div className="product_color">
-              {dummy_shoe.colors.map((color, index) => (
+              {product.colors.map((color, index) => (
                 <div
+                  key={index}
                   onClick={() => {
                     setImgColorIndex(index);
                   }}
@@ -281,19 +251,19 @@ function Product(props) {
               ))}
             </div>
           </div>
-          <button className="primary-button" onClick={addToCart}>
+          <button className="primary-button" onClick={handleAddToCart}>
             Add To Cart
           </button>
           <div className="realted_products">
             <h3>Related product</h3>
             <div className="related_products_parent">
-              {props.allShoes.map((shoe, index) => {
+              {allShoes.map((shoe, index) => {
                 if (
                   index > relatedProductIndex &&
                   index <= relatedProductIndex + 3
                 ) {
                   return (
-                    <div className="related_product">
+                    <div className="related_product" key={index}>
                       <h4>
                         {shoe.name.length > 40
                           ? shoe.name.slice(0, 40) + " ..."
@@ -330,7 +300,7 @@ function Product(props) {
               })}
 
               {/* <div className="related_product">
-                <h4>{dummy_shoe.name}</h4>
+                <h4>{product.name}</h4>
                 <div className="product_details">
                   <div className="related_product_img">
                     <img src="./imgs/front-page-shoes/shoe_1.png" alt="" />
@@ -338,23 +308,23 @@ function Product(props) {
                   <div className="product_info">
                     <div className="product_description">
                       <p>
-                        {dummy_shoe.description.length > 60
-                          ? dummy_shoe.description.slice(0, 60) + " ..."
-                          : dummy_shoe.description}
+                        {product.description.length > 60
+                          ? product.description.slice(0, 60) + " ..."
+                          : product.description}
                       </p>
                     </div>
                     <div className="rating">
-                      ⭐⭐⭐⭐⭐<span>{dummy_shoe.averageRating}</span>
+                      ⭐⭐⭐⭐⭐<span>{product.averageRating}</span>
                     </div>
                     <div className="price">
-                      <h5>{dummy_shoe.price}</h5>
+                      <h5>{product.price}</h5>
                     </div>
                     <button className="primary-button">Buy Product</button>
                   </div>
                 </div>
               </div>
               <div className="related_product">
-                <h4>{dummy_shoe.name}</h4>
+                <h4>{product.name}</h4>
                 <div className="product_details">
                   <div className="related_product_img">
                     <img src="./imgs/front-page-shoes/shoe_1.png" alt="" />
@@ -362,16 +332,16 @@ function Product(props) {
                   <div className="product_info">
                     <div className="product_description">
                       <p>
-                        {dummy_shoe.description.length > 60
-                          ? dummy_shoe.description.slice(0, 60) + " ..."
-                          : dummy_shoe.description}
+                        {product.description.length > 60
+                          ? product.description.slice(0, 60) + " ..."
+                          : product.description}
                       </p>
                     </div>
                     <div className="rating">
-                      ⭐⭐⭐⭐⭐<span>{dummy_shoe.averageRating}</span>
+                      ⭐⭐⭐⭐⭐<span>{product.averageRating}</span>
                     </div>
                     <div className="price">
-                      <h5>{dummy_shoe.price}</h5>
+                      <h5>{product.price}</h5>
                     </div>
                     <button className="primary-button">Buy Product</button>
                   </div>
@@ -382,7 +352,7 @@ function Product(props) {
           <div className="product_rating">
             <h3>Costomer Reviews</h3>
             <span className="product_ratings">
-              ⭐⭐⭐⭐⭐ {dummy_shoe.averageRating}
+              ⭐⭐⭐⭐⭐ {product.averageRating}
             </span>
             <div className="costomer_ratings">
               <div className="stars 5_stars" id="5_stars">
@@ -433,9 +403,9 @@ function Product(props) {
             </div>
           </div>
           <button className="primary-button">Write a Review</button>
-          {dummy_shoe.reviews.length !== 0 &&
-            dummy_shoe.reviews.map((review) => (
-              <div className="costomer_reviews">
+          {product.reviews.length !== 0 &&
+            product.reviews.map((review, index) => (
+              <div className="costomer_reviews" key={index}>
                 <div className="review">
                   <h3>{review.name}</h3>
                   <div className="rating">

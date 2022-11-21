@@ -4,7 +4,7 @@ import Header from "./Components/Header";
 import AllProducts from "./Components/AllProducts";
 import Product from "./Components/Product";
 import Footer from "./Components/Footer";
-import { createBrowserRouter, RouterProvider, Router } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cart from "./Components/Cart";
 function App() {
   const router = createBrowserRouter([

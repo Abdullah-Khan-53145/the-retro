@@ -6,11 +6,8 @@ import Masonry from "react-masonry-css";
 import { setProductAPI } from "../actions";
 import "../Styles/allproducts.css";
 
-function AllProducts(props) {
-  const handleClick = (shoe) => {
-    console.log(shoe);
-    props.setProduct(shoe);
-  };
+function AllProducts({ allShoes, setProduct, brand }) {
+  //some variables
   const filterObj = {
     colors: [
       "red",
@@ -61,11 +58,12 @@ function AllProducts(props) {
     price: { max: "", min: "" },
     size: "All",
     color: "All",
-    brand: props.brand,
+    brand: brand,
   };
+
+  //states
   const [position, setPosition] = useState({});
-  const [shoes, setShoes] = useState(props.allShoes);
-  const [noshoe, setNoShoe] = useState("");
+  const [shoes, setShoes] = useState(allShoes);
   const [filter, setFilter] = useState(initialFilter);
   const breakpointColumnsObj = {
     default: 3,
@@ -73,7 +71,10 @@ function AllProducts(props) {
     756: 1,
   };
 
-  // function
+  // click handlers
+  const handleClick = (shoe) => {
+    setProduct(shoe);
+  };
   const handleMinPrice = (e) => {
     setFilter({ ...filter, price: { ...filter.price, min: e.target.value } });
   };
@@ -90,13 +91,35 @@ function AllProducts(props) {
     setFilter({ ...filter, brand });
   };
   const handleFilterCLick = () => {
-    console.log(filter);
-    let arr = [];
+    ApplyFilter();
+  };
 
-    props.allShoes.forEach((shoe) => {
+  // functions
+  const scrollAnimator = () => {
+    if (
+      window.scrollY >= document.querySelector(".all_products_filter").offsetTop
+    ) {
+      setPosition({ position: "fixed", top: 0 });
+    } else if (
+      window.scrollY < document.querySelector(".all_products_filter").offsetTop
+    ) {
+      setPosition({ position: "absolute", top: 0 });
+    }
+    if (
+      window.scrollY >=
+      document.querySelector(".all_products_filter").offsetTop +
+        document.querySelector(".all_products_filter").offsetHeight -
+        window.innerHeight
+    ) {
+      setPosition({ position: "absolute", bottom: 0 });
+    }
+  };
+  const ApplyFilter = () => {
+    let arr = [];
+    allShoes.forEach((shoe) => {
       //checking for price
       if (
-        filter.price.max == "" ||
+        filter.price.max === "" ||
         (shoe.price >= filter.price.min && shoe.price <= filter.price.max)
       ) {
         // Checking for brand
@@ -111,33 +134,16 @@ function AllProducts(props) {
         }
       }
     });
-    console.log(arr);
     setShoes(arr);
   };
+
+  //use effect
   useEffect(() => {
     window.scrollTo(0, 0);
-    handleFilterCLick();
-    window.addEventListener("scroll", () => {
-      if (
-        window.scrollY >=
-        document.querySelector(".all_products_filter").offsetTop
-      ) {
-        setPosition({ position: "fixed", top: 0 });
-      } else if (
-        window.scrollY <
-        document.querySelector(".all_products_filter").offsetTop
-      ) {
-        setPosition({ position: "absolute", top: 0 });
-      }
-      if (
-        window.scrollY >=
-        document.querySelector(".all_products_filter").offsetTop +
-          document.querySelector(".all_products_filter").offsetHeight -
-          window.innerHeight
-      ) {
-        setPosition({ position: "absolute", bottom: 0 });
-      }
-    });
+    ApplyFilter();
+    window.addEventListener("scroll", scrollAnimator);
+    return () => window.removeEventListener("scroll", scrollAnimator);
+    // eslint-disable-next-line
   }, []);
   return (
     <div className="all_products_main">
@@ -257,33 +263,29 @@ function AllProducts(props) {
           columnClassName="my-masonry-grid_column"
         >
           {shoes.length !== 0 ? (
-            shoes.map((shoe, index) => {
-              if (true) {
-                return (
-                  <div>
-                    <Link
-                      style={{ color: "white", textDecoration: "none" }}
-                      to="/product"
-                      onClick={() => handleClick(shoe)}
-                    >
-                      <div className="all_products_product_main" key={index}>
-                        <img src={shoe.coverImg} alt="" />
-                        <div className="all_products_product_info">
-                          <h2>{shoe.name}</h2>
-                          <h4>{shoe.brand}</h4>
-                          <h4>⭐⭐⭐⭐⭐ {shoe.averageRating}</h4>
-                          <span>${shoe.price.toString()}</span>
-                          <span className="all_products_product_shipping">
-                            <h4>shipping</h4>
-                            <span>${Math.floor(shoe.price * 0.1)}</span>
-                          </span>
-                        </div>
-                      </div>
-                    </Link>
+            shoes.map((shoe, index) => (
+              <div key={index}>
+                <Link
+                  style={{ color: "white", textDecoration: "none" }}
+                  to="/product"
+                  onClick={() => handleClick(shoe)}
+                >
+                  <div className="all_products_product_main" key={index}>
+                    <img src={shoe.coverImg} alt="" />
+                    <div className="all_products_product_info">
+                      <h2>{shoe.name}</h2>
+                      <h4>{shoe.brand}</h4>
+                      <h4>⭐⭐⭐⭐⭐ {shoe.averageRating}</h4>
+                      <span>${shoe.price.toString()}</span>
+                      <span className="all_products_product_shipping">
+                        <h4>shipping</h4>
+                        <span>${Math.floor(shoe.price * 0.1)}</span>
+                      </span>
+                    </div>
                   </div>
-                );
-              }
-            })
+                </Link>
+              </div>
+            ))
           ) : (
             <h3>Sorry, no shoe found</h3>
           )}

@@ -687,3 +687,79 @@ const shoe = [
     ],
   },
 ];
+
+const scrollAnimator = () => {
+  if (window.innerWidth >= 756) {
+    if (ratings != product.rating) {
+      if (
+        window.scrollY >=
+        document.getElementById("5_stars").offsetTop -
+          window.innerHeight +
+          document.getElementById("5_stars").offsetHeight
+      ) {
+        setRatings({ ...ratings, five: product.rating.five });
+      }
+      if (
+        window.scrollY >
+        document.getElementById("4_stars").offsetTop -
+          window.innerHeight +
+          document.getElementById("4_stars").offsetHeight
+      ) {
+        setRatings({ ...ratings, four: product.rating.four });
+      }
+      if (
+        window.scrollY >
+        document.getElementById("3_stars").offsetTop -
+          window.innerHeight +
+          document.getElementById("3_stars").offsetHeight
+      ) {
+        setRatings({ ...ratings, three: product.rating.three });
+      }
+      if (
+        window.scrollY >
+        document.getElementById("2_stars").offsetTop -
+          window.innerHeight +
+          document.getElementById("2_stars").offsetHeight
+      ) {
+        setRatings({ ...ratings, two: product.rating.two });
+      }
+      if (
+        window.scrollY >
+        document.getElementById("1_stars").offsetTop -
+          window.innerHeight +
+          document.getElementById("1_stars").offsetHeight
+      ) {
+        setRatings({ ...ratings, one: product.rating.one });
+      }
+    }
+
+    if (
+      window.scrollY >=
+      document.querySelector(".product_main_child_images_section_parent")
+        .offsetTop
+    ) {
+      setPosition({ position: "fixed", top: 0 });
+    } else if (
+      window.scrollY <
+      document.querySelector(".product_main_child_images_section_parent")
+        .offsetTop
+    ) {
+      setPosition({ position: "fixed", top: 0 });
+    }
+    if (
+      window.scrollY >=
+      document.querySelector(".footer__main").offsetTop - window.innerHeight
+    ) {
+      setPosition({ position: "absolute", width: "100%", bottom: 0 });
+    }
+  } else {
+    setPosition({ position: "static", top: "0" });
+    setRatings({
+      five: "76%",
+      four: "14%",
+      three: "5%",
+      two: "2%",
+      one: "3%",
+    });
+  }
+};

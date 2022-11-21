@@ -17,6 +17,7 @@ function HotDeals({ allShoes, setProduct }) {
       if (shoe.hotDeal.status) arr.push(shoe);
     });
     setShoes(arr);
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -42,7 +43,7 @@ function HotDeals({ allShoes, setProduct }) {
                 shoes.map((shoe, index) => {
                   if (index < 2) {
                     return (
-                      <div className="hot_deals__products__card">
+                      <div className="hot_deals__products__card" key={index}>
                         <div className="hot_deals__products__card__info">
                           <div className="hot_deals__products__card__info__img">
                             <img src={shoe.coverImg} alt="" />
@@ -99,7 +100,7 @@ function HotDeals({ allShoes, setProduct }) {
                 shoes.map((shoe, index) => {
                   if (index > 1) {
                     return (
-                      <div className="hot_deals__products__card">
+                      <div className="hot_deals__products__card" key={index}>
                         <div className="hot_deals__products__card__info">
                           <div className="hot_deals__products__card__info__img">
                             <img src={shoe.coverImg} alt="" />

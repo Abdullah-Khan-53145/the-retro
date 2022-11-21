@@ -5,7 +5,8 @@
   font-family: $secondary_font;
   padding: 20px 0;
   display: flex;
-
+  position: relative;
+  z-index: 100000;
   justify-content: center;
   @media (min-width: 756px) {
     margin-bottom: 30px;

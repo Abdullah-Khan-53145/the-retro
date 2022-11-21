@@ -12,36 +12,36 @@ function FeaturedProducts(props) {
   const handleClick = (shoe) => {
     setProduct(shoe);
   };
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.innerWidth <= 756) {
-        if (
-          window.scrollY >=
-          document.querySelector(".featured__products__main__products")
-            .offsetTop
-        ) {
-          setPosition({ position: "fixed", top: 0 });
-        } else if (
-          window.scrollY <
-          document.querySelector(".featured__products__main__products")
-            .offsetTop
-        ) {
-          setPosition({ position: "absolute", top: 0 });
-        }
-        if (
-          window.scrollY >=
-          document.querySelector(".featured__products__main__products")
-            .offsetTop +
-            document.querySelector(".featured__products__main__products")
-              .offsetHeight -
-            window.innerHeight
-        ) {
-          setPosition({ position: "absolute", bottom: 0 });
-        }
-      } else {
-        setPosition({ position: "static" });
+  const scrollAnimator = () => {
+    if (window.innerWidth <= 756) {
+      if (
+        window.scrollY >=
+        document.querySelector(".featured__products__main__products").offsetTop
+      ) {
+        setPosition({ position: "fixed", top: 0 });
+      } else if (
+        window.scrollY <
+        document.querySelector(".featured__products__main__products").offsetTop
+      ) {
+        setPosition({ position: "absolute", top: 0 });
       }
-    });
+      if (
+        window.scrollY >=
+        document.querySelector(".featured__products__main__products")
+          .offsetTop +
+          document.querySelector(".featured__products__main__products")
+            .offsetHeight -
+          window.innerHeight
+      ) {
+        setPosition({ position: "absolute", bottom: 0 });
+      }
+    } else {
+      setPosition({ position: "static" });
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", scrollAnimator);
+    return () => window.removeEventListener("scroll", scrollAnimator);
     // eslint-disable-next-line
   }, []);
   return (
@@ -61,7 +61,7 @@ function FeaturedProducts(props) {
               allShoes.map((shoe, index) => {
                 if (index < 2 && shoe.featured) {
                   return (
-                    <div className="featured__products__card">
+                    <div className="featured__products__card" key={index}>
                       <div className="featured__products__card__info">
                         <div className="featured__products__card__info__img">
                           <img src={shoe.coverImg} alt="" />
@@ -101,7 +101,7 @@ function FeaturedProducts(props) {
               allShoes.map((shoe, index) => {
                 if (index > 1 && index < 4 && shoe.featured) {
                   return (
-                    <div className="featured__products__card">
+                    <div className="featured__products__card" key={index}>
                       <div className="featured__products__card__info">
                         <div className="featured__products__card__info__img">
                           <img src={shoe.coverImg} alt="" />

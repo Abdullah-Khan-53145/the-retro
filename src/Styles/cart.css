@@ -87,6 +87,7 @@
 
 .cart_item_detail .cart_item_title {
   margin-right: 1rem;
+  font-weight: 600;
   display: none;
 }
 

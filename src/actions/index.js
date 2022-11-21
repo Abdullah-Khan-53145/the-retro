@@ -29,6 +29,7 @@ export const setAllShoes = (payload) => {
 };
 
 export function setProductAPI(payload) {
+  localStorage.setItem("product", JSON.stringify(payload));
   return (dispatch) => {
     dispatch(setProduct(payload));
   };
