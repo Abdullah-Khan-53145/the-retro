@@ -1,11 +1,18 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { setProductAPI } from "../actions";
+import { Link } from "react-router-dom";
 import "../Styles/featuredproducts.css";
 
-function FeaturedProducts({ shoes }) {
+function FeaturedProducts(props) {
+  const { allShoes, setProduct } = props;
   const [position, setPosition] = useState({});
+
+  const handleClick = (shoe) => {
+    setProduct(shoe);
+  };
   useEffect(() => {
-    console.log(shoes);
     window.addEventListener("scroll", () => {
       if (window.innerWidth <= 756) {
         if (
@@ -35,6 +42,7 @@ function FeaturedProducts({ shoes }) {
         setPosition({ position: "static" });
       }
     });
+    // eslint-disable-next-line
   }, []);
   return (
     <div className="featured__products__main">
@@ -49,14 +57,14 @@ function FeaturedProducts({ shoes }) {
         </div>
         <div className="featured__products__main__products">
           <div className="featured__products__card__row">
-            {shoes.length !== 0 ? (
-              shoes.map((shoe, index) => {
-                if (index < 2) {
+            {allShoes.length !== 0 &&
+              allShoes.map((shoe, index) => {
+                if (index < 2 && shoe.featured) {
                   return (
                     <div className="featured__products__card">
                       <div className="featured__products__card__info">
                         <div className="featured__products__card__info__img">
-                          <img src={shoe.img} alt="" />
+                          <img src={shoe.coverImg} alt="" />
                         </div>
                         <div className="featured__products__card__info__text">
                           <div className="featured__products__card__heading">
@@ -70,66 +78,33 @@ function FeaturedProducts({ shoes }) {
                               : shoe.description}
                           </p>
                           <div className="rating">
-                            ⭐⭐⭐⭐⭐<span>{shoe.rating}</span>
+                            ⭐⭐⭐⭐⭐<span>{shoe.averageRating}</span>
                           </div>
                           <span>${shoe.price}</span>
-                          <button className="primary-button">BUY NOW</button>
+                          <Link
+                            to="/product"
+                            style={{ textDecoration: "none" }}
+                            onClick={() => handleClick(shoe)}
+                            className="primary-button"
+                          >
+                            BUY NOW
+                          </Link>
                         </div>
                       </div>
                     </div>
                   );
                 }
-              })
-            ) : (
-              <>
-                <div className="featured__products__card">
-                  <div className="featured__products__card__info">
-                    <div className="featured__products__card__info__img">
-                      <img src="./imgs/brand_sec_shoe_2.png" alt="" />
-                    </div>
-                    <div className="featured__products__card__info__text">
-                      <div className="featured__products__card__heading">
-                        Addidas xyz
-                      </div>
-                      <p>This will be the short decription of our shoes ...</p>
-                      <div className="rating">
-                        ⭐⭐⭐⭐⭐<span>5.5</span>
-                      </div>
-                      <span>1999$</span>
-                      <button className="primary-button">BUY NOW</button>
-                    </div>
-                  </div>
-                </div>
-                <div className="featured__products__card">
-                  <div className="featured__products__card__info">
-                    <div className="featured__products__card__info__img">
-                      <img src="./imgs/brand_sec_shoe_2.png" alt="" />
-                    </div>
-                    <div className="featured__products__card__info__text">
-                      <div className="featured__products__card__heading">
-                        Addidas xyz
-                      </div>
-                      <p>This will be the short decription of our shoes ...</p>
-                      <div className="rating">
-                        ⭐⭐⭐⭐⭐<span>5.5</span>
-                      </div>
-                      <span>1999$</span>
-                      <button className="primary-button">BUY NOW</button>
-                    </div>
-                  </div>
-                </div>
-              </>
-            )}
+              })}
           </div>
           <div className="featured__products__card__row">
-            {shoes.length !== 0 ? (
-              shoes.map((shoe, index) => {
-                if (index > 1 && index < 4) {
+            {allShoes.length !== 0 &&
+              allShoes.map((shoe, index) => {
+                if (index > 1 && index < 4 && shoe.featured) {
                   return (
                     <div className="featured__products__card">
                       <div className="featured__products__card__info">
                         <div className="featured__products__card__info__img">
-                          <img src={shoe.img} alt="" />
+                          <img src={shoe.coverImg} alt="" />
                         </div>
                         <div className="featured__products__card__info__text">
                           <div className="featured__products__card__heading">
@@ -143,56 +118,23 @@ function FeaturedProducts({ shoes }) {
                               : shoe.description}
                           </p>
                           <div className="rating">
-                            ⭐⭐⭐⭐⭐<span>{shoe.rating}</span>
+                            ⭐⭐⭐⭐⭐<span>{shoe.averageRating}</span>
                           </div>
                           <span>${shoe.price}</span>
-                          <button className="primary-button">BUY NOW</button>
+                          <Link
+                            to="/product"
+                            style={{ textDecoration: "none" }}
+                            onClick={() => handleClick(shoe)}
+                            className="primary-button"
+                          >
+                            BUY NOW
+                          </Link>
                         </div>
                       </div>
                     </div>
                   );
                 }
-              })
-            ) : (
-              <>
-                <div className="featured__products__card">
-                  <div className="featured__products__card__info">
-                    <div className="featured__products__card__info__img">
-                      <img src="./imgs/brand_sec_shoe_2.png" alt="" />
-                    </div>
-                    <div className="featured__products__card__info__text">
-                      <div className="featured__products__card__heading">
-                        Addidas xyz
-                      </div>
-                      <p>This will be the short decription of our shoes ...</p>
-                      <div className="rating">
-                        ⭐⭐⭐⭐⭐<span>5.5</span>
-                      </div>
-                      <span>1999$</span>
-                      <button className="primary-button">BUY NOW</button>
-                    </div>
-                  </div>
-                </div>
-                <div className="featured__products__card">
-                  <div className="featured__products__card__info">
-                    <div className="featured__products__card__info__img">
-                      <img src="./imgs/brand_sec_shoe_2.png" alt="" />
-                    </div>
-                    <div className="featured__products__card__info__text">
-                      <div className="featured__products__card__heading">
-                        Addidas xyz
-                      </div>
-                      <p>This will be the short decription of our shoes ...</p>
-                      <div className="rating">
-                        ⭐⭐⭐⭐⭐<span>5.5</span>
-                      </div>
-                      <span>1999$</span>
-                      <button className="primary-button">BUY NOW</button>
-                    </div>
-                  </div>
-                </div>
-              </>
-            )}
+              })}
           </div>
         </div>
       </div>
@@ -200,4 +142,11 @@ function FeaturedProducts({ shoes }) {
   );
 }
 
-export default FeaturedProducts;
+const mapStateToProps = (state) => ({
+  allShoes: state.ShoesState,
+});
+const dispatchStateToProps = (dispatch) => ({
+  setProduct: (payload) => dispatch(setProductAPI(payload)),
+});
+
+export default connect(mapStateToProps, dispatchStateToProps)(FeaturedProducts);

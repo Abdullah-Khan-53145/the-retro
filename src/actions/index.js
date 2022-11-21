@@ -1,4 +1,4 @@
-import { ADD_TO_CART, SET_PRODUCT } from "./actions";
+import { ADD_TO_CART, SET_PRODUCT, SET_BRAND, SET_ALL_SHOES } from "./actions";
 
 // Action to add item to cart
 export const addToCart = (payload) => ({
@@ -13,10 +13,40 @@ export const setProduct = (payload) => {
     payload: payload,
   };
 };
+// Action to set brand from landing page to product page
+export const setBrand = (payload) => {
+  return {
+    type: SET_BRAND,
+    payload: payload,
+  };
+};
+// Action to set All shoes
+export const setAllShoes = (payload) => {
+  return {
+    type: SET_ALL_SHOES,
+    payload: payload,
+  };
+};
 
 export function setProductAPI(payload) {
   return (dispatch) => {
-    console.log(payload);
     dispatch(setProduct(payload));
+  };
+}
+
+export function setBrandAPI(payload) {
+  return (dispatch) => {
+    dispatch(setBrand(payload));
+  };
+}
+
+export function setAllShoesAPI(payload) {
+  return (dispatch) => {
+    dispatch(setAllShoes(payload));
+  };
+}
+export function addToCartAPI(payload) {
+  return (dispatch) => {
+    dispatch(addToCart(payload));
   };
 }

@@ -227,6 +227,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .product_size div {
@@ -247,6 +249,7 @@
   color: black;
   border: 1px solid gray;
   margin-right: 1rem;
+  margin-top: 1rem;
 }
 
 .product_color {
@@ -273,9 +276,10 @@
 }
 
 .related_products_parent {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
 }
 
@@ -336,6 +340,15 @@
 
 .product_info p {
   font-size: 1rem;
+}
+
+.related_product_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .related_product_img img {

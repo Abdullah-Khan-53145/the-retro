@@ -1,6 +1,24 @@
 import React from "react";
 import "../Styles/hotdeals.css";
-function HotDeals({ shoes }) {
+import { setProductAPI } from "../actions";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
+function HotDeals({ allShoes, setProduct }) {
+  const [shoes, setShoes] = useState([]);
+
+  const handleClick = (shoe) => {
+    setProduct(shoe);
+  };
+  useEffect(() => {
+    let arr = [];
+    allShoes.forEach((shoe) => {
+      if (shoe.hotDeal.status) arr.push(shoe);
+    });
+    setShoes(arr);
+  }, []);
+
   return (
     <div>
       <div className="hot_deals__products__main">
@@ -20,14 +38,14 @@ function HotDeals({ shoes }) {
               </div>
             </div>
             <div className="hot_deals__products__card__row">
-              {shoes.length !== 0 ? (
+              {shoes.length !== 0 &&
                 shoes.map((shoe, index) => {
                   if (index < 2) {
                     return (
                       <div className="hot_deals__products__card">
                         <div className="hot_deals__products__card__info">
                           <div className="hot_deals__products__card__info__img">
-                            <img src={shoe.img} alt="" />
+                            <img src={shoe.coverImg} alt="" />
                           </div>
                           <div className="hot_deals__products__card__info__text">
                             <div className="hot_deals__products__card__heading">
@@ -41,77 +59,50 @@ function HotDeals({ shoes }) {
                                 : shoe.description}
                             </p>
                             <div className="rating">
-                              ⭐⭐⭐⭐⭐<span>{shoe.rating}</span>
+                              ⭐⭐⭐⭐⭐<span>{shoe.averageRating}</span>
                             </div>
 
                             <div className="hot__deals__price">
                               <span>
-                                ${(shoe.price - shoe.price * 0.3).toFixed(2)}
-                              </span>{" "}
+                                $
+                                {(
+                                  shoe.price -
+                                  shoe.price * shoe.hotDeal.discount
+                                ).toFixed(2)}
+                              </span>
                               <span>${shoe.price}</span>
                             </div>
-
-                            <button className="primary-button">BUY NOW</button>
+                            <Link
+                              onClick={() =>
+                                handleClick({
+                                  ...shoe,
+                                  price:
+                                    shoe.price -
+                                    shoe.price * shoe.hotDeal.discount,
+                                })
+                              }
+                              to="/product"
+                            >
+                              <button className="primary-button">
+                                BUY NOW
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
                     );
                   }
-                })
-              ) : (
-                <>
-                  <div className="hot_deals__products__card">
-                    <div className="hot_deals__products__card__info">
-                      <div className="hot_deals__products__card__info__img">
-                        <img src="./imgs/brand_sec_shoe_2.png" alt="" />
-                      </div>
-                      <div className="hot_deals__products__card__info__text">
-                        <div className="hot_deals__products__card__heading">
-                          Addidas xyz
-                        </div>
-                        <p>
-                          This will be the short decription of our shoes ...
-                        </p>
-                        <div className="rating">
-                          ⭐⭐⭐⭐⭐<span>5.5</span>
-                        </div>
-                        <span>1999$</span>
-                        <button className="primary-button">BUY NOW</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="hot_deals__products__card">
-                    <div className="hot_deals__products__card__info">
-                      <div className="hot_deals__products__card__info__img">
-                        <img src="./imgs/brand_sec_shoe_2.png" alt="" />
-                      </div>
-                      <div className="hot_deals__products__card__info__text">
-                        <div className="hot_deals__products__card__heading">
-                          Addidas xyz
-                        </div>
-                        <p>
-                          This will be the short decription of our shoes ...
-                        </p>
-                        <div className="rating">
-                          ⭐⭐⭐⭐⭐<span>5.5</span>
-                        </div>
-                        <span>1999$</span>
-                        <button className="primary-button">BUY NOW</button>
-                      </div>
-                    </div>
-                  </div>
-                </>
-              )}
+                })}
             </div>
             <div className="hot_deals__products__card__row">
-              {shoes.length !== 0 ? (
+              {shoes.length !== 0 &&
                 shoes.map((shoe, index) => {
-                  if (index > 2 && index < 5) {
+                  if (index > 1) {
                     return (
                       <div className="hot_deals__products__card">
                         <div className="hot_deals__products__card__info">
                           <div className="hot_deals__products__card__info__img">
-                            <img src={shoe.img} alt="" />
+                            <img src={shoe.coverImg} alt="" />
                           </div>
                           <div className="hot_deals__products__card__info__text">
                             <div className="hot_deals__products__card__heading">
@@ -125,65 +116,39 @@ function HotDeals({ shoes }) {
                                 : shoe.description}
                             </p>
                             <div className="rating">
-                              ⭐⭐⭐⭐⭐<span>{shoe.rating}</span>
+                              ⭐⭐⭐⭐⭐<span>{shoe.averageRating}</span>
                             </div>
                             <div className="hot__deals__price">
                               <span>
-                                ${(shoe.price - shoe.price * 0.3).toFixed(2)}
+                                $
+                                {(
+                                  shoe.price -
+                                  shoe.price * shoe.hotDeal.discount
+                                ).toFixed(2)}
                               </span>{" "}
                               <span>${shoe.price}</span>
                             </div>
-                            <button className="primary-button">BUY NOW</button>
+                            <Link
+                              onClick={() =>
+                                handleClick({
+                                  ...shoe,
+                                  price:
+                                    shoe.price -
+                                    shoe.price * shoe.hotDeal.discount,
+                                })
+                              }
+                              to="/product"
+                            >
+                              <button className="primary-button">
+                                BUY NOW
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
                     );
                   }
-                })
-              ) : (
-                <>
-                  <div className="hot_deals__products__card">
-                    <div className="hot_deals__products__card__info">
-                      <div className="hot_deals__products__card__info__img">
-                        <img src="./imgs/brand_sec_shoe_2.png" alt="" />
-                      </div>
-                      <div className="hot_deals__products__card__info__text">
-                        <div className="hot_deals__products__card__heading">
-                          Addidas xyz
-                        </div>
-                        <p>
-                          This will be the short decription of our shoes ...
-                        </p>
-                        <div className="rating">
-                          ⭐⭐⭐⭐⭐<span>5.5</span>
-                        </div>
-                        <span>1999$</span>
-                        <button className="primary-button">BUY NOW</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="hot_deals__products__card">
-                    <div className="hot_deals__products__card__info">
-                      <div className="hot_deals__products__card__info__img">
-                        <img src="./imgs/brand_sec_shoe_2.png" alt="" />
-                      </div>
-                      <div className="hot_deals__products__card__info__text">
-                        <div className="hot_deals__products__card__heading">
-                          Addidas xyz
-                        </div>
-                        <p>
-                          This will be the short decription of our shoes ...
-                        </p>
-                        <div className="rating">
-                          ⭐⭐⭐⭐⭐<span>5.5</span>
-                        </div>
-                        <span>1999$</span>
-                        <button className="primary-button">BUY NOW</button>
-                      </div>
-                    </div>
-                  </div>
-                </>
-              )}
+                })}
             </div>
           </div>
         </div>
@@ -192,4 +157,11 @@ function HotDeals({ shoes }) {
   );
 }
 
-export default HotDeals;
+const mapStateToProps = (state) => ({
+  allShoes: state.ShoesState,
+});
+const dispatchStateToProps = (dispatch) => ({
+  setProduct: (payload) => dispatch(setProductAPI(payload)),
+});
+
+export default connect(mapStateToProps, dispatchStateToProps)(HotDeals);

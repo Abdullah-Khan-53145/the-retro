@@ -4,7 +4,7 @@ import FeaturedProducts from "./FeaturedProducts";
 import Brands from "./Brands";
 import HotDeals from "./HotDeals";
 import Bannar from "./Bannar";
-import Footer from "./Footer";
+import { useEffect } from "react";
 function Home() {
   const shoeDummyData = [
     {
@@ -48,6 +48,10 @@ function Home() {
       price: "173.99",
     },
   ];
+  useEffect(() => {
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div>
       <HomeHeroSection />

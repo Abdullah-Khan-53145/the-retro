@@ -4,30 +4,49 @@ import Header from "./Components/Header";
 import AllProducts from "./Components/AllProducts";
 import Product from "./Components/Product";
 import Footer from "./Components/Footer";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Router } from "react-router-dom";
 import Cart from "./Components/Cart";
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: (
+        <>
+          <Header />
+          <Home />
+        </>
+      ),
     },
     {
       path: "all-products",
-      element: <AllProducts />,
+      element: (
+        <>
+          <Header />
+          <AllProducts />
+        </>
+      ),
     },
     {
       path: "product",
-      element: <Product />,
+      element: (
+        <>
+          <Header />
+          <Product />
+        </>
+      ),
     },
     {
       path: "cart",
-      element: <Cart />,
+      element: (
+        <>
+          <Header />
+          <Cart />
+        </>
+      ),
     },
   ]);
   return (
     <div className="App">
-      <Header />
       <RouterProvider router={router} />
       <Footer />
     </div>

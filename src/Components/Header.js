@@ -1,18 +1,21 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+
 // import ShoppingBasketSharpIcon from "@mui/icons-material/ShoppingBasketSharp";
 
 import "../Styles/header.css";
 
-function Header() {
+function Header({ cartlength }) {
   return (
     <>
       <div className="header__main">
         <div className="header_child_main">
-          <div className="header__main__logo">
-            <img src="imgs/top_nav_logo.png" alt="" />
-          </div>
+          <Link to="/">
+            <div className="header__main__logo">
+              <img src="imgs/top_nav_logo.png" alt="" />
+            </div>
+          </Link>
 
           <div className="header__main__search">
             <input type="text" name="" id="" placeholder="Search" />
@@ -51,7 +54,7 @@ function Header() {
               <span>Abdullah Khan</span>
             </div>
           </div>
-          <div className="header__main__buttons">
+          <Link to="/cart" className="header__main__buttons">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,8 +69,8 @@ function Header() {
                 />
               </svg>
             </div>
-            <span>2</span>
-          </div>
+            <span>{cartlength}</span>
+          </Link>
         </div>
       </div>
       <div className="header__buttons__mobile">
@@ -143,5 +146,9 @@ function Header() {
     </>
   );
 }
+const mapStateToProps = (state) => ({
+  cartlength: state.CartState.length,
+});
+const dispatchStateToProps = (dispatch) => ({});
 
-export default Header;
+export default connect(mapStateToProps, dispatchStateToProps)(Header);

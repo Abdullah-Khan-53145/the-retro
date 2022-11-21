@@ -1,9 +1,22 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { setProductAPI, addToCartAPI } from "../actions";
+
 import "../Styles/product.css";
 function Product(props) {
   const dummy_shoe = props.product;
+  const addToCart = () => {
+    props.addToCart({
+      name: props.product.name,
+      img: props.product.coverImg,
+      price: props.product.price,
+      qty: 1,
+      size: props.product.size[sizeIndex],
+      color: props.product.colors[imgColorIndex],
+    });
+  };
   //{five:76,four: 14,three: 5,two: 2,one: 3}
 
   const [ratings, setRatings] = useState({
@@ -15,6 +28,7 @@ function Product(props) {
   });
   const [position, setPosition] = useState({ position: "fixed", top: 0 });
   const [imgIndex, setImgIndex] = useState(0);
+  const [relatedProductIndex, setRelatedProductIndex] = useState(0);
   const [imgColorIndex, setImgColorIndex] = useState(0);
   const [sizeIndex, setSizeIndex] = useState(0);
   //Slider functions
@@ -119,7 +133,18 @@ function Product(props) {
       });
     }
   });
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  const handleClick = (shoe) => {
+    props.setProduct(shoe);
+  };
+
   useEffect(() => {
+    setRelatedProductIndex(getRandomInt(0, 5));
     window.scrollTo(0, 0);
   }, []);
 
@@ -256,11 +281,55 @@ function Product(props) {
               ))}
             </div>
           </div>
-          <button className="primary-button">Add To Cart</button>
+          <button className="primary-button" onClick={addToCart}>
+            Add To Cart
+          </button>
           <div className="realted_products">
             <h3>Related product</h3>
             <div className="related_products_parent">
-              <div className="related_product">
+              {props.allShoes.map((shoe, index) => {
+                if (
+                  index > relatedProductIndex &&
+                  index <= relatedProductIndex + 3
+                ) {
+                  return (
+                    <div className="related_product">
+                      <h4>
+                        {shoe.name.length > 40
+                          ? shoe.name.slice(0, 40) + " ..."
+                          : shoe.name}
+                      </h4>
+                      <div className="product_details">
+                        <div className="related_product_img">
+                          <img src={shoe.coverImg} alt="" />
+                        </div>
+                        <div className="product_info">
+                          <div className="product_description">
+                            <p>
+                              {shoe.description.length > 60
+                                ? shoe.description.slice(0, 60) + " ..."
+                                : shoe.description}
+                            </p>
+                          </div>
+                          <div className="rating">
+                            ⭐⭐⭐⭐⭐<span>{shoe.averageRating}</span>
+                          </div>
+                          <div className="price">
+                            <h5>${shoe.price}</h5>
+                          </div>
+                          <Link to="/product" onClick={() => handleClick(shoe)}>
+                            <button className="primary-button">
+                              Buy Product
+                            </button>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+              })}
+
+              {/* <div className="related_product">
                 <h4>{dummy_shoe.name}</h4>
                 <div className="product_details">
                   <div className="related_product_img">
@@ -307,31 +376,7 @@ function Product(props) {
                     <button className="primary-button">Buy Product</button>
                   </div>
                 </div>
-              </div>
-              <div className="related_product">
-                <h4>{dummy_shoe.name}</h4>
-                <div className="product_details">
-                  <div className="related_product_img">
-                    <img src="./imgs/front-page-shoes/shoe_1.png" alt="" />
-                  </div>
-                  <div className="product_info">
-                    <div className="product_description">
-                      <p>
-                        {dummy_shoe.description.length > 60
-                          ? dummy_shoe.description.slice(0, 60) + " ..."
-                          : dummy_shoe.description}
-                      </p>
-                    </div>
-                    <div className="rating">
-                      ⭐⭐⭐⭐⭐<span>{dummy_shoe.averageRating}</span>
-                    </div>
-                    <div className="price">
-                      <h5>{dummy_shoe.price}</h5>
-                    </div>
-                    <button className="primary-button">Buy Product</button>
-                  </div>
-                </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="product_rating">
@@ -407,7 +452,12 @@ function Product(props) {
 }
 const mapStateToProps = (state) => ({
   product: state.ProductState,
+  allShoes: state.ShoesState,
+  cartItems: state.CartState,
 });
-const dispatchStateToProps = (dispatch) => ({});
+const dispatchStateToProps = (dispatch) => ({
+  setProduct: (payload) => dispatch(setProductAPI(payload)),
+  addToCart: (payload) => dispatch(addToCartAPI(payload)),
+});
 
 export default connect(mapStateToProps, dispatchStateToProps)(Product);
