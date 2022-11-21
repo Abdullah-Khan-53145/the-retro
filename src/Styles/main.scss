@@ -57,4 +57,9 @@ html {
   &:hover {
     background-color: black;
   }
+  &:disabled,
+  &[disabled]{
+    color: #cccccc;
+    background-color: #666666;
+  }
 }

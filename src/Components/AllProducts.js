@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import Masonry from "react-masonry-css";
 import { setProductAPI } from "../actions";
 import "../Styles/allproducts.css";
 
@@ -12,27 +13,51 @@ function AllProducts(props) {
   };
   const filterObj = {
     colors: [
-      "white",
-      "black",
-      "green",
-      "navy",
       "red",
-      "yellow",
-      "brown",
-      "orange",
-      "gray",
-      "white",
       "black",
-      "green",
       "navy",
+      "blue",
+      "lightgray",
+      "brown",
+      "white",
+      "lightgreen",
+      "yellow",
+      "lightskyblue",
+      "greenyellow",
+      "orange",
+      "All",
     ],
     sizes: [
-      4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12,
-      12.5, 13, 14, 15, 16, 17, 18, 19,
+      4,
+      4.5,
+      5,
+      5.5,
+      6,
+      6.5,
+      7,
+      7.5,
+      8,
+      8.5,
+      9,
+      9.5,
+      10,
+      10.5,
+      11,
+      11.5,
+      12,
+      12.5,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      "All",
     ],
-    brands: ["Addidas", "Nike", "Under Haumour", "Puma"],
+    brands: ["Adidas", "Nike", "Under Armour", "Puma", "Skechers", "All"],
   };
-  const shoes = [
+  const totalShoes = [
     {
       name: "Under Armour Men's Charged Assert 9 Running Shoe",
       coverImg:
@@ -513,7 +538,7 @@ function AllProducts(props) {
       description:
         "From the puma archives in 1968, this lightweight training shoe was equipped with comfort enhancing features such as a thick padded tongue and orthopedic arch supports. This version features a nylon upper and vivid colors for a summer look and feel.They love their sneaker style in the Roma Basic JR from PUMA. Accented with contrast logo details, this lace-up design is fabricated from fine leather and sports classic stitching. A wraparound sole adds a retro touch with plenty of scuff protection, while the grippy outsole keeps them steady along the way. This would look cute paired with everything from denim to corduroy overalls.PUMA is the global athletic brand that successfully fuses influences from sport, lifestyle and fashion. PUMA's unique industry perspective delivers the unexpected in sport-lifestyle footwear, apparel and accessories, through technical innovation and revolutionary design.",
       averageRating: "4.5",
-      brand: "PUMA",
+      brand: "Puma",
       rating: {
         five: "73%",
         four: "14%",
@@ -732,7 +757,63 @@ function AllProducts(props) {
       ],
     },
   ];
+  const initialFilter = {
+    price: { max: "", min: "" },
+    size: "All",
+    color: "All",
+    brand: "All",
+  };
   const [position, setPosition] = useState({});
+  const [shoes, setShoes] = useState(totalShoes);
+  const [noshoe, setNoShoe] = useState("");
+  const [filter, setFilter] = useState(initialFilter);
+  const breakpointColumnsObj = {
+    default: 3,
+    1027: 2,
+    756: 1,
+  };
+
+  // function
+  const handleMinPrice = (e) => {
+    setFilter({ ...filter, price: { ...filter.price, min: e.target.value } });
+  };
+  const handleMaxPrice = (e) => {
+    setFilter({ ...filter, price: { ...filter.price, max: e.target.value } });
+  };
+  const handleSize = (size) => {
+    setFilter({ ...filter, size });
+  };
+  const handleColorClick = (color) => {
+    setFilter({ ...filter, color });
+  };
+  const handleBrandClick = (brand) => {
+    setFilter({ ...filter, brand });
+  };
+  const handleFilterCLick = () => {
+    console.log(filter);
+    let arr = [];
+
+    totalShoes.forEach((shoe) => {
+      //checking for price
+      if (
+        filter.price.max == "" ||
+        (shoe.price >= filter.price.min && shoe.price <= filter.price.max)
+      ) {
+        // Checking for brand
+        if (filter.brand === "All" || filter.brand === shoe.brand) {
+          // Checking for size
+          if (filter.size === "All" || shoe.size.includes(filter.size)) {
+            // Checking for Colors
+            if (filter.color === "All" || shoe.colors.includes(filter.color)) {
+              arr.push(shoe);
+            }
+          }
+        }
+      }
+    });
+    console.log(arr);
+    setShoes(arr);
+  };
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (
@@ -760,7 +841,10 @@ function AllProducts(props) {
     <div className="all_products_main">
       <div className="all_products_main_child">
         <div className="all_products_filter">
-          <div className="all_products_filter_child" style={position}>
+          <div
+            className="all_products_filter_child"
+            style={{ ...position, height: "100vh" }}
+          >
             <div className="all_products_filter_heading">
               <h2>Filters</h2>
               <div className="all_products_filter_heading_image">
@@ -783,15 +867,37 @@ function AllProducts(props) {
             <div className="all_products_filter_price all_products_filter_section">
               <h3>Price</h3>
               <div className="all_products_filter_price_range">
-                <input type="number" placeholder="Min" name="" id="" />
-                <input type="number" placeholder="Max" name="" id="" />
+                <input
+                  type="number"
+                  placeholder="Min"
+                  value={filter.price.min}
+                  onChange={(e) => handleMinPrice(e)}
+                  name=""
+                  id=""
+                />
+                <input
+                  type="number"
+                  placeholder="Max"
+                  value={filter.price.max}
+                  onChange={(e) => handleMaxPrice(e)}
+                  name=""
+                  id=""
+                />
               </div>
             </div>
             <div className="all_products_filter_sizes all_products_filter_section">
               <h3>Size</h3>
               <div className="all_products_filter_size_range">
                 {filterObj.sizes.map((size, index) => (
-                  <div className="dis_con size" key={index}>
+                  <div
+                    className="dis_con size"
+                    key={index}
+                    onClick={() => handleSize(size)}
+                    style={{
+                      textDecoration:
+                        size === filter.size ? "underline" : "none",
+                    }}
+                  >
                     {size}
                   </div>
                 ))}
@@ -804,8 +910,15 @@ function AllProducts(props) {
                   <div
                     className="dis_con color"
                     key={index}
-                    style={{ backgroundColor: color }}
-                  ></div>
+                    onClick={() => handleColorClick(color)}
+                    style={{
+                      background: color === "All" ? "none" : color,
+                      border:
+                        filter.color === color ? "2px solid gray" : "none",
+                    }}
+                  >
+                    {color === "All" && "All"}
+                  </div>
                 ))}
               </div>
             </div>
@@ -813,35 +926,66 @@ function AllProducts(props) {
               <h3>Brands</h3>
               <div className="all_products_filter_brand_range">
                 {filterObj.brands.map((brand, index) => (
-                  <div className="brand" key={index}>
+                  <div
+                    className="brand"
+                    key={index}
+                    style={{
+                      textDecoration:
+                        brand === filter.brand ? "underline" : "none",
+                    }}
+                    onClick={() => handleBrandClick(brand)}
+                  >
                     <p>{brand}</p>
-                    <input type="checkbox" name="" id="" />
                   </div>
                 ))}
               </div>
             </div>
+            <button
+              className="primary-button"
+              disabled={initialFilter === filter}
+              onClick={handleFilterCLick}
+            >
+              Apply Filter
+            </button>
           </div>
         </div>
-        <div className="all_products_products">
-          {shoes.map((shoe, index) => (
-            <Link
-              style={{ color: "white", textDecoration: "none" }}
-              to="/product"
-              onClick={() => handleClick(shoe)}
-            >
-              <div className="all_products_product_main" key={index}>
-                <img src={shoe.coverImg} alt="" />
-                <div className="all_products_product_info">
-                  <h3>{shoe.name}</h3>
-                  <div className="product_name_brand">
-                    <h4>{shoe.brand}</h4>
-                    <span>${shoe.price.toString()}</span>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {shoes.length !== 0 ? (
+            shoes.map((shoe, index) => {
+              if (true) {
+                return (
+                  <div>
+                    <Link
+                      style={{ color: "white", textDecoration: "none" }}
+                      to="/product"
+                      onClick={() => handleClick(shoe)}
+                    >
+                      <div className="all_products_product_main" key={index}>
+                        <img src={shoe.coverImg} alt="" />
+                        <div className="all_products_product_info">
+                          <h2>{shoe.name}</h2>
+                          <h4>{shoe.brand}</h4>
+                          <h4>⭐⭐⭐⭐⭐ {shoe.averageRating}</h4>
+                          <span>${shoe.price.toString()}</span>
+                          <span className="all_products_product_shipping">
+                            <h4>shipping</h4>
+                            <span>${Math.floor(shoe.price * 0.1)}</span>
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
                   </div>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+                );
+              }
+            })
+          ) : (
+            <h3>Sorry, no shoe found</h3>
+          )}
+        </Masonry>
       </div>
     </div>
   );

@@ -82,4 +82,9 @@ html {
 .primary-button:hover {
   background-color: black;
 }
+
+.primary-button:disabled, .primary-button[disabled] {
+  color: #cccccc;
+  background-color: #666666;
+}
 /*# sourceMappingURL=main.css.map */

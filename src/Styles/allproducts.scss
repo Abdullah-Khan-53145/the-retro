@@ -22,7 +22,7 @@
         height: 3rem;
     }
     h2{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     h3{
         font-size: 2rem;
@@ -30,6 +30,7 @@
     }
 }
 .all_products_filter{
+    min-height: 100vh;
    width:30rem ;
     margin-right: 3rem;
     @media (max-width:420px){
@@ -42,7 +43,6 @@
   @media (max-width:420px){
     width:19.5rem ;
 }
-
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -62,6 +62,9 @@
         input{
             width: 48%;
             font-size:1.5rem;
+            outline:none;
+            border:none;
+            padding:.7rem;
             
         }
     }
@@ -75,17 +78,36 @@
     .size{
         font-size:1.5rem;
             margin-right: 10px;
+            cursor: pointer;
+            transition: color .2s;
+            &:hover{
+            color:lightgray;
+        }
+
     }
 }
 .all_products_filter_color_range{
     display:flex;
     flex-wrap: wrap;
     .color{
+       display:flex;
+       justify-content: center;
+       align-items: center;
+        font-size:1.2rem;
         width: 2.5rem;
         height: 2.5rem;
         margin-right: 10px;
         margin-top: 10px;
+        background: url("https://p.kindpng.com/picc/s/166-1667490_red-line-triangle-hd-png-download.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
         border:1px solid gray;
+        cursor: pointer;
+        transition: color .2s;
+        &:hover{
+        opacity: 0.45;
+    }
     }
 }
 .all_products_filter_brand_range{
@@ -95,6 +117,11 @@
         display: flex;
         font-size:1.5rem;
         justify-content: space-between;
+        cursor: pointer;
+        transition: color .2s;
+        &:hover{
+        color:lightgray;
+    }
         input{
             width: 1.5rem;
             &:checked{
@@ -107,17 +134,25 @@
     display:flex;
     flex-direction:column;
     align-items: center;
-    background: $bg_cards;
+    height: 100%;
     width: 100%;
-    padding:60px 30px;
+    padding:20px 20px;
     @media (max-width:420px){
         padding:40px 20px;
     }
     img{
-        width: 30rem;
+        width: 35rem;
         margin-bottom:20px;
         object-fit: contain;
         @media (max-width:480px){
+            width: 30rem;
+            margin-bottom:10px;
+        }
+        @media (max-width:360px){
+            width: 25rem;
+            margin-bottom:10px;
+        }
+        @media (max-width:340px){
             width: 20rem;
             margin-bottom:10px;
         }
@@ -135,7 +170,9 @@
 .all_products_product_info{
     display:flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
+    width: 100%;
+  
     .product_name_brand{
         display:flex;
         width: 100%;
@@ -147,16 +184,43 @@
         font-weight: 900;
     }
 }
-.all_products_products{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    @media (max-width:1027px){
-        grid-template-columns: 1fr 1fr;
+.all_products_product_shipping{
+    display:flex;
+    align-items: center;
+    gap:10px;    
+    span{
+
+        font-weight: 300;
     }
-    @media (max-width:756px){
-        grid-template-columns: 1fr;
-    }
-    flex:1;
-    gap:3rem;
-    align-self: center;
+    
 }
+
+
+
+.my-masonry-grid {
+    display: -webkit-box; /* Not needed if autoprefixing */
+    display: -ms-flexbox; /* Not needed if autoprefixing */
+    display: flex;
+    margin-left: -30px; /* gutter size offset */
+    width: auto;
+    flex:1;
+  }
+  .my-masonry-grid_column {
+    padding-left: 30px; /* gutter size */
+    background-clip: padding-box;
+  }
+  
+  /* Style your items */
+  .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+    background: $bg_cards;
+    margin-bottom: 30px;
+    transition: .3s;
+    @media (min-width: 756px){
+
+   
+    &:hover{
+        background-color: #ffffff4d;
+        transform: scale(1.07);
+    }
+  }
+  }

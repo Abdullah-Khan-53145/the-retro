@@ -6,6 +6,10 @@
   margin-bottom: 50px;
 }
 
+.all_products_main a {
+  text-decoration: none;
+}
+
 .all_products_main_child {
   width: 89%;
   display: block;
@@ -24,7 +28,7 @@
 }
 
 .all_products_main_child h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .all_products_main_child h3 {
@@ -32,6 +36,7 @@
 }
 
 .all_products_filter {
+  min-height: 100vh;
   width: 30rem;
   margin-right: 3rem;
   position: relative;
@@ -88,6 +93,9 @@
 .all_products_filter_price .all_products_filter_price_range input {
   width: 48%;
   font-size: 1.5rem;
+  outline: none;
+  border: none;
+  padding: .7rem;
 }
 
 .all_products_filter_section {
@@ -105,6 +113,13 @@
 .all_products_filter_size_range .size {
   font-size: 1.5rem;
   margin-right: 10px;
+  cursor: pointer;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.all_products_filter_size_range .size:hover {
+  color: lightgray;
 }
 
 .all_products_filter_color_range {
@@ -116,11 +131,32 @@
 }
 
 .all_products_filter_color_range .color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
   width: 2.5rem;
   height: 2.5rem;
   margin-right: 10px;
   margin-top: 10px;
+  background: url("https://p.kindpng.com/picc/s/166-1667490_red-line-triangle-hd-png-download.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   border: 1px solid gray;
+  cursor: pointer;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.all_products_filter_color_range .color:hover {
+  opacity: 0.45;
 }
 
 .all_products_filter_brand_range {
@@ -141,6 +177,13 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  cursor: pointer;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.all_products_filter_brand_range .brand:hover {
+  color: lightgray;
 }
 
 .all_products_filter_brand_range .brand input {
@@ -162,9 +205,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #ffffff32;
+  height: 100%;
   width: 100%;
-  padding: 60px 30px;
+  padding: 20px 20px;
 }
 
 @media (max-width: 420px) {
@@ -174,13 +217,27 @@
 }
 
 .all_products_product_main img {
-  width: 30rem;
+  width: 35rem;
   margin-bottom: 20px;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
 @media (max-width: 480px) {
+  .all_products_product_main img {
+    width: 30rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .all_products_product_main img {
+    width: 25rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 340px) {
   .all_products_product_main img {
     width: 20rem;
     margin-bottom: 10px;
@@ -205,9 +262,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
 }
 
 .all_products_product_info .product_name_brand {
@@ -228,30 +286,54 @@
   font-weight: 900;
 }
 
-.all_products_products {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+.all_products_product_shipping {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.all_products_product_shipping span {
+  font-weight: 300;
+}
+
+.my-masonry-grid {
+  display: -webkit-box;
+  /* Not needed if autoprefixing */
+  display: -ms-flexbox;
+  /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px;
+  /* gutter size offset */
+  width: auto;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  gap: 3rem;
-  -ms-grid-row-align: center;
-      align-self: center;
 }
 
-@media (max-width: 1027px) {
-  .all_products_products {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-  }
+.my-masonry-grid_column {
+  padding-left: 30px;
+  /* gutter size */
+  background-clip: padding-box;
 }
 
-@media (max-width: 756px) {
-  .all_products_products {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  background: #ffffff32;
+  margin-bottom: 30px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+@media (min-width: 756px) {
+  .my-masonry-grid_column > div:hover {
+    background-color: #ffffff4d;
+    -webkit-transform: scale(1.07);
+            transform: scale(1.07);
   }
 }
 /*# sourceMappingURL=allproducts.css.map */
