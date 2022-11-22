@@ -1,12 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-
-// import ShoppingBasketSharpIcon from "@mui/icons-material/ShoppingBasketSharp";
+import { useEffect, useState } from "react";
 
 import "../Styles/header.css";
 
-function Header({ cartlength }) {
+function Header({ cart }) {
+  const [items, setItems] = useState(0);
+  useEffect(() => {
+    let sum = 0;
+    cart.forEach((item) => {
+      sum += item.qty;
+    });
+    setItems(sum);
+  }, [cart]);
   return (
     <>
       <div className="header__main">
@@ -69,7 +76,7 @@ function Header({ cartlength }) {
                 />
               </svg>
             </div>
-            <span>{cartlength}</span>
+            <span>{items}</span>
           </Link>
         </div>
       </div>
@@ -147,7 +154,7 @@ function Header({ cartlength }) {
   );
 }
 const mapStateToProps = (state) => ({
-  cartlength: state.CartState.length,
+  cart: state.CartState,
 });
 const dispatchStateToProps = (dispatch) => ({});
 

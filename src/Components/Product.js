@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { setProductAPI, addToCartAPI } from "../actions";
 import "../Styles/product.css";
 //component
-function Product({ allShoes, product, addToCart, setProduct }) {
+function Product({ allShoes, product, addToCart, setProduct, cartItems }) {
   // States
   const [position, setPosition] = useState({ position: "fixed", top: 0 });
   const [imgIndex, setImgIndex] = useState(0);
@@ -27,7 +27,8 @@ function Product({ allShoes, product, addToCart, setProduct }) {
       name: product.name,
       img: product.coverImg,
       price: product.price,
-      qty: 1,
+      id: `${product.name}-${sizeIndex}-${imgColorIndex}`,
+      index: cartItems.length,
       size: product.size[sizeIndex],
       color: product.colors[imgColorIndex],
     });

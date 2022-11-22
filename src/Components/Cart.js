@@ -1,20 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import { reduceQtyAPI, removeFromCartAPI, addToCartAPI } from "../actions";
 
 import "../Styles/cart.css";
-function Cart({ cartItems }) {
+function Cart({ removeFromCart, cartItems, reduceQtyFromCart, addToCart }) {
   const [mainHeading, setMainHeading] = useState(
     window.innerWidth >= 756
       ? "./imgs/your_cart_heading.png"
       : "./imgs/your_cart_heading_mob.png"
   );
   const [totalPrice, setTotalPrice] = useState(0);
+  const [renderableCart, setRenderableCart] = useState(cartItems);
+  // Funtions
   const getTotalPrice = () => {
     let caltotalPrice = 0;
     cartItems.forEach((item) => {
-      caltotalPrice += item.price;
+      caltotalPrice += item.price * item.qty;
     });
     setTotalPrice(caltotalPrice);
+  };
+
+  // Event Handlers
+  const handleRemoveFromCart = (product) => {
+    removeFromCart(product);
+  };
+  const handleReduceQty = (product) => {
+    if (product.qty > 1) {
+      reduceQtyFromCart(product);
+    }
+  };
+  const handleIncreaseQty = (product) => {
+    addToCart(product);
   };
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 756) {
@@ -26,8 +42,8 @@ function Cart({ cartItems }) {
 
   useEffect(() => {
     getTotalPrice();
-    // eslint-disable-next-line
-  }, []);
+    setRenderableCart(cartItems.sort((a, b) => a.index - b.index));
+  }, [cartItems]);
 
   return (
     <div className="cart_main">
@@ -58,8 +74,8 @@ function Cart({ cartItems }) {
 
             <div className="cart_close"></div>
           </div>
-          {cartItems.length !== 0 ? (
-            cartItems.map((product, index) => (
+          {renderableCart.length !== 0 ? (
+            renderableCart.map((product, index) => (
               <div className="cart_item" key={index}>
                 <div className="cart_product_img cart_item_detail cart_item_sap">
                   <img src={product.img} alt="" />
@@ -77,19 +93,20 @@ function Cart({ cartItems }) {
                 </div>
 
                 <div className="cart_product_qty cart_item_detail cart_item_sap">
-                  <button>-</button>
+                  <button onClick={() => handleReduceQty(product)}>-</button>
                   <p>{product.qty}</p>
-                  <button>+</button>
+                  <button onClick={() => handleIncreaseQty(product)}>+</button>
                 </div>
                 <p className="cart_product_price cart_item_detail cart_item_sap">
                   <span className="cart_item_title">Price: </span>$
-                  {product.price}
+                  {(product.price * product.qty).toFixed(2)}
                 </p>
 
                 <div className="cart_close">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
+                    onClick={() => handleRemoveFromCart({ ...product, index })}
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
@@ -110,7 +127,7 @@ function Cart({ cartItems }) {
           <div className="cart_total_bill">
             <div className="total_bill">
               <h3>
-                Sub Total : <span>${totalPrice}</span>
+                Sub Total : <span>${totalPrice.toFixed(2)}</span>
               </h3>
               <h3>
                 Shipping : <span>${Math.floor(totalPrice * 0.2)}</span>
@@ -127,6 +144,10 @@ function Cart({ cartItems }) {
 const mapStateToProps = (state) => ({
   cartItems: state.CartState,
 });
-const dispatchStateToProps = (dispatch) => ({});
+const dispatchStateToProps = (dispatch) => ({
+  removeFromCart: (payload) => dispatch(removeFromCartAPI(payload)),
+  reduceQtyFromCart: (payload) => dispatch(reduceQtyAPI(payload)),
+  addToCart: (payload) => dispatch(addToCartAPI(payload)),
+});
 
 export default connect(mapStateToProps, dispatchStateToProps)(Cart);
