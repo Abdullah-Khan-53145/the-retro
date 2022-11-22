@@ -42,6 +42,54 @@
   }
 }
 
+.Link_nav_footer {
+  border: 2px solid yellow;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  height: 100%;
+  border: none;
+  outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: transparent;
+  font-size: 2rem;
+}
+
+.Link_nav_footer .logo {
+  position: relative;
+}
+
+.Link_nav_footer .number_of_items {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: -5px;
+  right: -10px;
+  background-color: black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.Link_nav_footer svg {
+  color: white;
+}
+
 .header__main__search {
   display: -webkit-box;
   display: -ms-flexbox;
