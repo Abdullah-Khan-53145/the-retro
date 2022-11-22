@@ -122,10 +122,12 @@
   width: 40%;
 }
 
-.cart_product_name p {
-  text-align: start;
-  padding-left: 1rem;
-  width: 100%;
+@media (min-width: 600px) {
+  .cart_product_name p {
+    text-align: start;
+    padding-left: 1rem;
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {

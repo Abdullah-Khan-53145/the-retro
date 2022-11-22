@@ -110,15 +110,30 @@
     font-weight: 600;
   }
 }
+.header__main__buttons__scroll{
+  position:fixed;
+  border-radius: 50%;
+  width: fit-content;
+  animation: cartAnimator .5s ;
+  bottom:3rem;
+  right: 3rem;
+  background-color:black;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 30px 0px;
+  padding:10px;
+  svg {
+    width: 25px;
+    color: white;
+    animation: cartAnimatorSvg .5s ;
+  }
+}
 .header__main__buttons {
-  // border: 2px solid green;
+  text-decoration: none;
   display: flex;
   align-items: center;
   font-size: 18px;
   font-weight: 400;
   color: white;
   margin: 0px 10px;
-  gap: 10px;
   svg {
     color: white;
   }
@@ -138,7 +153,6 @@
 svg {
   color: red;
   width: 25px;
-
   font-weight: 900;
 }
 
@@ -169,4 +183,24 @@ svg {
       color: white;
     }
   }
+}
+
+@keyframes cartAnimator {
+  0%{
+   opacity:0
+    
+  }
+  100%{
+    opacity:1
+  }
+  
+}
+@keyframes cartAnimatorSvg {
+  0%{
+    width: 25px;
+  }
+  100%{
+    width: 25px;
+  }
+  
 }

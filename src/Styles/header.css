@@ -178,7 +178,31 @@
   font-weight: 600;
 }
 
+.header__main__buttons__scroll {
+  position: fixed;
+  border-radius: 50%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-animation: cartAnimator .5s;
+          animation: cartAnimator .5s;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: black;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 30px 0px;
+          box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 30px 0px;
+  padding: 10px;
+}
+
+.header__main__buttons__scroll svg {
+  width: 25px;
+  color: white;
+  -webkit-animation: cartAnimatorSvg .5s;
+          animation: cartAnimatorSvg .5s;
+}
+
 .header__main__buttons {
+  text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,7 +213,6 @@
   font-weight: 400;
   color: white;
   margin: 0px 10px;
-  gap: 10px;
 }
 
 .header__main__buttons svg {
@@ -258,5 +281,41 @@ svg {
 
 .header__buttons__mobile button span {
   color: white;
+}
+
+@-webkit-keyframes cartAnimator {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes cartAnimator {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes cartAnimatorSvg {
+  0% {
+    width: 25px;
+  }
+  100% {
+    width: 25px;
+  }
+}
+
+@keyframes cartAnimatorSvg {
+  0% {
+    width: 25px;
+  }
+  100% {
+    width: 25px;
+  }
 }
 /*# sourceMappingURL=header.css.map */

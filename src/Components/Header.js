@@ -7,6 +7,16 @@ import "../Styles/header.css";
 
 function Header({ cart }) {
   const [items, setItems] = useState(0);
+  const [show, setShow] = useState(0);
+
+  //functions
+  const setingCartShow = (scrollValue) => {
+    if (scrollValue > 55) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  };
   useEffect(() => {
     let sum = 0;
     cart.forEach((item) => {
@@ -14,6 +24,14 @@ function Header({ cart }) {
     });
     setItems(sum);
   }, [cart]);
+  useEffect(() => {
+    console.log("working");
+    window.addEventListener("scroll", () => setingCartShow(window.scrollY));
+    return () =>
+      window.removeEventListener("scroll", () =>
+        setingCartShow(window.scrollY)
+      );
+  }, []);
   return (
     <>
       <div className="header__main">
@@ -61,7 +79,12 @@ function Header({ cart }) {
               <span>Abdullah Khan</span>
             </div>
           </div>
-          <Link to="/cart" className="header__main__buttons">
+          <Link
+            to="/cart"
+            className={`header__main__buttons ${
+              show && "header__main__buttons__scroll"
+            } `}
+          >
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Masonry from "react-masonry-css";
-import { setProductAPI } from "../actions";
+import { setProductAPI, setBrandAPI } from "../actions";
 import "../Styles/allproducts.css";
 
-function AllProducts({ allShoes, setProduct, brand }) {
+function AllProducts({ allShoes, setProduct, brand, setBrand }) {
   //some variables
   const filterObj = {
     colors: [
@@ -89,6 +89,7 @@ function AllProducts({ allShoes, setProduct, brand }) {
   };
   const handleBrandClick = (brand) => {
     setFilter({ ...filter, brand });
+    setBrand(brand);
   };
   const handleFilterCLick = () => {
     ApplyFilter();
@@ -302,6 +303,7 @@ const mapStateToProps = (state) => ({
 });
 const dispatchStateToProps = (dispatch) => ({
   setProduct: (payload) => dispatch(setProductAPI(payload)),
+  setBrand: (payload) => dispatch(setBrandAPI(payload)),
 });
 
 export default connect(mapStateToProps, dispatchStateToProps)(AllProducts);
