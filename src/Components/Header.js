@@ -21,7 +21,6 @@ function Header({ cart, setProduct, allShoes }) {
     }
   };
   const handleBlur = () => {
-    setSearch("");
     setDis("none");
   };
   const handleClick = (shoe) => {
