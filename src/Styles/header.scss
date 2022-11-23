@@ -54,6 +54,7 @@
 
 .header__main__search {
   display: flex;
+  position: relative;
   align-items: center;
   flex-grow: 1;
   margin: 0 10px;
@@ -183,6 +184,69 @@ svg {
       color: white;
     }
   }
+}
+
+@import 'imports';
+.search_components_main{
+    position:absolute;
+    top:55px;
+    left:0;
+    width:100%;
+    z-index: 1000;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    color:white;  
+    h2{
+        font-size: 1rem;
+    }
+    h3{
+        font-size: 1rem;
+        font-weight: 100;
+    }
+    border-left:1px solid gray ;
+    border-right:1px solid gray ;
+}
+.search_components_main::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    left: 0;
+    width: 100%;
+    border-radius: 5px;
+    height: 100%;
+    background: black;
+   
+}
+.search_component_child{
+    display:flex;
+    gap:10px;
+    transition: background .2s;
+    background: black;
+    padding:10px;
+    cursor:pointer;
+    border-bottom:1px solid gray;
+    &:nth-child(1){
+        border-top:1px solid gray ;
+    }
+    &:hover{
+        
+        background: rgb(40, 40, 40);
+    }
+}
+.search_component_child_img{
+    width:6rem;
+    height:6rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width:5rem;
+        height:5rem;
+        object-fit: contain;
+
+    }
 }
 
 @keyframes cartAnimator {

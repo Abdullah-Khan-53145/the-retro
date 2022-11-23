@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+.search_components_main {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  color: white;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
+.search_components_main h2 {
+  font-size: 1rem;
+}
+
+.search_components_main h3 {
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.search_components_main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  left: 0;
+  width: 100%;
+  border-radius: 5px;
+  height: 100%;
+  background: black;
+}
+
+.search_component_child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+  background: black;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid gray;
+}
+
+.search_component_child:nth-child(1) {
+  border-top: 1px solid gray;
+}
+
+.search_component_child:hover {
+  background: #282828;
+}
+
+.search_component_child_img {
+  width: 6rem;
+  height: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search_component_child_img img {
+  width: 5rem;
+  height: 5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+/*# sourceMappingURL=searchproduct.css.map */

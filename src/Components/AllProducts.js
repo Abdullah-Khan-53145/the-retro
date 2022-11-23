@@ -2,8 +2,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import Masonry from "react-masonry-css";
 import { setProductAPI, setBrandAPI } from "../actions";
+import Masonry from "react-masonry-css";
 import "../Styles/allproducts.css";
 
 function AllProducts({ allShoes, setProduct, brand, setBrand }) {

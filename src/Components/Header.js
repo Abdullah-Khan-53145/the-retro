@@ -1,22 +1,44 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { connect } from "react-redux";
+import { setProductAPI } from "../actions";
 import { useEffect, useState } from "react";
 
 import "../Styles/header.css";
 
-function Header({ cart }) {
+function Header({ cart, setProduct, allShoes }) {
   const [items, setItems] = useState(0);
   const [show, setShow] = useState(0);
+  const [dis, setDis] = useState("none");
+  const [search, setSearch] = useState("");
+  const location = useLocation();
+  // Event Handlers
+  const handleShow = (keyword) => {
+    if (keyword !== "") {
+      setDis("flex");
+    } else {
+      setDis("none");
+    }
+  };
+  const handleBlur = () => {
+    setSearch("");
+    setDis("none");
+  };
+  const handleClick = (shoe) => {
+    setProduct(shoe);
+    setDis("none");
+  };
 
   //functions
-  const setingCartShow = (scrollValue) => {
+  const settingElementScrollShow = (scrollValue) => {
     if (scrollValue > 55) {
       setShow(true);
+      setDis("none");
     } else {
       setShow(false);
     }
   };
+
   useEffect(() => {
     let sum = 0;
     cart.forEach((item) => {
@@ -25,11 +47,16 @@ function Header({ cart }) {
     setItems(sum);
   }, [cart]);
   useEffect(() => {
-    console.log("working");
-    window.addEventListener("scroll", () => setingCartShow(window.scrollY));
+    setSearch("");
+    setDis("none");
+  }, [location]);
+  useEffect(() => {
+    window.addEventListener("scroll", () =>
+      settingElementScrollShow(window.scrollY)
+    );
     return () =>
       window.removeEventListener("scroll", () =>
-        setingCartShow(window.scrollY)
+        settingElementScrollShow(window.scrollY)
       );
   }, []);
   return (
@@ -43,7 +70,52 @@ function Header({ cart }) {
           </Link>
 
           <div className="header__main__search">
-            <input type="text" name="" id="" placeholder="Search" />
+            <div className="search_components_main" style={{ display: dis }}>
+              {allShoes.map((shoe, index) => {
+                if (
+                  shoe.name.toLowerCase().includes(search.toLowerCase()) ||
+                  shoe.brand.toLowerCase().includes(search.toLowerCase()) ||
+                  shoe.description.toLowerCase().includes(search.toLowerCase())
+                )
+                  return (
+                    <Link
+                      style={{ color: "white", textDecoration: "none" }}
+                      to="/product"
+                      className="search_component_child"
+                      onClick={(e) => {
+                        handleClick(shoe);
+                      }}
+                      onMouseDown={(e) => {
+                        e.preventDefault();
+                      }}
+                      key={index}
+                    >
+                      <div className="search_component_child_img">
+                        <img src={shoe.coverImg} alt="" />
+                      </div>
+                      <div className="search_component_child_info">
+                        <h2>{shoe.name}</h2>
+                        <h3>{shoe.brand}</h3>
+                        <span>⭐⭐⭐⭐⭐ {shoe.averageRating}</span>
+                        <p>${shoe.price}</p>
+                      </div>
+                    </Link>
+                  );
+              })}
+            </div>
+            <input
+              type="text"
+              name=""
+              id=""
+              onBlur={(e) => handleBlur(e)}
+              onFocus={(e) => handleShow(e.target.value)}
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+                handleShow(e.target.value);
+              }}
+              placeholder="Search"
+            />
             <button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +255,10 @@ function Header({ cart }) {
 }
 const mapStateToProps = (state) => ({
   cart: state.CartState,
+  allShoes: state.ShoesState,
 });
-const dispatchStateToProps = (dispatch) => ({});
+const dispatchStateToProps = (dispatch) => ({
+  setProduct: (payload) => dispatch(setProductAPI(payload)),
+});
 
 export default connect(mapStateToProps, dispatchStateToProps)(Header);
