@@ -317,7 +317,6 @@ svg {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 10px;
   color: white;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
