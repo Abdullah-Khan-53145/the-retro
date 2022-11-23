@@ -127,6 +127,14 @@
     animation: cartAnimatorSvg .5s ;
   }
 }
+.cart__dummy__icon{
+  width:100px;
+  display:flex;
+  justify-content: flex-end;
+  @media (max-width:756px) {
+    display:none;
+  }
+}
 .header__main__buttons {
   text-decoration: none;
   display: flex;
@@ -196,14 +204,7 @@ svg {
     display:flex;
     flex-direction: column;
     gap:10px;
-    color:white;  
-    h2{
-        font-size: 1rem;
-    }
-    h3{
-        font-size: 1rem;
-        font-weight: 100;
-    }
+    color:white;    
     border-left:1px solid gray ;
     border-right:1px solid gray ;
 }
@@ -236,14 +237,14 @@ svg {
     }
 }
 .search_component_child_img{
-    width:6rem;
-    height:6rem;
+    width:7rem;
+    height:7rem;
     display:flex;
     justify-content: center;
     align-items: center;
     img{
-        width:5rem;
-        height:5rem;
+        width:6rem;
+        height:6rem;
         object-fit: contain;
 
     }

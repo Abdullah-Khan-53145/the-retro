@@ -217,7 +217,7 @@
 }
 
 .all_products_product_main img {
-  width: 35rem;
+  width: 100%;
   margin-bottom: 20px;
   -o-object-fit: contain;
      object-fit: contain;

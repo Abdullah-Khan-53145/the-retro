@@ -68,7 +68,7 @@ function AllProducts({ allShoes, setProduct, brand, setBrand }) {
   const breakpointColumnsObj = {
     default: 3,
     1027: 2,
-    756: 1,
+    600: 1,
   };
 
   // click handlers
@@ -104,7 +104,7 @@ function AllProducts({ allShoes, setProduct, brand, setBrand }) {
     } else if (
       window.scrollY < document.querySelector(".all_products_filter").offsetTop
     ) {
-      setPosition({ position: "absolute", top: 0 });
+      setPosition({ position: "absolute", top: 0, width: "100%" });
     }
     if (
       window.scrollY >=
