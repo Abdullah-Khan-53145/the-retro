@@ -135,7 +135,13 @@ function Cart({
                       ${(product.price * product.qty).toFixed(2)}
                     </span>
 
-                    <span>
+                    <span
+                      className="item_discounted_price"
+                      style={{
+                        display:
+                          product.hotDeal.status && user ? "flex" : "none",
+                      }}
+                    >
                       {product.hotDeal.status && user
                         ? `$${(
                             (product.price -
