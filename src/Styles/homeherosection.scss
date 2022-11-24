@@ -75,6 +75,7 @@
     justify-content: flex-end;
     width: 100%;
   }
+ 
 }
 .home__hero__description {
   display: flex;
@@ -114,7 +115,7 @@
 //Animation to slide the shoe
 @keyframes shoe_translator {
   0% {
-    transform: translateX(-200%) rotate(-45deg);
+    transform: translateX(-200%) rotate(-45deg) scale(.7);
   }
   50% {
     transform: translateX(0%) rotate(-4deg) scale(1.05);
@@ -127,13 +128,13 @@
 //Animation to give a rotating float effect to the shoe
 @keyframes shoe_rotator {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1);;
   }
   50% {
-    transform: rotate(10deg);
+    transform: rotate(10deg) scale(.96);;
   }
 
   100% {
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1);;
   }
 }

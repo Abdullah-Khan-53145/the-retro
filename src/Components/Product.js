@@ -6,7 +6,14 @@ import { Link } from "react-router-dom";
 import { setProductAPI, addToCartAPI } from "../actions";
 import "../Styles/product.css";
 //component
-function Product({ allShoes, product, addToCart, setProduct, cartItems }) {
+function Product({
+  allShoes,
+  product,
+  addToCart,
+  setProduct,
+  cartItems,
+  user,
+}) {
   // States
   const [position, setPosition] = useState({ position: "fixed", top: 0 });
   const [imgIndex, setImgIndex] = useState(0);
@@ -28,6 +35,7 @@ function Product({ allShoes, product, addToCart, setProduct, cartItems }) {
       img: product.coverImg,
       price: product.price,
       id: `${product.name}-${sizeIndex}-${imgColorIndex}`,
+      hotDeal: product.hotDeal,
       index: cartItems.length,
       size: product.size[sizeIndex],
       color: product.colors[imgColorIndex],
@@ -215,6 +223,27 @@ function Product({ allShoes, product, addToCart, setProduct, cartItems }) {
           <div className="product_average_rating">
             <h3>Average Rating</h3>
             <p>⭐⭐⭐⭐⭐ {product.averageRating}</p>
+          </div>
+          <div className="product_average_price">
+            <h3>Price</h3>
+            <h3
+              style={{
+                color: product.hotDeal.status && user ? "gray" : "white",
+                textDecoration:
+                  product.hotDeal.status && user ? "line-through" : "none",
+                fontSize: product.hotDeal.status && user ? "1.5rem" : "2.5rem",
+              }}
+            >
+              ${product.price.toFixed(2)}
+            </h3>
+            <h3>
+              {product.hotDeal.status && user
+                ? `$${(
+                    product.price -
+                    product.price * product.hotDeal.discount
+                  ).toFixed(2)}`
+                : ""}
+            </h3>
           </div>
           <div className="product_sizes">
             <h3>Select Size</h3>
@@ -425,6 +454,7 @@ const mapStateToProps = (state) => ({
   product: state.ProductState,
   allShoes: state.ShoesState,
   cartItems: state.CartState,
+  user: state.userState,
 });
 const dispatchStateToProps = (dispatch) => ({
   setProduct: (payload) => dispatch(setProductAPI(payload)),

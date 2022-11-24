@@ -235,8 +235,8 @@
 
 @-webkit-keyframes shoe_translator {
   0% {
-    -webkit-transform: translateX(-200%) rotate(-45deg);
-            transform: translateX(-200%) rotate(-45deg);
+    -webkit-transform: translateX(-200%) rotate(-45deg) scale(0.7);
+            transform: translateX(-200%) rotate(-45deg) scale(0.7);
   }
   50% {
     -webkit-transform: translateX(0%) rotate(-4deg) scale(1.05);
@@ -250,8 +250,8 @@
 
 @keyframes shoe_translator {
   0% {
-    -webkit-transform: translateX(-200%) rotate(-45deg);
-            transform: translateX(-200%) rotate(-45deg);
+    -webkit-transform: translateX(-200%) rotate(-45deg) scale(0.7);
+            transform: translateX(-200%) rotate(-45deg) scale(0.7);
   }
   50% {
     -webkit-transform: translateX(0%) rotate(-4deg) scale(1.05);
@@ -265,31 +265,31 @@
 
 @-webkit-keyframes shoe_rotator {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
   }
   50% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    -webkit-transform: rotate(10deg) scale(0.96);
+            transform: rotate(10deg) scale(0.96);
   }
   100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
   }
 }
 
 @keyframes shoe_rotator {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
   }
   50% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
+    -webkit-transform: rotate(10deg) scale(0.96);
+            transform: rotate(10deg) scale(0.96);
   }
   100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
   }
 }
 /*# sourceMappingURL=homeherosection.css.map */

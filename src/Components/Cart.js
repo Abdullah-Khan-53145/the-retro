@@ -3,7 +3,13 @@ import { connect } from "react-redux";
 import { reduceQtyAPI, removeFromCartAPI, addToCartAPI } from "../actions";
 
 import "../Styles/cart.css";
-function Cart({ removeFromCart, cartItems, reduceQtyFromCart, addToCart }) {
+function Cart({
+  removeFromCart,
+  cartItems,
+  reduceQtyFromCart,
+  addToCart,
+  user,
+}) {
   const [mainHeading, setMainHeading] = useState(
     window.innerWidth >= 756
       ? "./imgs/your_cart_heading.png"
@@ -15,7 +21,19 @@ function Cart({ removeFromCart, cartItems, reduceQtyFromCart, addToCart }) {
   const getTotalPrice = () => {
     let caltotalPrice = 0;
     cartItems.forEach((item) => {
-      caltotalPrice += item.price * item.qty;
+      if (user) {
+        if (item.hotDeal.status) {
+          const price = (
+            item.price -
+            item.price * item.hotDeal.discount
+          ).toFixed(2);
+          caltotalPrice += price * item.qty;
+        } else {
+          caltotalPrice += item.price * item.qty;
+        }
+      } else {
+        caltotalPrice += item.price * item.qty;
+      }
     });
     setTotalPrice(caltotalPrice);
   };
@@ -43,7 +61,7 @@ function Cart({ removeFromCart, cartItems, reduceQtyFromCart, addToCart }) {
   useEffect(() => {
     getTotalPrice();
     setRenderableCart(cartItems.sort((a, b) => a.index - b.index));
-  }, [cartItems]);
+  }, [cartItems, user]);
 
   return (
     <div className="cart_main">
@@ -98,8 +116,35 @@ function Cart({ removeFromCart, cartItems, reduceQtyFromCart, addToCart }) {
                   <button onClick={() => handleIncreaseQty(product)}>+</button>
                 </div>
                 <p className="cart_product_price cart_item_detail cart_item_sap">
-                  <span className="cart_item_title">Price: </span>$
-                  {(product.price * product.qty).toFixed(2)}
+                  <span className="cart_item_title">Price: </span>
+                  <div className="cart_item_price">
+                    <span
+                      style={{
+                        color:
+                          product.hotDeal.status && user
+                            ? "lightgray"
+                            : "white",
+                        textDecoration:
+                          product.hotDeal.status && user
+                            ? "line-through"
+                            : "none",
+                        fontSize:
+                          product.hotDeal.status && user ? "1.2rem" : "1.5rem",
+                      }}
+                    >
+                      ${(product.price * product.qty).toFixed(2)}
+                    </span>
+
+                    <span>
+                      {product.hotDeal.status && user
+                        ? `$${(
+                            (product.price -
+                              product.hotDeal.discount * product.price) *
+                            product.qty
+                          ).toFixed(2)}`
+                        : ""}
+                    </span>
+                  </div>
                 </p>
 
                 <div className="cart_close">
@@ -143,6 +188,7 @@ function Cart({ removeFromCart, cartItems, reduceQtyFromCart, addToCart }) {
 
 const mapStateToProps = (state) => ({
   cartItems: state.CartState,
+  user: state.userState,
 });
 const dispatchStateToProps = (dispatch) => ({
   removeFromCart: (payload) => dispatch(removeFromCartAPI(payload)),

@@ -183,7 +183,17 @@
     }
 }
 
-
+.cart_item_price{
+    display:flex;
+    flex-direction: column;
+    @media (max-width:600px) {
+        flex-direction: row-reverse;
+        gap:1rem;
+        align-items: flex-end;
+        
+        
+    }
+}
 
 .cart_total_bill{
     display:flex;

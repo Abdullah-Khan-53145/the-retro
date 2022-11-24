@@ -5,6 +5,9 @@ import {
   SET_ALL_SHOES,
   REMOVE_FROM_CART,
   REDUCE_QTY,
+  TOGGLE_MODAL,
+  LOG_IN,
+  LOG_OUT,
 } from "./actions";
 
 // Action to add item to cart
@@ -44,6 +47,27 @@ export const setAllShoes = (payload) => {
     payload: payload,
   };
 };
+// Action to toggle login modal
+export const toggleModal = (payload) => {
+  return {
+    type: TOGGLE_MODAL,
+    payload: payload,
+  };
+};
+// Action to set User modal
+export const logIn = (payload) => {
+  return {
+    type: LOG_IN,
+    payload: payload,
+  };
+};
+// Action to remove User modal
+export const logOut = (payload) => {
+  return {
+    type: LOG_OUT,
+    payload: payload,
+  };
+};
 
 export function setProductAPI(payload) {
   localStorage.setItem("product", JSON.stringify(payload));
@@ -76,5 +100,21 @@ export function removeFromCartAPI(payload) {
 export function reduceQtyAPI(payload) {
   return (dispatch) => {
     dispatch(reduceQty(payload));
+  };
+}
+
+export function toggleModalAPI(payload) {
+  return (dispatch) => {
+    dispatch(toggleModal(payload));
+  };
+}
+export function logInAPI(payload) {
+  return (dispatch) => {
+    dispatch(logIn(payload));
+  };
+}
+export function logOutAPI() {
+  return (dispatch) => {
+    dispatch(logOut());
   };
 }
