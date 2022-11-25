@@ -201,7 +201,9 @@
     display:flex;
     justify-content: flex-end;  
     .total_bill{
+        width: fit-content;
         display:flex;
+        justify-content: flex-end;  
         flex-direction: column;
         gap:10px;
         h3{

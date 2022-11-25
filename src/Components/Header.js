@@ -173,7 +173,7 @@ function Header({ cart, setProduct, allShoes, user, logIn, logOut }) {
 
             <div className="header__main_User__text">
               <div>
-                Welcome,{" "}
+                Welcome,
                 <b>{user ? user.displayName.split(" ")[0] : "Guest"}</b>
               </div>
               <button className="primary-button" onClick={handleLogInLogOut}>

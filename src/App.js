@@ -6,6 +6,7 @@ import Product from "./Components/Product";
 import Footer from "./Components/Footer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
 function App() {
   const router = createBrowserRouter([
     {
@@ -41,6 +42,15 @@ function App() {
         <>
           <Header />
           <Cart />
+        </>
+      ),
+    },
+    {
+      path: "checkout",
+      element: (
+        <>
+          <Header />
+          <Checkout />
         </>
       ),
     },

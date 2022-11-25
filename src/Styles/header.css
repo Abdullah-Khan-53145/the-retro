@@ -6,10 +6,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
 .header__main {
   width: 100%;
   font-family: "Poppins", sans-serif;
@@ -154,6 +150,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 5px;
   margin: 0 10px;
 }
@@ -172,7 +171,7 @@
 }
 
 .header__main_User__text {
-  font-size: 14px;
+  font-size: 1.5rem;
   line-height: 18px;
   color: white;
   display: -webkit-box;
@@ -190,6 +189,14 @@
 
 .header__main_User__text div {
   font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: .2rem;
+  color: white;
+}
+
+.header__main_User__text div b {
   color: lightgray;
 }
 
@@ -226,7 +233,7 @@
 .header__main_User__text button img {
   width: 1.2rem;
   position: absolute;
-  top: .3rem;
+  bottom: .2rem;
   right: 3.43rem;
   border-radius: 0;
   -webkit-transform: translateY(-3px);
@@ -259,7 +266,7 @@
 }
 
 .cart__dummy__icon {
-  width: 100px;
+  width: 8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

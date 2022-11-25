@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { reduceQtyAPI, removeFromCartAPI, addToCartAPI } from "../actions";
 
 import "../Styles/cart.css";
@@ -15,8 +16,8 @@ function Cart({
       ? "./imgs/your_cart_heading.png"
       : "./imgs/your_cart_heading_mob.png"
   );
-  const [totalPrice, setTotalPrice] = useState(0);
   const [renderableCart, setRenderableCart] = useState(cartItems);
+  const [totalPrice, setTotalPrice] = useState(0);
   // Funtions
   const getTotalPrice = () => {
     let caltotalPrice = 0;
@@ -183,7 +184,18 @@ function Cart({
               <h3>
                 Shipping : <span>${Math.floor(totalPrice * 0.2)}</span>
               </h3>
-              <button className="primary-button">Proceed to Checkout</button>
+
+              <button
+                className="primary-button"
+                disabled={cartItems.length === 0}
+              >
+                <Link
+                  to={cartItems.length === 0 ? "" : "/checkout"}
+                  style={{ color: "white", textDecoration: "none" }}
+                >
+                  Proceed to Checkout
+                </Link>
+              </button>
             </div>
           </div>
         </div>
