@@ -1,4 +1,9 @@
-import { ADD_TO_CART, REDUCE_QTY, REMOVE_FROM_CART } from "../actions/actions";
+import {
+  ADD_TO_CART,
+  REDUCE_QTY,
+  REMOVE_FROM_CART,
+  EMPTY_CART,
+} from "../actions/actions";
 
 const initialState = [];
 let qty = 0;
@@ -36,6 +41,9 @@ const addToCart = (state = initialState, action) => {
         (item) => state.indexOf(item) !== action.payload.index
       );
       return [...newCartAfterRemoving];
+    case EMPTY_CART:
+      console.log(action.payload);
+      return [];
     default:
       return state;
   }

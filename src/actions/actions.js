@@ -7,3 +7,4 @@ export const SET_ALL_SHOES = "SET_ALL_SHOES";
 export const TOGGLE_MODAL = "TOGGLE_MODAL";
 export const LOG_IN = "LOG_IN";
 export const LOG_OUT = "LOG_OUT";
+export const EMPTY_CART = "EMPTY_CART";

@@ -127,7 +127,7 @@
 
 
 
-form{
+.costomer__details__form{
     height: 100%;
     .form_slots{
         height: 100%;
@@ -170,7 +170,8 @@ form{
         }
        
         .input{
-            
+            display: flex;
+            align-items: center;
             padding: 0px;
             padding-left: 5px;
             input{
@@ -209,6 +210,9 @@ form{
     }
 }
 .costomer__phone{
+    
+
+   
     width: 30%;
     @media (max-width:756px) {
         width:100%;
@@ -291,4 +295,51 @@ form{
         }
     }
     
+}
+.order__confrim__news{
+    justify-content: center;
+    align-items: center;
+    h1{
+        font-size: 3rem;
+    }
+    h2{
+        font-size: 2rem;
+    }
+}
+.order__confrim__news_child{
+    background-color: $bg-cards;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    .top_message{
+        border-bottom: 1px solid gray;
+        padding-bottom: 1rem;
+        display:flex;
+        flex-direction: column;
+        gap:1rem;
+        align-items: center;
+        h2{
+            font-weight: 200;
+        }
+        svg{
+            color:green;
+            background-color: white;
+            border-radius: 50%;
+            width: 4rem;
+
+        }        
+    }
+    .order_info_row{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        .name, .adress{
+            text-align: end;
+        }
+        div{
+            width: 50%;
+        }
+    }
 }

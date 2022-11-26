@@ -127,209 +127,214 @@ function Product({
 
   return (
     <div className="main_product">
-      <div className="product_main_child">
-        <div className="product_main_child_images_section_parent">
-          <div
-            className="product_main_child_images_section_child"
-            style={position}
-          >
-            <div className="product_main_child_images_section_child_image">
-              <div className="product_main_child_images_section_slider">
-                <button
-                  className="left_arrow arrow"
-                  onClick={handleLeftArrowClick}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.75 19.5L8.25 12l7.5-7.5"
-                    />
-                  </svg>
-                </button>
-                <div className="main_product_image">
-                  <img src={product.imgs[imgColorIndex][imgIndex]} alt="" />
-                </div>
-                <button
-                  className="right_arrow arrow"
-                  onClick={handleRightArrowClick}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div className="product_main_child_images_section_samples">
-                <div
-                  className="shoe_sample_image"
-                  style={{
-                    border: imgIndex === 0 ? "3px solid red" : "none",
-                  }}
-                  onClick={() => {
-                    setImgIndex(0);
-                  }}
-                >
-                  <img src={product.imgs[imgColorIndex][0]} alt="" />
-                </div>
-                <div
-                  className="shoe_sample_image"
-                  style={{
-                    border: imgIndex === 1 ? "3px solid red" : "none",
-                  }}
-                  onClick={() => {
-                    setImgIndex(1);
-                  }}
-                >
-                  <img src={product.imgs[imgColorIndex][1]} alt="" />
-                </div>
-                <div
-                  className="shoe_sample_image"
-                  style={{
-                    border: imgIndex === 2 ? "3px solid red" : "none",
-                  }}
-                  onClick={() => {
-                    setImgIndex(2);
-                  }}
-                >
-                  <img src={product.imgs[imgColorIndex][2]} alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="product_main_child_Info_section">
-          <div className="product_main_heading_and_info">
-            <h1>{product.name}</h1>
-            <p>{product.description}</p>
-          </div>
-          <div className="product_average_rating">
-            <h3>Average Rating</h3>
-            <p>⭐⭐⭐⭐⭐ {product.averageRating}</p>
-          </div>
-          <div className="product_average_price">
-            <h3>Price</h3>
-            <h3
-              style={{
-                color: product.hotDeal.status && user ? "gray" : "white",
-                textDecoration:
-                  product.hotDeal.status && user ? "line-through" : "none",
-                fontSize: product.hotDeal.status && user ? "1.5rem" : "2.5rem",
-              }}
+      {product ? (
+        <div className="product_main_child">
+          <div className="product_main_child_images_section_parent">
+            <div
+              className="product_main_child_images_section_child"
+              style={position}
             >
-              ${product.price.toFixed(2)}
-            </h3>
-            <h3>
-              {product.hotDeal.status && user
-                ? `$${(
-                    product.price -
-                    product.price * product.hotDeal.discount
-                  ).toFixed(2)}`
-                : ""}
-            </h3>
-          </div>
-          <div className="product_sizes">
-            <h3>Select Size</h3>
-            <div className="product_size">
-              {product.size.map((size, index) => (
-                <div
-                  onClick={() => setSizeIndex(index)}
-                  key={index}
-                  style={{
-                    border: sizeIndex === index ? "2px solid red" : "none",
-                  }}
-                >
-                  {size}
+              <div className="product_main_child_images_section_child_image">
+                <div className="product_main_child_images_section_slider">
+                  <button
+                    className="left_arrow arrow"
+                    onClick={handleLeftArrowClick}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 19.5L8.25 12l7.5-7.5"
+                      />
+                    </svg>
+                  </button>
+                  <div className="main_product_image">
+                    <img src={product.imgs[imgColorIndex][imgIndex]} alt="" />
+                  </div>
+                  <button
+                    className="right_arrow arrow"
+                    onClick={handleRightArrowClick}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </button>
                 </div>
-              ))}
+                <div className="product_main_child_images_section_samples">
+                  <div
+                    className="shoe_sample_image"
+                    style={{
+                      border: imgIndex === 0 ? "3px solid red" : "none",
+                    }}
+                    onClick={() => {
+                      setImgIndex(0);
+                    }}
+                  >
+                    <img src={product.imgs[imgColorIndex][0]} alt="" />
+                  </div>
+                  <div
+                    className="shoe_sample_image"
+                    style={{
+                      border: imgIndex === 1 ? "3px solid red" : "none",
+                    }}
+                    onClick={() => {
+                      setImgIndex(1);
+                    }}
+                  >
+                    <img src={product.imgs[imgColorIndex][1]} alt="" />
+                  </div>
+                  <div
+                    className="shoe_sample_image"
+                    style={{
+                      border: imgIndex === 2 ? "3px solid red" : "none",
+                    }}
+                    onClick={() => {
+                      setImgIndex(2);
+                    }}
+                  >
+                    <img src={product.imgs[imgColorIndex][2]} alt="" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="product_colors">
-            <h3>Select colors</h3>
-            <div className="product_color">
-              {product.colors.map((color, index) => (
-                <div
-                  key={index}
-                  onClick={() => {
-                    setImgColorIndex(index);
-                  }}
-                  style={{
-                    background: color,
-                    padding: "2px",
+          <div className="product_main_child_Info_section">
+            <div className="product_main_heading_and_info">
+              <h1>{product.name}</h1>
+              <p>{product.description}</p>
+            </div>
+            <div className="product_average_rating">
+              <h3>Average Rating</h3>
+              <p>⭐⭐⭐⭐⭐ {product.averageRating}</p>
+            </div>
+            <div className="product_average_price">
+              <h3>Price</h3>
+              <h3
+                style={{
+                  color: product.hotDeal.status && user ? "gray" : "white",
+                  textDecoration:
+                    product.hotDeal.status && user ? "line-through" : "none",
+                  fontSize:
+                    product.hotDeal.status && user ? "1.5rem" : "2.5rem",
+                }}
+              >
+                ${product.price.toFixed(2)}
+              </h3>
+              <h3>
+                {product.hotDeal.status && user
+                  ? `$${(
+                      product.price -
+                      product.price * product.hotDeal.discount
+                    ).toFixed(2)}`
+                  : ""}
+              </h3>
+            </div>
+            <div className="product_sizes">
+              <h3>Select Size</h3>
+              <div className="product_size">
+                {product.size.map((size, index) => (
+                  <div
+                    onClick={() => setSizeIndex(index)}
+                    key={index}
+                    style={{
+                      border: sizeIndex === index ? "2px solid red" : "none",
+                    }}
+                  >
+                    {size}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="product_colors">
+              <h3>Select colors</h3>
+              <div className="product_color">
+                {product.colors.map((color, index) => (
+                  <div
+                    key={index}
+                    onClick={() => {
+                      setImgColorIndex(index);
+                    }}
+                    style={{
+                      background: color,
+                      padding: "2px",
 
-                    border:
-                      index === imgColorIndex ? "2px solid white" : "none",
-                  }}
-                ></div>
-              ))}
+                      border:
+                        index === imgColorIndex ? "2px solid white" : "none",
+                    }}
+                  ></div>
+                ))}
+              </div>
             </div>
-          </div>
-          <button className="primary-button" onClick={handleAddToCart}>
-            Add To Cart
-          </button>
-          <div className="realted_products">
-            <h3>Related product</h3>
-            <div className="related_products_parent">
-              {allShoes.map((shoe, index) => {
-                if (
-                  index > relatedProductIndex &&
-                  index <= relatedProductIndex + 3
-                ) {
-                  return (
-                    <div className="related_product" key={index}>
-                      <h4>
-                        {shoe.name.length > 40
-                          ? shoe.name.slice(0, 40) + " ..."
-                          : shoe.name}
-                      </h4>
-                      <div className="product_details">
-                        <div className="related_product_img">
-                          <img src={shoe.coverImg} alt="" />
-                        </div>
-                        <div className="product_info">
-                          <div className="product_description">
-                            <p>
-                              {shoe.description.length > 60
-                                ? shoe.description.slice(0, 60) + " ..."
-                                : shoe.description}
-                            </p>
+            <button className="primary-button" onClick={handleAddToCart}>
+              Add To Cart
+            </button>
+            <div className="realted_products">
+              <h3>Related product</h3>
+              <div className="related_products_parent">
+                {allShoes.map((shoe, index) => {
+                  if (
+                    index > relatedProductIndex &&
+                    index <= relatedProductIndex + 3
+                  ) {
+                    return (
+                      <div className="related_product" key={index}>
+                        <h4>
+                          {shoe.name.length > 40
+                            ? shoe.name.slice(0, 40) + " ..."
+                            : shoe.name}
+                        </h4>
+                        <div className="product_details">
+                          <div className="related_product_img">
+                            <img src={shoe.coverImg} alt="" />
                           </div>
-                          <div className="rating">
-                            ⭐⭐⭐⭐⭐<span>{shoe.averageRating}</span>
+                          <div className="product_info">
+                            <div className="product_description">
+                              <p>
+                                {shoe.description.length > 60
+                                  ? shoe.description.slice(0, 60) + " ..."
+                                  : shoe.description}
+                              </p>
+                            </div>
+                            <div className="rating">
+                              ⭐⭐⭐⭐⭐<span>{shoe.averageRating}</span>
+                            </div>
+                            <div className="price">
+                              <h5>${shoe.price}</h5>
+                            </div>
+                            <Link
+                              to="/product"
+                              onClick={() => handleClick(shoe)}
+                            >
+                              <button className="primary-button">
+                                Buy Product
+                              </button>
+                            </Link>
                           </div>
-                          <div className="price">
-                            <h5>${shoe.price}</h5>
-                          </div>
-                          <Link to="/product" onClick={() => handleClick(shoe)}>
-                            <button className="primary-button">
-                              Buy Product
-                            </button>
-                          </Link>
                         </div>
                       </div>
-                    </div>
-                  );
-                }
-              })}
+                    );
+                  }
+                })}
 
-              {/* <div className="related_product">
+                {/* <div className="related_product">
                 <h4>{product.name}</h4>
                 <div className="product_details">
                   <div className="related_product_img">
@@ -377,76 +382,81 @@ function Product({
                   </div>
                 </div>
               </div> */}
-            </div>
-          </div>
-          <div className="product_rating">
-            <h3>Costomer Reviews</h3>
-            <span className="product_ratings">
-              ⭐⭐⭐⭐⭐ {product.averageRating}
-            </span>
-            <div className="costomer_ratings">
-              <div className="stars 5_stars" id="5_stars">
-                <span>5 stars</span>
-                <div className="stars_bar">
-                  <div
-                    className="load_bar"
-                    style={{ width: ratings.five }}
-                  ></div>
-                </div>
-              </div>
-              <div className="stars 4_stars" id="4_stars">
-                <span>4 stars</span>
-                <div className="stars_bar">
-                  <div
-                    className="load_bar"
-                    style={{ width: ratings.four }}
-                  ></div>
-                </div>
-              </div>
-              <div className="stars 3_stars" id="3_stars">
-                <span>3 stars</span>
-                <div className="stars_bar">
-                  <div
-                    className="load_bar"
-                    style={{ width: ratings.three }}
-                  ></div>
-                </div>
-              </div>
-              <div className="stars 2_stars" id="2_stars">
-                <span>2 stars</span>
-                <div className="stars_bar">
-                  <div
-                    className="load_bar"
-                    style={{ width: ratings.two }}
-                  ></div>
-                </div>
-              </div>
-              <div className="stars 1_stars" id="1_stars">
-                <span>1 stars</span>
-                <div className="stars_bar">
-                  <div
-                    className="load_bar"
-                    style={{ width: ratings.one }}
-                  ></div>
-                </div>
               </div>
             </div>
-          </div>
-          <button className="primary-button">Write a Review</button>
-          {product.reviews.length !== 0 &&
-            product.reviews.map((review, index) => (
-              <div className="costomer_reviews" key={index}>
-                <div className="review">
-                  <h3>{review.name}</h3>
-                  <div className="rating">
-                    ⭐⭐⭐⭐⭐<span>{review.rate}</span>
+            <div className="product_rating">
+              <h3>Costomer Reviews</h3>
+              <span className="product_ratings">
+                ⭐⭐⭐⭐⭐ {product.averageRating}
+              </span>
+              <div className="costomer_ratings">
+                <div className="stars 5_stars" id="5_stars">
+                  <span>5 stars</span>
+                  <div className="stars_bar">
+                    <div
+                      className="load_bar"
+                      style={{ width: ratings.five }}
+                    ></div>
                   </div>
-                  <p>{review.review}</p>
+                </div>
+                <div className="stars 4_stars" id="4_stars">
+                  <span>4 stars</span>
+                  <div className="stars_bar">
+                    <div
+                      className="load_bar"
+                      style={{ width: ratings.four }}
+                    ></div>
+                  </div>
+                </div>
+                <div className="stars 3_stars" id="3_stars">
+                  <span>3 stars</span>
+                  <div className="stars_bar">
+                    <div
+                      className="load_bar"
+                      style={{ width: ratings.three }}
+                    ></div>
+                  </div>
+                </div>
+                <div className="stars 2_stars" id="2_stars">
+                  <span>2 stars</span>
+                  <div className="stars_bar">
+                    <div
+                      className="load_bar"
+                      style={{ width: ratings.two }}
+                    ></div>
+                  </div>
+                </div>
+                <div className="stars 1_stars" id="1_stars">
+                  <span>1 stars</span>
+                  <div className="stars_bar">
+                    <div
+                      className="load_bar"
+                      style={{ width: ratings.one }}
+                    ></div>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
+            <button className="primary-button">Write a Review</button>
+            {product.reviews.length !== 0 &&
+              product.reviews.map((review, index) => (
+                <div className="costomer_reviews" key={index}>
+                  <div className="review">
+                    <h3>{review.name}</h3>
+                    <div className="rating">
+                      ⭐⭐⭐⭐⭐<span>{review.rate}</span>
+                    </div>
+                    <p>{review.review}</p>
+                  </div>
+                </div>
+              ))}
+          </div>
         </div>
-      </div>
+      ) : (
+        <h1 style={{ width: "100%", textAlign: "center", minHeight: "50vh" }}>
+          Error 404 Page not found
+        </h1>
+      )}
     </div>
   );
 }

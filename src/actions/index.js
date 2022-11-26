@@ -8,11 +8,17 @@ import {
   TOGGLE_MODAL,
   LOG_IN,
   LOG_OUT,
+  EMPTY_CART,
 } from "./actions";
 
 // Action to add item to cart
 export const addToCart = (payload) => ({
   type: ADD_TO_CART,
+  payload: payload,
+});
+// Action to add item to cart
+export const emptyCart = (payload) => ({
+  type: EMPTY_CART,
   payload: payload,
 });
 // Action to Remove item to cart
@@ -95,6 +101,11 @@ export function addToCartAPI(payload) {
 export function removeFromCartAPI(payload) {
   return (dispatch) => {
     dispatch(removeFromCart(payload));
+  };
+}
+export function emptyCartAPI(payload) {
+  return (dispatch) => {
+    dispatch(emptyCart(payload));
   };
 }
 export function reduceQtyAPI(payload) {
