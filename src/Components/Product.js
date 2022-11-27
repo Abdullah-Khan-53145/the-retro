@@ -32,7 +32,7 @@ function Product({
   const handleAddToCart = () => {
     addToCart({
       name: product.name,
-      img: product.coverImg,
+      img: product.imgs[imgColorIndex][0],
       price: product.price,
       id: `${product.name}-${sizeIndex}-${imgColorIndex}`,
       hotDeal: product.hotDeal,
@@ -110,6 +110,11 @@ function Product({
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
+  useEffect(() => {
+    setImgColorIndex(0);
+    setImgIndex(0);
+    setSizeIndex(0);
+  }, [product]);
 
   useEffect(() => {
     setRelatedProductIndex(getRandomInt(0, 5));

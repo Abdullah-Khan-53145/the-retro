@@ -63,6 +63,7 @@
         width: 10rem;
         img{
             width: 100%;
+            transform: rotate(30deg);
             height: 100%;
             object-fit: contain;
         }
@@ -315,6 +316,7 @@
     font-size: 2rem;
     .top_message{
         border-bottom: 1px solid gray;
+        // border-bottom: 1px solid ;
         padding-bottom: 1rem;
         display:flex;
         flex-direction: column;

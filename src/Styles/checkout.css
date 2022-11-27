@@ -92,6 +92,8 @@
 
 .checkout__page__ordered__item .item__img img {
   width: 100%;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;

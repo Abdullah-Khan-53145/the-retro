@@ -98,19 +98,19 @@ const initialState = [
     colors: ["black", "blue", "lightgray"],
     imgs: [
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_A.png?alt=media&token=f851f64c-c346-4c17-9b67-1c5a02573a66",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_B.png?alt=media&token=cc09b746-7292-464e-b012-493df96ac6f8",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_C.png?alt=media&token=c2370e49-6573-4b4b-87d6-2c8dcae61cd4",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_2%2Fshoe_2_black_A.png?alt=media&token=a1b0e5e5-e701-443a-8d08-0c924e8b1eed",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_2%2Fshoe_2_black_C.png?alt=media&token=b9c25a6d-c020-4e6c-ae39-598fa4581943",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_2%2Fshoe_2_black_B.png?alt=media&token=56c5e0ec-646e-44f6-8a13-af1b58ae9e8e ",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_A.png?alt=media&token=95f2ca35-81b9-4639-be9f-cb503f6c34e6",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_B.png?alt=media&token=4686e7e1-090f-4e34-9586-7f49bb1eb393",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_C.png?alt=media&token=15cd15af-7b0e-4785-8dab-14e2601f05ef",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_2%2Fshoe_2_blue_A.png?alt=media&token=3f0fa6b1-f46c-498f-8ad8-8a4461bdb01e",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_2%2Fshoe_2_blue_B.png?alt=media&token=ca1ac562-147a-48cf-9f5f-48d24b0cecd7",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_2%2Fshoe_2_blue_C.png?alt=media&token=55363520-7383-4736-969c-69fdeb9fe241",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_A.png?alt=media&token=5866ac58-9577-44bb-beae-840cff0fe26c",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_B.png?alt=media&token=725b8c29-1791-41b6-8b88-4592092dbd0a",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_C.png?alt=media&token=1a10a2c0-8cb2-42db-8a11-d890bc47ab5a",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_2%2Fshoe_2_lightgray_A.png?alt=media&token=5a223aeb-a17c-439c-a070-5cd7c97f038a",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_2%2Fshoe_2_lightgray_B.png?alt=media&token=2bb64c6b-86df-414e-8391-6f5a8502d159",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_2%2Fshoe_2_lightgray_C.png?alt=media&token=f02cf432-e276-4284-b7e0-da9349a5f26a",
       ],
     ],
     description:
@@ -176,22 +176,22 @@ const initialState = [
       "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_3%2Fshoe_3_main.png?alt=media&token=73cf50b1-0a60-4842-a808-2cc85af99471",
     featured: true,
     hotDeal: { status: false, discount: 0 },
-    colors: ["black", "navy", "brown"],
+    colors: ["black", "rgb(92, 77, 38)", "navy"],
     imgs: [
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_A.png?alt=media&token=f851f64c-c346-4c17-9b67-1c5a02573a66",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_B.png?alt=media&token=cc09b746-7292-464e-b012-493df96ac6f8",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_C.png?alt=media&token=c2370e49-6573-4b4b-87d6-2c8dcae61cd4",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_3%2Fshoe_3_black_A.png?alt=media&token=428763fe-de6c-44f7-bdf0-af623fdf474b",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_3%2Fshoe_3_black_B.png?alt=media&token=211d0b12-ce57-4fe7-97d4-a6e4359cded8",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_3%2Fshoe_3_black_C.png?alt=media&token=def122ee-3c77-4958-9bcc-4dd432f68ee3",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_A.png?alt=media&token=95f2ca35-81b9-4639-be9f-cb503f6c34e6",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_B.png?alt=media&token=4686e7e1-090f-4e34-9586-7f49bb1eb393",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_C.png?alt=media&token=15cd15af-7b0e-4785-8dab-14e2601f05ef",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_3%2Fshoe_3_brown_A%20(2).png?alt=media&token=c632dbcd-bb46-4c65-809e-3390b8cb7d62",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_3%2Fshoe_3_brown_B.png?alt=media&token=41a15323-9c9b-46e1-a531-7dae77dd960e",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_3%2Fshoe_3_brown_C.png?alt=media&token=ea751113-e0d5-4788-8bf0-a2f8d14e4d67",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_A.png?alt=media&token=5866ac58-9577-44bb-beae-840cff0fe26c",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_B.png?alt=media&token=725b8c29-1791-41b6-8b88-4592092dbd0a",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_C.png?alt=media&token=1a10a2c0-8cb2-42db-8a11-d890bc47ab5a",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_3%2Fshoe_3_navyblue_A.png?alt=media&token=5750c021-eecc-4c3b-868e-76340d28afa4",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_3%2Fshoe_3_navyblue_B.png?alt=media&token=d0a497ec-7564-41e8-9442-e36d1755e513",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_3%2Fshoe_3_navyblue_C.png?alt=media&token=c4b7192d-3041-4124-bb35-4623a4e11e8a",
       ],
     ],
     description:
@@ -257,25 +257,25 @@ const initialState = [
   {
     name: "adidas Men's Lite Racer Adapt 3.0 Running Shoe",
     coverImg:
-      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_4%2Fshoe_4_main.png?alt=media&token=2c353311-99a8-4db6-ad77-6ce5d5e4deca",
+      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_4%2Fshoe_4_main.png?alt=media&token=97ee9e5c-5ea1-4a81-b1c3-e3cf3cb706a7",
     colors: ["blue", "navy", "red"],
     featured: true,
     hotDeal: { status: false, discount: 0 },
     imgs: [
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_A.png?alt=media&token=f851f64c-c346-4c17-9b67-1c5a02573a66",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_B.png?alt=media&token=cc09b746-7292-464e-b012-493df96ac6f8",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_C.png?alt=media&token=c2370e49-6573-4b4b-87d6-2c8dcae61cd4",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_4%2Fshoe_4_blue_A.png?alt=media&token=0b20898f-55b6-492c-b198-1c9c1e69f44d",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_4%2Fshoe_4_blue_B.png?alt=media&token=ddc352d2-bdc5-43cb-833b-f39258b4e67c",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_4%2Fshoe_4_blue_C.png?alt=media&token=12af8982-52a7-463d-9fa2-a957879621e6",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_A.png?alt=media&token=95f2ca35-81b9-4639-be9f-cb503f6c34e6",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_B.png?alt=media&token=4686e7e1-090f-4e34-9586-7f49bb1eb393",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_C.png?alt=media&token=15cd15af-7b0e-4785-8dab-14e2601f05ef",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_4%2Fshoe_4_navyblue_A.png?alt=media&token=94a88f3f-de7d-4739-a336-5e11fee649eb",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_4%2Fshoe_4_navyblue_B.png?alt=media&token=8b230a83-8473-4540-b1ed-18e5b4582c97",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_4%2Fshoe_4_navyblue_C.png?alt=media&token=50d759b7-f3b6-4dd0-96b4-4b53392d13a9",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_A.png?alt=media&token=5866ac58-9577-44bb-beae-840cff0fe26c",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_B.png?alt=media&token=725b8c29-1791-41b6-8b88-4592092dbd0a",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_C.png?alt=media&token=1a10a2c0-8cb2-42db-8a11-d890bc47ab5a",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_4%2Fshoe_4_red_A.png?alt=media&token=c7ee418e-ab64-496a-acb9-c2a371c72914",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_4%2Fshoe_4_red_B.png?alt=media&token=6847d63e-406e-469d-8647-2a571fe4d7e5",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_4%2Fshoe_4_red_C.png?alt=media&token=b1566337-fefd-42a8-9c41-c1f00bce9555",
       ],
     ],
     description:
@@ -339,25 +339,25 @@ const initialState = [
   {
     name: "adidas Men's Kaptir 2.0 Running Shoe",
     coverImg:
-      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_5%2Fshoe_5_main.png?alt=media&token=d000241a-f162-45c5-823f-d0197c8d5998",
+      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_5%2Fshoe_5_main.png?alt=media&token=aeeda7fc-2e7a-4f5e-96b7-a1a004dd46f7",
     colors: ["white", "black", "lightgray"],
     featured: false,
     hotDeal: { status: true, discount: 0.2 },
     imgs: [
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_A.png?alt=media&token=f851f64c-c346-4c17-9b67-1c5a02573a66",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_B.png?alt=media&token=cc09b746-7292-464e-b012-493df96ac6f8",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_C.png?alt=media&token=c2370e49-6573-4b4b-87d6-2c8dcae61cd4",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_5%2Fshoe_5_white_A.png?alt=media&token=9d1b81b6-2c16-4735-87c2-4f79fd8aa6fb",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_5%2Fshoe_5_white_B.png?alt=media&token=73fa9412-4f3a-4de0-b2d9-2713f7044812",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_5%2Fshoe_5_white_C.png?alt=media&token=9979b56f-6c31-41f6-aaaa-9ef4147470ae",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_A.png?alt=media&token=95f2ca35-81b9-4639-be9f-cb503f6c34e6",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_B.png?alt=media&token=4686e7e1-090f-4e34-9586-7f49bb1eb393",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_C.png?alt=media&token=15cd15af-7b0e-4785-8dab-14e2601f05ef",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_5%2Fshoe_5_black_A-.png?alt=media&token=37a78608-bd65-4cdc-b9f9-88af618c8724",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_5%2Fshoe_5_black_B-.png?alt=media&token=b103960b-90c1-41b5-a8ad-7aaa0ae1a74f",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_5%2Fshoe_5_black_C-.png?alt=media&token=6d3d0f2f-e36e-43d4-b57e-0fc46fdd5ec6",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_A.png?alt=media&token=5866ac58-9577-44bb-beae-840cff0fe26c",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_B.png?alt=media&token=725b8c29-1791-41b6-8b88-4592092dbd0a",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_C.png?alt=media&token=1a10a2c0-8cb2-42db-8a11-d890bc47ab5a",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_5%2Fshoe_5_lightgray_A-.png?alt=media&token=f96bd130-19d1-4fc8-9d0b-d61f9656a24c",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_5%2Fshoe_5_lightgray_B.png?alt=media&token=d3482c64-1310-4525-89e9-8cd2abb0812f",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_5%2Fshoe_5_lightgray_C.png?alt=media&token=6fa0e125-8fac-4e8a-949f-14084860caf5",
       ],
     ],
     description:
@@ -421,25 +421,25 @@ const initialState = [
   {
     name: "Nike Mens KD Trey 5 VIII Basketball Shoes",
     coverImg:
-      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_6%2Fshoe_6_main.png?alt=media&token=65a7beaf-ed0e-455f-a30d-35c03b501197",
+      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_6%2Fshoe_6_main.png?alt=media&token=cae1d1c7-927d-4260-8706-3e71020fd59e",
     colors: ["red", "black", "lightgreen"],
     featured: false,
     hotDeal: { status: true, discount: 0.1 },
     imgs: [
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_A.png?alt=media&token=f851f64c-c346-4c17-9b67-1c5a02573a66",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_B.png?alt=media&token=cc09b746-7292-464e-b012-493df96ac6f8",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_C.png?alt=media&token=c2370e49-6573-4b4b-87d6-2c8dcae61cd4",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_6%2Fshoe_6_red_A.png?alt=media&token=180acfb8-32a1-42f5-9394-6a1900308f1f",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_6%2Fshoe_6_red_B.png?alt=media&token=d388383f-dbe0-4b10-a431-2cdf7f69406f",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_6%2Fshoe_6_red_C.png?alt=media&token=b9abd852-a13f-407e-ac63-ef7ea21b176e",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_A.png?alt=media&token=95f2ca35-81b9-4639-be9f-cb503f6c34e6",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_B.png?alt=media&token=4686e7e1-090f-4e34-9586-7f49bb1eb393",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_C.png?alt=media&token=15cd15af-7b0e-4785-8dab-14e2601f05ef",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_6%2Fshoe_6_black_A%20.png?alt=media&token=d5e4e9e8-6ae8-4135-b6cd-90f713f5f759",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_6%2Fshoe_6_black_B.png?alt=media&token=576304bc-fc59-47f5-9ff8-01ccbce5826c",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_6%2Fshoe_6_black_C.png?alt=media&token=b16e2594-b1b2-4e0a-82c8-ff29ad5742ab",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_A.png?alt=media&token=5866ac58-9577-44bb-beae-840cff0fe26c",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_B.png?alt=media&token=725b8c29-1791-41b6-8b88-4592092dbd0a",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_C.png?alt=media&token=1a10a2c0-8cb2-42db-8a11-d890bc47ab5a",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_6%2Fshoe_6_green_A.png?alt=media&token=85419c52-2b84-436b-806a-013ae7ef6cbf",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_6%2Fshoe_6_green_B.png?alt=media&token=11c22761-653d-4aa7-8b1d-d1804f89b877",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_6%2Fshoe_6_green_C.png?alt=media&token=09128a17-92b9-47ce-ac69-ac1e644c034b",
       ],
     ],
     description:
@@ -469,25 +469,25 @@ const initialState = [
   {
     name: "PUMA Unisex-Child Roma Basic Summer JR-K",
     coverImg:
-      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_7%2Fshoe_7_main.png?alt=media&token=7d794f8b-51ba-465d-9d44-b0800cb33254",
+      "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_7%2Fshoe_7_main.png?alt=media&token=419653d7-ff2d-498b-9926-e06a5d39d2b3",
     colors: ["white", "black", "yellow"],
     featured: false,
     hotDeal: { status: true, discount: 0.5 },
     imgs: [
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_A.png?alt=media&token=f851f64c-c346-4c17-9b67-1c5a02573a66",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_B.png?alt=media&token=cc09b746-7292-464e-b012-493df96ac6f8",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_C.png?alt=media&token=c2370e49-6573-4b4b-87d6-2c8dcae61cd4",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_7%2Fshoe_7_white_A.png?alt=media&token=e2052c5b-3b15-46f4-8e1c-7ba470b17959",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_7%2Fshoe_7_white_B.png?alt=media&token=c851f995-042e-4ecf-a451-a361375d3580",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_7%2Fshoe_7_white_C.png?alt=media&token=9820c6ac-d655-4b74-ae00-887e757c8f94",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_A.png?alt=media&token=95f2ca35-81b9-4639-be9f-cb503f6c34e6",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_B.png?alt=media&token=4686e7e1-090f-4e34-9586-7f49bb1eb393",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_C.png?alt=media&token=15cd15af-7b0e-4785-8dab-14e2601f05ef",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_7%2Fshoe_7_black_A.png?alt=media&token=e5eb3a7e-094c-4d32-bead-6753b78b8c69",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_7%2Fshoe_7_black_B.png?alt=media&token=b483b408-ba64-4365-972b-5955d5d169cd",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_7%2Fshoe_7_black_C.png?alt=media&token=12e33afd-7bf4-450c-b24a-a75ababbcdd2",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_A.png?alt=media&token=5866ac58-9577-44bb-beae-840cff0fe26c",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_B.png?alt=media&token=725b8c29-1791-41b6-8b88-4592092dbd0a",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_C.png?alt=media&token=1a10a2c0-8cb2-42db-8a11-d890bc47ab5a",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_7%2Fshoe_7_yellow_A.png?alt=media&token=8e547270-bafb-4ec9-b44f-2340fe761c25",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_7%2Fshoe_7_yellow_B.png?alt=media&token=c6993ccc-f8db-4745-869a-ce1105a7be06",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_7%2Fshoe_7_yellow_C.png?alt=media&token=d00780b9-6b52-4a7e-8186-036440651712",
       ],
     ],
     description:
@@ -560,19 +560,19 @@ const initialState = [
     hotDeal: { status: false, discount: 0 },
     imgs: [
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_A.png?alt=media&token=f851f64c-c346-4c17-9b67-1c5a02573a66",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_B.png?alt=media&token=cc09b746-7292-464e-b012-493df96ac6f8",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_C.png?alt=media&token=c2370e49-6573-4b4b-87d6-2c8dcae61cd4",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_8%2Fshoe_8_blue_A.png?alt=media&token=ad75f463-4435-49b4-a70a-919a410e5566",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_8%2Fshoe_8_blue_B.png?alt=media&token=49616418-27bf-4e17-a6b8-dae8f8994943",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_8%2Fshoe_8_blue_C.png?alt=media&token=6e9f539a-6165-4241-8d1f-8d591a4e04f9",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_A.png?alt=media&token=95f2ca35-81b9-4639-be9f-cb503f6c34e6",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_B.png?alt=media&token=4686e7e1-090f-4e34-9586-7f49bb1eb393",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_C.png?alt=media&token=15cd15af-7b0e-4785-8dab-14e2601f05ef",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_8%2Fshoe_8_black_A.png?alt=media&token=a0daf77d-3977-43cf-a93f-bd05d66a0cf8",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_8%2Fshoe_8_black_B.png?alt=media&token=09d03e60-c6cb-4d42-82fa-f7009db79446",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_8%2Fshoe_8_black_C.png?alt=media&token=f41c4176-41b7-4840-8b75-fd536dca6342",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_A.png?alt=media&token=5866ac58-9577-44bb-beae-840cff0fe26c",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_B.png?alt=media&token=725b8c29-1791-41b6-8b88-4592092dbd0a",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_C.png?alt=media&token=1a10a2c0-8cb2-42db-8a11-d890bc47ab5a",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_8%2Fshoe_8_red_A.png?alt=media&token=74a6da73-7e9c-4dae-bf70-09a864bdd7a2",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_8%2Fshoe_8_red_B.png?alt=media&token=0f0442a4-6602-4279-9929-b753aec2faec",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_8%2Fshoe_8_red_C.png?alt=media&token=35497393-ba06-400a-9146-9f81275aea1e",
       ],
     ],
     description:
@@ -642,19 +642,19 @@ const initialState = [
     hotDeal: { status: true, discount: 0.25 },
     imgs: [
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_A.png?alt=media&token=f851f64c-c346-4c17-9b67-1c5a02573a66",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_B.png?alt=media&token=cc09b746-7292-464e-b012-493df96ac6f8",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_red_C.png?alt=media&token=c2370e49-6573-4b4b-87d6-2c8dcae61cd4",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_9%2Fshoe_9_lightblue_A.png?alt=media&token=4215fbee-f346-4de3-9974-7029cae1e8ad",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_9%2Fshoe_9_lightblue_B.png?alt=media&token=1d04efd8-cca8-416a-9c38-6c76561d01c1",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_9%2Fshoe_9_lightblue_C.png?alt=media&token=a79ddae8-7f75-44b3-901d-d0d0f296a9c7",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_A.png?alt=media&token=95f2ca35-81b9-4639-be9f-cb503f6c34e6",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_B.png?alt=media&token=4686e7e1-090f-4e34-9586-7f49bb1eb393",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_black_C.png?alt=media&token=15cd15af-7b0e-4785-8dab-14e2601f05ef",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_9%2Fshoe_9_lightgreen_A.png?alt=media&token=c49df6e2-3781-4adb-8743-af7df75d7faa",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_9%2Fshoe_9_lightgreen_B.png?alt=media&token=b693b7df-74c1-4beb-a2a8-145e30128971",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_9%2Fshoe_9_lightgreen_C.png?alt=media&token=8e44df18-28b8-4b13-8fb4-0e6003754dc4",
       ],
       [
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_A.png?alt=media&token=5866ac58-9577-44bb-beae-840cff0fe26c",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_B.png?alt=media&token=725b8c29-1791-41b6-8b88-4592092dbd0a",
-        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_1%2Fshoe_1_navy_blue_C.png?alt=media&token=1a10a2c0-8cb2-42db-8a11-d890bc47ab5a",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_9%2Fshoe_9_lightorange_A.png?alt=media&token=edbd0dd9-09a9-494f-8f48-a24ea9180ab7",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_9%2Fshoe_9_lightorange_B.png?alt=media&token=6dfd0b10-ad14-406c-a262-0ac1003d78f8",
+        "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_9%2Fshoe_9_lightorange_C.png?alt=media&token=b06d6875-cce9-4a9d-9752-aef1452e91a8",
       ],
     ],
     description:

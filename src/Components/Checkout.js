@@ -8,6 +8,7 @@ const countries = require("./countries.json");
 const countries_code = require("./PhoneCode.json");
 function Checkout({ user, allShoes, cartItems, emptyCart }) {
   const [country, setCountry] = useState("");
+  const [countryName, setCountryName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
@@ -34,8 +35,13 @@ function Checkout({ user, allShoes, cartItems, emptyCart }) {
   const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   useEffect(() => {
     console.log(cartItems);
-    setFirstName(user.displayName.split(" ")[0]);
-    setLastName(user.displayName.split(" ")[1]);
+    if (user) {
+      setFirstName(user.displayName.split(" ")[0]);
+      setLastName(user.displayName.split(" ")[1]);
+    } else {
+      setFirstName("");
+      setLastName("");
+    }
     getTotalPrice();
   }, [cartItems, user]);
 
@@ -78,7 +84,7 @@ function Checkout({ user, allShoes, cartItems, emptyCart }) {
       setCountry(e.target.value);
       setStates(JSON.parse(e.target.value).states);
       FindTheCountryCode(JSON.parse(e.target.value).country_name);
-      console.log(JSON.parse(e.target.value).country_name);
+      setCountryName(JSON.parse(e.target.value).country_name);
     }
   };
   const handlestate = (e) => {
@@ -129,13 +135,12 @@ function Checkout({ user, allShoes, cartItems, emptyCart }) {
   const handlesubmit = (e) => {
     e.preventDefault();
     setOrderconfrim(true);
+    emptyCart("done");
     setOrderConfrimDetail({
       First_Name: firstName,
       Last_Name: lastName,
       Phone: phone,
-      Adress: `${address},${city},${state},${
-        countries[JSON.parse(country).country_id - 1].country_name
-      },${postalCode}`,
+      Adress: `${address},${city},${state},${countryName},${postalCode}`,
       price: subtotalPrice - discount + 20,
     });
   };
@@ -208,9 +213,6 @@ function Checkout({ user, allShoes, cartItems, emptyCart }) {
           <Link
             style={{ color: "white", textDecoration: "none" }}
             to="/all-products"
-            onClick={(e) => {
-              emptyCart("done");
-            }}
           >
             <button className="primary-button">Continue shopping</button>
           </Link>
