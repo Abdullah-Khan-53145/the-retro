@@ -228,18 +228,9 @@
 
 .featured__products__card__info__img img {
   width: 20rem;
-  -webkit-transition: .4s transform;
-  transition: .4s transform;
   -o-object-fit: contain;
      object-fit: contain;
   height: 100%;
-}
-
-@media (min-width: 756px) {
-  .featured__products__card__info__img img:hover {
-    -webkit-transform: scale(1.5) rotate(20deg);
-            transform: scale(1.5) rotate(20deg);
-  }
 }
 
 @media (max-width: 756px) {

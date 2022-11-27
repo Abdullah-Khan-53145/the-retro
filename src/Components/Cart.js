@@ -174,24 +174,33 @@ function Cart({
               </div>
             ))
           ) : (
-            <h3>Cart empty</h3>
+            <h3 className="cart__empty__title">
+              Cart <span>Empty</span>
+            </h3>
           )}
           <div className="cart_total_bill">
             <div className="total_bill">
               <h3>
                 Sub Total : <span>${totalPrice.toFixed(2)}</span>
               </h3>
+              
               <h3>
-                Shipping : <span>${Math.floor(totalPrice * 0.2)}</span>
+                Shipping : <span>$20</span>
               </h3>
 
               <button
-                className="primary-button"
                 disabled={cartItems.length === 0}
+                className="primary-button"
               >
                 <Link
                   to={cartItems.length === 0 ? "" : "/checkout"}
-                  style={{ color: "white", textDecoration: "none" }}
+                  className="primary-button"
+                  style={{
+                    color: "white",
+                    textDecoration: "none",
+                    color: cartItems.length === 0 ? "#cccccc" : "white",
+                    backgroundColor: cartItems.length === 0 ? "#666666" : "red",
+                  }}
                 >
                   Proceed to Checkout
                 </Link>

@@ -6,8 +6,21 @@ import Product from "./Components/Product";
 import Footer from "./Components/Footer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cart from "./Components/Cart";
+import { connect } from "react-redux";
 import Checkout from "./Components/Checkout";
-function App() {
+import { useEffect } from "react";
+function App({ cartItems }) {
+  useEffect(() => {
+    let sum = 0;
+    cartItems.forEach((item) => {
+      sum += item.qty;
+    });
+    if (sum !== 0) {
+      document.title = `The Retro (${sum})`;
+    } else {
+      document.title = `The Retro`;
+    }
+  }, [cartItems]);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -62,5 +75,7 @@ function App() {
     </div>
   );
 }
-
-export default App;
+const mapStateToProps = (state) => ({
+  cartItems: state.CartState,
+});
+export default connect(mapStateToProps)(App);

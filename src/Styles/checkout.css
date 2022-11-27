@@ -91,6 +91,7 @@
 }
 
 .checkout__page__ordered__item .item__img img {
+  padding: .5rem;
   width: 100%;
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);

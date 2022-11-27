@@ -111,10 +111,14 @@ function Product({
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
   useEffect(() => {
+    window.scrollTo(0, 0);
     setImgColorIndex(0);
     setImgIndex(0);
     setSizeIndex(0);
   }, [product]);
+  useEffect(() => {
+    setImgIndex(0);
+  }, [imgColorIndex]);
 
   useEffect(() => {
     setRelatedProductIndex(getRandomInt(0, 5));

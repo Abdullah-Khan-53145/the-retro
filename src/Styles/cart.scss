@@ -148,11 +148,12 @@
 }
 .cart_product_price{
     width: 10%;
-    align-items: flex-start;
+    align-items: center;
     
     @media (max-width:600px) {
         width: 100%;
         justify-content: flex-start;
+        align-items: flex-start;
         
     }
 }
@@ -200,12 +201,15 @@
 .cart_total_bill{
     display:flex;
     justify-content: flex-end;  
+    button{
+        padding: 0;
+    }
     .total_bill{
         width: fit-content;
         display:flex;
         justify-content: flex-end;  
         flex-direction: column;
-        gap:10px;
+        gap:20px;
         h3{
             font-size: 2rem;
             span{
@@ -213,4 +217,13 @@
             }
         }
     } 
+}
+.cart__empty__title{
+    background-color: $bg-cards;
+    font-size: 3rem;
+    font-weight: 200;
+    padding: 2rem;
+    span{
+        color:red;
+    }
 }

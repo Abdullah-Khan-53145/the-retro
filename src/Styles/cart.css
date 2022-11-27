@@ -226,9 +226,9 @@
 
 .cart_product_price {
   width: 10%;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 600px) {
@@ -237,6 +237,9 @@
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
@@ -309,6 +312,10 @@
           justify-content: flex-end;
 }
 
+.cart_total_bill button {
+  padding: 0;
+}
+
 .cart_total_bill .total_bill {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -323,7 +330,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .cart_total_bill .total_bill h3 {
@@ -332,5 +339,16 @@
 
 .cart_total_bill .total_bill h3 span {
   font-weight: 300;
+}
+
+.cart__empty__title {
+  background-color: #ffffff32;
+  font-size: 3rem;
+  font-weight: 200;
+  padding: 2rem;
+}
+
+.cart__empty__title span {
+  color: red;
 }
 /*# sourceMappingURL=cart.css.map */

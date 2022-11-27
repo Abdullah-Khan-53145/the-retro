@@ -190,7 +190,7 @@ function Checkout({ user, allShoes, cartItems, emptyCart }) {
               </div>
 
               <div className="adress">
-                <h3>Adress</h3>
+                <h3>Address</h3>
 
                 <span>
                   {orderconfrim &&
@@ -267,18 +267,18 @@ function Checkout({ user, allShoes, cartItems, emptyCart }) {
                 <h2>Total</h2>
                 <h2>${(subtotalPrice - discount + 20).toFixed(2)}</h2>
               </div>
-              <label htmlFor="submit_button" style={{ width: "100%" }}>
-                <input
-                  type={"submit"}
-                  value=" Confrim Order"
-                  className="primary-button"
-                  style={{ width: "100%" }}
-                />
-              </label>
+              <button
+                htmlFor="submit_button"
+                type={"submit"}
+                className="primary-button"
+                style={{ width: "100%" }}
+              >
+                Confrim Order
+              </button>
             </div>
             <div className="costomer__details__form">
               <div className="form_slots">
-                <h1>Shiping adress</h1>
+                <h1>Shipping address</h1>
                 <div className="costomer__name common__cards">
                   <div className="costomer__first__name common__input">
                     <label htmlFor="first_name">
@@ -330,7 +330,7 @@ function Checkout({ user, allShoes, cartItems, emptyCart }) {
                 <div className="costomer__street_adress common__cards">
                   <div className="costomer_adress_street common__input">
                     <label htmlFor="adress">
-                      Adress <span style={{ color: "red" }}>*</span>
+                      Address <span style={{ color: "red" }}>*</span>
                     </label>
                     <input
                       required
