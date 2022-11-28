@@ -45,7 +45,7 @@ function HotDeals({ allShoes, setProduct, logIn, user }) {
         <div className="hot_deals__products__child">
           <div className="hot_deals__productsmain__heading">
             <div className="hot_deals__productsmain__heading__child">
-              <img src="./imgs/hot_deal_heading.png" alt="" />
+              <img loading="lazy" src="./imgs/hot_deal_heading.png" alt="" />
             </div>
           </div>
           <div className="hot_deals__products__main__products">
@@ -70,7 +70,7 @@ function HotDeals({ allShoes, setProduct, logIn, user }) {
                       <div className="hot_deals__products__card" key={index}>
                         <div className="hot_deals__products__card__info">
                           <div className="hot_deals__products__card__info__img">
-                            <img src={shoe.coverImg} alt="" />
+                            <img loading="lazy" src={shoe.coverImg} alt="" />
                           </div>
                           <div className="hot_deals__products__card__info__text">
                             <div className="hot_deals__products__card__heading">
@@ -127,7 +127,7 @@ function HotDeals({ allShoes, setProduct, logIn, user }) {
                       <div className="hot_deals__products__card" key={index}>
                         <div className="hot_deals__products__card__info">
                           <div className="hot_deals__products__card__info__img">
-                            <img src={shoe.coverImg} alt="" />
+                            <img loading="lazy" src={shoe.coverImg} alt="" />
                           </div>
                           <div className="hot_deals__products__card__info__text">
                             <div className="hot_deals__products__card__heading">

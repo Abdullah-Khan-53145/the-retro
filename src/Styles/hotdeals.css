@@ -192,14 +192,12 @@
   position: absolute;
   inset: 0;
   z-index: 1000;
-  opacity: 0.9;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("../../public/imgs/hot_deal_lock.jpg");
-  background-position: center;
-  background-size: cover;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(rgba(255, 0, 0, 0.9)), color-stop(rgba(47, 47, 47, 0.9)), to(rgba(47, 47, 47, 0.9)));
+  background-image: linear-gradient(to right top, rgba(255, 0, 0, 0.9), rgba(47, 47, 47, 0.9), rgba(47, 47, 47, 0.9));
 }
 
 .hot__deals__lock__message {

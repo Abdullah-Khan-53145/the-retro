@@ -4,7 +4,9 @@ import { useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { setProductAPI, addToCartAPI } from "../actions";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import "../Styles/product.css";
+import Loader from "./Loader";
 //component
 function Product({
   allShoes,
@@ -165,7 +167,12 @@ function Product({
                     </svg>
                   </button>
                   <div className="main_product_image">
-                    <img src={product.imgs[imgColorIndex][imgIndex]} alt="" />
+                    <LazyLoadImage
+                      alt={product.imgs[imgColorIndex][imgIndex]}
+                      placeholderSrc={<Loader />}
+                      effect="blur"
+                      src={product.imgs[imgColorIndex][imgIndex]} // use normal <img> attributes as props
+                    />
                   </div>
                   <button
                     className="right_arrow arrow"
@@ -197,7 +204,12 @@ function Product({
                       setImgIndex(0);
                     }}
                   >
-                    <img src={product.imgs[imgColorIndex][0]} alt="" />
+                    <LazyLoadImage
+                      alt={product.imgs[imgColorIndex][0]}
+                      effect="blur"
+                      placeholderSrc={product.imgs[imgColorIndex][0]}
+                      src={product.imgs[imgColorIndex][0]} // use normal <img> attributes as props
+                    />
                   </div>
                   <div
                     className="shoe_sample_image"
@@ -208,7 +220,12 @@ function Product({
                       setImgIndex(1);
                     }}
                   >
-                    <img src={product.imgs[imgColorIndex][1]} alt="" />
+                    <LazyLoadImage
+                      alt={product.imgs[imgColorIndex][1]}
+                      effect="blur"
+                      placeholderSrc={product.imgs[imgColorIndex][1]}
+                      src={product.imgs[imgColorIndex][1]} // use normal <img> attributes as props
+                    />
                   </div>
                   <div
                     className="shoe_sample_image"
@@ -219,7 +236,12 @@ function Product({
                       setImgIndex(2);
                     }}
                   >
-                    <img src={product.imgs[imgColorIndex][2]} alt="" />
+                    <LazyLoadImage
+                      alt={product.imgs[imgColorIndex][2]}
+                      placeholderSrc={product.imgs[imgColorIndex][2]}
+                      effect="blur"
+                      src={product.imgs[imgColorIndex][2]} // use normal <img> attributes as props
+                    />
                   </div>
                 </div>
               </div>
@@ -312,7 +334,7 @@ function Product({
                         </h4>
                         <div className="product_details">
                           <div className="related_product_img">
-                            <img src={shoe.coverImg} alt="" />
+                            <img loading="lazy" src={shoe.coverImg} alt="" />
                           </div>
                           <div className="product_info">
                             <div className="product_description">
@@ -347,7 +369,7 @@ function Product({
                 <h4>{product.name}</h4>
                 <div className="product_details">
                   <div className="related_product_img">
-                    <img src="./imgs/front-page-shoes/shoe_1.png" alt="" />
+                    <img loading="lazy" src="./imgs/front-page-shoes/shoe_1.png" alt="" />
                   </div>
                   <div className="product_info">
                     <div className="product_description">
@@ -371,7 +393,7 @@ function Product({
                 <h4>{product.name}</h4>
                 <div className="product_details">
                   <div className="related_product_img">
-                    <img src="./imgs/front-page-shoes/shoe_1.png" alt="" />
+                    <img loading="lazy" src="./imgs/front-page-shoes/shoe_1.png" alt="" />
                   </div>
                   <div className="product_info">
                     <div className="product_description">

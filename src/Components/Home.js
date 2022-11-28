@@ -1,17 +1,26 @@
 import React from "react";
 import HomeHeroSection from "./HomeHeroSection";
-import FeaturedProducts from "./FeaturedProducts";
-import Brands from "./Brands";
-import HotDeals from "./HotDeals";
-import Bannar from "./Bannar";
+import Loader from "./Loader";
+const Brands = React.lazy(() => import("./Brands"));
+const HotDeals = React.lazy(() => import("./HotDeals"));
+const Bannar = React.lazy(() => import("./Bannar"));
+const FeaturedProducts = React.lazy(() => import("./FeaturedProducts"));
 function Home() {
   return (
     <div>
       <HomeHeroSection />
-      <Brands />
-      <FeaturedProducts />
-      <HotDeals />
-      <Bannar />
+      <React.Suspense fallback={<Loader />}>
+        <Brands />
+      </React.Suspense>
+      <React.Suspense fallback={<Loader />}>
+        <FeaturedProducts />
+      </React.Suspense>
+      <React.Suspense fallback={<Loader />}>
+        <HotDeals />
+      </React.Suspense>
+      <React.Suspense fallback={<Loader />}>
+        <Bannar />
+      </React.Suspense>
     </div>
   );
 }

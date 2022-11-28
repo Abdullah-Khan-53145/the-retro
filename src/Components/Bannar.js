@@ -5,7 +5,7 @@ function Bannar() {
     <div className="main__bannar">
       <div className="main__child">
         <div className="img__main__bannar">
-          <img src="./imgs/bannar-picture.png" alt="" />
+          <img loading="lazy" src="./imgs/bannar-picture.png" alt="" />
         </div>
         <div className="sub__main__bannar">
           <h2>Subscribe to our news letter to stay updated</h2>

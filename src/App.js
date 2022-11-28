@@ -1,14 +1,16 @@
 import "./Styles/main.css";
-import Home from "./Components/Home";
+import React from "react";
 import Header from "./Components/Header";
-import AllProducts from "./Components/AllProducts";
-import Product from "./Components/Product";
 import Footer from "./Components/Footer";
+import Loader from "./Components/Loader";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Cart from "./Components/Cart";
 import { connect } from "react-redux";
-import Checkout from "./Components/Checkout";
 import { useEffect } from "react";
+const AllProducts = React.lazy(() => import("./Components/AllProducts"));
+const Product = React.lazy(() => import("./Components/Product"));
+const Cart = React.lazy(() => import("./Components/Cart"));
+const Checkout = React.lazy(() => import("./Components/Checkout"));
+const Home = React.lazy(() => import("./Components/Home"));
 function App({ cartItems }) {
   useEffect(() => {
     let sum = 0;
@@ -27,7 +29,9 @@ function App({ cartItems }) {
       element: (
         <>
           <Header />
-          <Home />
+          <React.Suspense fallback={<Loader />}>
+            <Home />
+          </React.Suspense>
         </>
       ),
     },
@@ -36,7 +40,9 @@ function App({ cartItems }) {
       element: (
         <>
           <Header />
-          <AllProducts />
+          <React.Suspense fallback={<Loader />}>
+            <AllProducts />
+          </React.Suspense>
         </>
       ),
     },
@@ -45,7 +51,9 @@ function App({ cartItems }) {
       element: (
         <>
           <Header />
-          <Product />
+          <React.Suspense fallback={<Loader />}>
+            <Product />
+          </React.Suspense>
         </>
       ),
     },
@@ -54,7 +62,9 @@ function App({ cartItems }) {
       element: (
         <>
           <Header />
-          <Cart />
+          <React.Suspense fallback={<Loader />}>
+            <Cart />
+          </React.Suspense>
         </>
       ),
     },

@@ -231,7 +231,7 @@ function Checkout({ user, allShoes, cartItems, emptyCart }) {
                 {cartItems.map((item) => (
                   <div className="checkout__page__ordered__item">
                     <div className="item__img">
-                      <img src={item.img} alt="" />
+                      <img loading="lazy" src={item.img} alt="" />
                     </div>
                     <div className="item__info">
                       <h3>Under Armour Men's Charged Assert 9 Running Shoe</h3>

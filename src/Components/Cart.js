@@ -68,7 +68,7 @@ function Cart({
     <div className="cart_main">
       <div className="cart_main_child">
         <div className="cart_main_child_heading">
-          <img src={mainHeading} alt="" />
+          <img loading="lazy" src={mainHeading} alt="" />
         </div>
 
         <div className="cart_main_child_cart">
@@ -97,7 +97,7 @@ function Cart({
             renderableCart.map((product, index) => (
               <div className="cart_item" key={index}>
                 <div className="cart_product_img cart_item_detail cart_item_sap">
-                  <img src={product.img} alt="" />
+                  <img loading="lazy" src={product.img} alt="" />
                 </div>
                 <div className="cart_product_name cart_item_detail cart_item_sap">
                   <p>{product.name}</p>
