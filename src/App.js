@@ -73,7 +73,9 @@ function App({ cartItems }) {
       element: (
         <>
           <Header />
-          <Checkout />
+          <React.Suspense fallback={<Loader />}>
+            <Checkout />
+          </React.Suspense>
         </>
       ),
     },
