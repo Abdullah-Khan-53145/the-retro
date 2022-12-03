@@ -4,14 +4,13 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Loader from "./Components/Loader";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { connect } from "react-redux";
-import { useEffect } from "react";
+const PrivacyPolicy = React.lazy(() => import("./Components/PrivacyPolicy"));
 const AllProducts = React.lazy(() => import("./Components/AllProducts"));
 const Product = React.lazy(() => import("./Components/Product"));
 const Cart = React.lazy(() => import("./Components/Cart"));
 const Checkout = React.lazy(() => import("./Components/Checkout"));
 const Home = React.lazy(() => import("./Components/Home"));
-function App({ cartItems }) {
+function App() {
   const router = createBrowserRouter([
     {
       path: "/",
@@ -21,6 +20,7 @@ function App({ cartItems }) {
           <React.Suspense fallback={<Loader />}>
             <Home />
           </React.Suspense>
+          <Footer />
         </>
       ),
     },
@@ -32,6 +32,7 @@ function App({ cartItems }) {
           <React.Suspense fallback={<Loader />}>
             <AllProducts />
           </React.Suspense>
+          <Footer />
         </>
       ),
     },
@@ -43,6 +44,7 @@ function App({ cartItems }) {
           <React.Suspense fallback={<Loader />}>
             <Product />
           </React.Suspense>
+          <Footer />
         </>
       ),
     },
@@ -54,6 +56,7 @@ function App({ cartItems }) {
           <React.Suspense fallback={<Loader />}>
             <Cart />
           </React.Suspense>
+          <Footer />
         </>
       ),
     },
@@ -65,6 +68,31 @@ function App({ cartItems }) {
           <React.Suspense fallback={<Loader />}>
             <Checkout />
           </React.Suspense>
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: "terms-and-condition",
+      element: (
+        <>
+          <Header />
+          <React.Suspense fallback={<Loader />}>
+            <PrivacyPolicy status="t" />
+          </React.Suspense>
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: "privacy-policy",
+      element: (
+        <>
+          <Header />
+          <React.Suspense fallback={<Loader />}>
+            <PrivacyPolicy status="p" />
+          </React.Suspense>
+          <Footer />
         </>
       ),
     },
@@ -72,11 +100,8 @@ function App({ cartItems }) {
   return (
     <div className="App">
       <RouterProvider router={router} />
-      <Footer />
     </div>
   );
 }
-const mapStateToProps = (state) => ({
-  cartItems: state.CartState,
-});
-export default connect(mapStateToProps)(App);
+
+export default App;

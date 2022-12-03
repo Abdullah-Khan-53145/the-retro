@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../Styles/footer.css";
 
 function Footer() {
@@ -41,19 +42,47 @@ function Footer() {
           <div className="Helpful__links__section__footer links__section__footer">
             <h2>Helpful links</h2>
             <div className="Helpful__links__section__footer__sub">
-              <p>Services</p>
-              <p>Support</p>
-              <p>Terms & Conditions</p>
-              <p>Privacy Policy</p>
+              <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+                <p>Home</p>
+              </Link>
+              <Link
+                to="/all-products"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <p>All products</p>
+              </Link>
+              <Link
+                to="/terms-and-condition"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <p>Terms & Conditions</p>
+              </Link>
+              <Link
+                to="/privacy-policy"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <p>Privacy Policy</p>
+              </Link>
             </div>
           </div>
           <div className="Services__section__footer links__section__footer">
-            <h2>Services</h2>
+            <h2>Brands</h2>
             <div className="Services__section__footer__sub">
-              <p>Brand List</p>
-              <p>Order</p>
-              <p>Return and Exchange</p>
-              <p>Fashion List</p>
+              <a target="_blank" href="https://www.adidas.com/us">
+                <p>Adidas</p>
+              </a>
+              <a target="_blank" href="https://www.nike.com">
+                <p>Nike</p>
+              </a>
+              <a target="_blank" href="https://www.underarmour.com/en-us/">
+                <p>Under Armour</p>
+              </a>
+              <a target="_blank" href="https://us.puma.com/us/en">
+                <p>Puma</p>
+              </a>
+              <a target="_blank" href="https://www.skechers.com">
+                <p>Skechers</p>
+              </a>
             </div>
           </div>
         </div>

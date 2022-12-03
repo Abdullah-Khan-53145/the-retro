@@ -8,6 +8,12 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
 function HotDeals({ allShoes, setProduct, logIn, user }) {
   const [shoes, setShoes] = useState([]);
+  const [img, setImg] = useState(
+    window.innerWidth >= 801
+      ? `./imgs/hot_deal_heading.png`
+      : `./imgs/hot_deal_heading_mob.png`
+  );
+
   // funtions
   const signIn = async () => {
     signInWithPopup(auth, provider)
@@ -36,6 +42,21 @@ function HotDeals({ allShoes, setProduct, logIn, user }) {
       if (shoe.hotDeal.status) arr.push(shoe);
     });
     setShoes(arr);
+    window.addEventListener("resize", () => {
+      setImg(
+        window.innerWidth >= 801
+          ? `./imgs/hot_deal_heading.png`
+          : `./imgs/hot_deal_heading_mob.png`
+      );
+    });
+    return () =>
+      window.removeEventListener("resize", () => {
+        setImg(
+          window.innerWidth >= 801
+            ? `./imgs/hot_deal_heading.png`
+            : `./imgs/hot_deal_heading_mob.png`
+        );
+      });
     // eslint-disable-next-line
   }, []);
 
@@ -45,7 +66,7 @@ function HotDeals({ allShoes, setProduct, logIn, user }) {
         <div className="hot_deals__products__child">
           <div className="hot_deals__productsmain__heading">
             <div className="hot_deals__productsmain__heading__child">
-              <img loading="lazy" src="./imgs/hot_deal_heading.png" alt="" />
+              <img loading="lazy" src={img} alt="" />
             </div>
           </div>
           <div className="hot_deals__products__main__products">
@@ -62,112 +83,55 @@ function HotDeals({ allShoes, setProduct, logIn, user }) {
                 </button>
               </div>
             </div>
-            <div className="hot_deals__products__card__row">
-              {shoes.length !== 0 &&
-                shoes.map((shoe, index) => {
-                  if (index < 2) {
-                    return (
-                      <div className="hot_deals__products__card" key={index}>
-                        <div className="hot_deals__products__card__info">
-                          <div className="hot_deals__products__card__info__img">
-                            <img loading="lazy" src={shoe.coverImg} alt="" />
-                          </div>
-                          <div className="hot_deals__products__card__info__text">
-                            <div className="hot_deals__products__card__heading">
-                              {shoe.name.length > 20
-                                ? shoe.name.slice(0, 20) + " ..."
-                                : shoe.name}
-                            </div>
-                            <p>
-                              {shoe.description.length > 100
-                                ? shoe.description.slice(0, 100) + " ..."
-                                : shoe.description}
-                            </p>
-                            <div className="rating">
-                              ⭐⭐⭐⭐⭐<span>{shoe.averageRating}</span>
-                            </div>
+            {shoes.length !== 0 &&
+              shoes.map((shoe, index) => (
+                <div className="hot_deals__products__card" key={index}>
+                  <div className="hot_deals__products__card__info">
+                    <div className="hot_deals__products__card__info__img">
+                      <img loading="lazy" src={shoe.coverImg} alt="" />
+                    </div>
+                    <div className="hot_deals__products__card__info__text">
+                      <div className="hot_deals__products__card__heading">
+                        {/* {shoe.name.length > 20
+                          ? shoe.name.slice(0, 20) + " ..."
+                          : shoe.name} */}
+                        {shoe.name}
+                      </div>
+                      <p>
+                        {shoe.description.length > 120
+                          ? shoe.description.slice(0, 120) + " ..."
+                          : shoe.description}
+                      </p>
+                      <div className="rating">
+                        ⭐⭐⭐⭐⭐<span>{shoe.averageRating}</span>
+                      </div>
 
-                            <div className="hot__deals__price">
-                              <span>
-                                $
-                                {(
-                                  shoe.price -
-                                  shoe.price * shoe.hotDeal.discount
-                                ).toFixed(2)}
-                              </span>
-                              <span>${shoe.price}</span>
-                            </div>
-                            <Link
-                              onClick={() =>
-                                handleClick({
-                                  ...shoe,
-                                  price:
-                                    shoe.price -
-                                    shoe.price * shoe.hotDeal.discount,
-                                })
-                              }
-                              to="/product"
-                            >
-                              <button className="primary-button">
-                                BUY NOW
-                              </button>
-                            </Link>
-                          </div>
-                        </div>
+                      <div className="hot__deals__price">
+                        <span>
+                          $
+                          {(
+                            shoe.price -
+                            shoe.price * shoe.hotDeal.discount
+                          ).toFixed(2)}
+                        </span>
+                        <span>${shoe.price}</span>
                       </div>
-                    );
-                  }
-                })}
-            </div>
-            <div className="hot_deals__products__card__row">
-              {shoes.length !== 0 &&
-                shoes.map((shoe, index) => {
-                  if (index > 1) {
-                    return (
-                      <div className="hot_deals__products__card" key={index}>
-                        <div className="hot_deals__products__card__info">
-                          <div className="hot_deals__products__card__info__img">
-                            <img loading="lazy" src={shoe.coverImg} alt="" />
-                          </div>
-                          <div className="hot_deals__products__card__info__text">
-                            <div className="hot_deals__products__card__heading">
-                              {shoe.name.length > 20
-                                ? shoe.name.slice(0, 20) + " ..."
-                                : shoe.name}
-                            </div>
-                            <p>
-                              {shoe.description.length > 100
-                                ? shoe.description.slice(0, 100) + " ..."
-                                : shoe.description}
-                            </p>
-                            <div className="rating">
-                              ⭐⭐⭐⭐⭐<span>{shoe.averageRating}</span>
-                            </div>
-                            <div className="hot__deals__price">
-                              <span>
-                                $
-                                {(
-                                  shoe.price -
-                                  shoe.price * shoe.hotDeal.discount
-                                ).toFixed(2)}
-                              </span>{" "}
-                              <span>${shoe.price}</span>
-                            </div>
-                            <Link
-                              onClick={() => handleClick(shoe)}
-                              to="/product"
-                            >
-                              <button className="primary-button">
-                                BUY NOW
-                              </button>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  }
-                })}
-            </div>
+                      <Link
+                        onClick={() =>
+                          handleClick({
+                            ...shoe,
+                            price:
+                              shoe.price - shoe.price * shoe.hotDeal.discount,
+                          })
+                        }
+                        to="/product"
+                      >
+                        <button className="primary-button">BUY NOW</button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </div>

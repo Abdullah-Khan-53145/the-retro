@@ -7,61 +7,40 @@ import "../Styles/featuredproducts.css";
 
 function FeaturedProducts(props) {
   const { allShoes, setProduct } = props;
-  const [position, setPosition] = useState({});
+  const [img, setImg] = useState(
+    window.innerWidth >= 600
+      ? `./imgs/featured_products_heading.png`
+      : `./imgs/featured_products_heading_mob.png`
+  );
 
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setImg(
+        window.innerWidth >= 600
+          ? `./imgs/featured_products_heading.png`
+          : `./imgs/featured_products_heading_mob.png`
+      );
+    });
+    return () =>
+      window.removeEventListener("resize", () => {
+        setImg(
+          window.innerWidth >= 600
+            ? `./imgs/featured_products_heading.png`
+            : `./imgs/featured_products_heading_mob.png`
+        );
+      });
+    // eslint-disable-next-line
+  }, []);
   const handleClick = (shoe) => {
     setProduct(shoe);
   };
-  const scrollAnimator = () => {
-    if (window.innerWidth <= 756) {
-      if (
-        window.scrollY >=
-        document.querySelector(".featured__productsmain__heading").offsetTop
-      ) {
-        setPosition({ position: "sticky", top: 0 });
-      } else if (
-        window.scrollY <
-        document.querySelector(".featured__productsmain__heading").offsetTop
-      ) {
-        console.log("run_1st");
-        setPosition({ position: "absolute", top: 0 });
-      }
-      if (
-        window.scrollY >=
-        document.querySelector(".featured__productsmain__heading").offsetTop +
-          document.querySelector(".featured__productsmain__heading")
-            .offsetHeight -
-          window.innerHeight
-      ) {
-        console.log("run");
-        setPosition({ position: "absolute", bottom: 0 });
-      }
-    } else {
-      setPosition({ position: "static" });
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", scrollAnimator);
-    return () => window.removeEventListener("scroll", scrollAnimator);
-    // eslint-disable-next-line
-  }, []);
+
   return (
     <div className="featured__products__main">
       <div className="featured__products__child">
         <div className="featured__productsmain__heading">
-          <div
-            className="featured__productsmain__heading__child"
-            style={position}
-          >
-            <img
-              loading="lazy"
-              src={
-                window.innerWidth >= 600
-                  ? `./imgs/featured_products_heading.png`
-                  : `./imgs/featured_products_heading_mob.png`
-              }
-              alt=""
-            />
+          <div className="featured__productsmain__heading__child">
+            <img loading="lazy" src={img} alt="" />
           </div>
         </div>
         <div className="featured__products__main__products">

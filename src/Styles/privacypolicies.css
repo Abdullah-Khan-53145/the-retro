@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+.privacy__policy__main {
+  min-height: 60vh;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.privacy__policy__main h1 {
+  font-size: 5rem;
+}
+
+.privacy__policy__main h2 {
+  font-size: 2.5rem;
+}
+
+.privacy__policy__main p, .privacy__policy__main li, .privacy__policy__main ul, .privacy__policy__main a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.privacy__policy__main ul {
+  padding-left: 3rem;
+}
+
+.privacy__policy__main a:hover {
+  text-decoration: underline;
+  color: gray;
+}
+
+.privacy__policy__main .red {
+  color: red;
+}
+
+.privacy__policy__main .black {
+  color: black;
+}
+
+.privacy__policy__child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  width: 89%;
+  margin: auto;
+}
+
+.page_image_main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.page_image_main .page_image_child {
+  position: -webkit-sticky;
+  position: sticky;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+}
+
+.page_image_main img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.main_text {
+  width: 55vw;
+}
+/*# sourceMappingURL=privacypolicies.css.map */

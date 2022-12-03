@@ -31,19 +31,17 @@
 }
 .all_products_filter{
     min-height: 100vh;
-   width:30rem ;
+    position: relative;
+    width:30rem ;
     margin-right: 3rem;
     @media (max-width:420px){
-         width:20rem ;
+        width:20rem ;
     }
-    position: relative;
 }
 .all_products_filter_child{
-    
-  width:29.5rem ;
-  @media (max-width:420px){
-    width:19.5rem ;
-}
+    position: sticky;
+    top:0;    
+
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -75,7 +73,7 @@
 }
 .all_products_filter_size_range{
     display:flex;
-    // flex-direction: column;
+    flex-direction: column;
     flex-wrap: wrap;
     .size{
         font-size:1.5rem;

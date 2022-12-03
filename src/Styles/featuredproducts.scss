@@ -25,7 +25,7 @@
   @media (max-width: 400px) {
     height:340rem;
   }
-
+  
 }
 // 1489
 .featured__productsmain__heading {
@@ -39,14 +39,17 @@
     height: 100%;
     width: 30rem;
   }
-
+  
   .featured__productsmain__heading__child {
+   
+  
     display: flex;
     align-items: flex-start;
     @media (max-width: 756px) {
       justify-content: center;
       width: 100%;
-      position: absolute;
+      position: sticky;
+      top:0;
       height: 100vh;
       padding-top: 5rem;
     }

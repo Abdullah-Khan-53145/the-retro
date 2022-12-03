@@ -24,34 +24,7 @@ function AllProducts({ allShoes, setProduct, brand, setBrand }) {
       "orange",
       "All",
     ],
-    sizes: [
-      4,
-      4.5,
-      5,
-      5.5,
-      6,
-      6.5,
-      7,
-      7.5,
-      8,
-      8.5,
-      9,
-      9.5,
-      10,
-      10.5,
-      11,
-      11.5,
-      12,
-      12.5,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19,
-      "All",
-    ],
+    sizes: [4, 5, 6, 7, 8, "All"],
     brands: ["Adidas", "Nike", "Under Armour", "Puma", "Skechers", "All"],
   };
   const initialFilter = {
@@ -96,25 +69,7 @@ function AllProducts({ allShoes, setProduct, brand, setBrand }) {
   };
 
   // functions
-  const scrollAnimator = () => {
-    if (
-      window.scrollY >= document.querySelector(".all_products_filter").offsetTop
-    ) {
-      setPosition({ position: "fixed", top: 0 });
-    } else if (
-      window.scrollY < document.querySelector(".all_products_filter").offsetTop
-    ) {
-      setPosition({ position: "absolute", top: 0, width: "100%" });
-    }
-    if (
-      window.scrollY >=
-      document.querySelector(".all_products_filter").offsetTop +
-        document.querySelector(".all_products_filter").offsetHeight -
-        window.innerHeight
-    ) {
-      setPosition({ position: "absolute", bottom: 0 });
-    }
-  };
+
   const ApplyFilter = () => {
     let arr = [];
     allShoes.forEach((shoe) => {
@@ -142,18 +97,13 @@ function AllProducts({ allShoes, setProduct, brand, setBrand }) {
   useEffect(() => {
     window.scrollTo(0, 0);
     ApplyFilter();
-    window.addEventListener("scroll", scrollAnimator);
-    return () => window.removeEventListener("scroll", scrollAnimator);
     // eslint-disable-next-line
   }, []);
   return (
     <div className="all_products_main">
       <div className="all_products_main_child">
         <div className="all_products_filter">
-          <div
-            className="all_products_filter_child"
-            style={{ ...position, height: "100vh" }}
-          >
+          <div className="all_products_filter_child">
             <div className="all_products_filter_heading">
               <h2>Filters</h2>
               <div className="all_products_filter_heading_image">
@@ -276,7 +226,13 @@ function AllProducts({ allShoes, setProduct, brand, setBrand }) {
                   <div className="all_products_product_main" key={index}>
                     <img src={shoe.coverImg} alt="" />
                     <div className="all_products_product_info">
-                      <h2>{shoe.name}</h2>
+                      {/* <h2>{shoe.name}</h2> */}
+                      <h2>
+                        {" "}
+                        {shoe.name.length > 23
+                          ? shoe.name.slice(0, 23) + " ..."
+                          : shoe.name}
+                      </h2>
                       <h4>{shoe.brand}</h4>
                       <h4>⭐⭐⭐⭐⭐ {shoe.averageRating}</h4>
                       <span>${shoe.price.toString()}</span>

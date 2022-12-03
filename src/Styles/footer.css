@@ -157,4 +157,24 @@
 .about__logo__section__footer .about__logo__section__footer__logo {
   margin-left: -3px;
 }
+
+.Helpful__links__section__footer__sub, .Services__section__footer__sub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Helpful__links__section__footer__sub a, .Services__section__footer__sub a {
+  color: white;
+  text-decoration: none;
+}
+
+.Helpful__links__section__footer__sub p:hover, .Services__section__footer__sub p:hover {
+  color: gray;
+  text-decoration: underline;
+}
 /*# sourceMappingURL=footer.css.map */

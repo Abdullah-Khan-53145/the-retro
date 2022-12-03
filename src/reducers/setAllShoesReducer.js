@@ -419,7 +419,7 @@ const initialState = [
     ],
   },
   {
-    name: "Nike Mens KD Trey 5 VIII Basketball Shoes",
+    name: "Nike Mens KD Trey 5 Basketball Shoes",
     coverImg:
       "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_6%2Fshoe_6_main.png?alt=media&token=cae1d1c7-927d-4260-8706-3e71020fd59e",
     colors: ["red", "black", "lightgreen"],
@@ -467,7 +467,7 @@ const initialState = [
     ],
   },
   {
-    name: "PUMA Unisex-Child Roma Basic Summer JR-K",
+    name: "PUMA Unisex Roma Basic Summer ",
     coverImg:
       "https://firebasestorage.googleapis.com/v0/b/the-retro-ef490.appspot.com/o/shoe_7%2Fshoe_7_main.png?alt=media&token=419653d7-ff2d-498b-9926-e06a5d39d2b3",
     colors: ["white", "black", "yellow"],

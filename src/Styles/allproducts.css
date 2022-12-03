@@ -37,9 +37,9 @@
 
 .all_products_filter {
   min-height: 100vh;
+  position: relative;
   width: 30rem;
   margin-right: 3rem;
-  position: relative;
 }
 
 @media (max-width: 420px) {
@@ -49,7 +49,9 @@
 }
 
 .all_products_filter_child {
-  width: 29.5rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,12 +60,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-@media (max-width: 420px) {
-  .all_products_filter_child {
-    width: 19.5rem;
-  }
 }
 
 .all_products_filter_heading {
@@ -106,6 +102,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }

@@ -24,7 +24,6 @@
 .product_main_child{
     width: 89%;
     display:grid;
-    // border:2px solid green;
     gap:2rem;
     grid-template-columns: 1fr 1fr;
     margin:auto;
@@ -34,28 +33,19 @@
     }
 }
 .product_main_child_images_section_parent{
-    // border:2px solid red;
     display: flex;
-    align-items: flex-end;
     justify-content: center;
-
     position: relative;
 }
-.dummy_div{
-    // border:2px solid blue;
-    height: 100vh;
-    position: absolute;
-    width: 100%;
-    bottom:0;
-}
+
 .product_main_child_images_section_child{    
-    position:fixed;   
-    width: 43.7%;
-    height: 100vh;    
+    position:sticky;
+    top:0;   
+    height: 100vh;   
+    width: 100%; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    // border:2px solid yellow;
     justify-content: center;
     .product_main_child_images_section_child_image{
         width: 100%;

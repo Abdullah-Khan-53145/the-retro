@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../Styles/bannar.css";
 import { collection, addDoc, query, getDocs } from "firebase/firestore";
+import { Toaster, toast } from "react-hot-toast";
 
 import { db } from "../firebase";
 function Bannar() {
@@ -34,6 +35,7 @@ function Bannar() {
     });
     setUsers(arr);
   };
+  const notify = () => toast("Wow so easy !");
   const addUserToDb = async (email) => {
     setLoading(true);
     if (!containsObject({ email }, users)) {
@@ -42,25 +44,17 @@ function Bannar() {
       })
         .then((docRef) => {
           console.log("Document written with ID: ", docRef.id);
-          setMsg({
-            status: true,
-            error: false,
-            message: "You've subscribed successfully",
-          });
+          toast.success("Subscribed successfully", { border: "2px solid red" });
           setLoading(false);
           setEmail("");
           setUsers([...users, { email }]);
         })
         .catch((error) => {
           console.error("Error adding document: ", error);
-          setMsg({
-            status: true,
-            error: true,
-            message: "Some Error Occured, Please Try Again",
-          });
           setLoading(false);
         });
     } else {
+      toast.error("You've Already subscribed");
       setMsg({
         status: true,
         error: true,
@@ -84,36 +78,49 @@ function Bannar() {
     getUsersFromDb();
   }, []);
   return (
-    <div className="main__bannar">
-      <div className="main__child">
-        <div className="img__main__bannar">
-          <img loading="lazy" src="./imgs/bannar-picture.png" alt="" />
-        </div>
-        <div className="sub__main__bannar">
-          <h2>Subscribe to our news letter to stay updated</h2>
-          <form onSubmit={handleClick} className="cre__bannar">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-              required
-            />
-            <button className="primary-button" disabled={loading} type="submit">
-              {loading ? <span className="loader"></span> : <>Subscribe</>}
-            </button>
-          </form>
-          {msg.status && (
-            <span
-              style={{ color: msg.error ? "red" : "green" }}
-              className="message"
-            >
-              {msg.message}
-            </span>
-          )}
+    <>
+      <Toaster
+        position="bottom-center"
+        reverseOrder={true}
+        toastOptions={{
+          className: "",
+          duration: 2000,
+          style: {
+            background: "#363636",
+            fontFamily: "poppins",
+            borderRadius: "0",
+            fontSize: "1.5rem",
+            color: "#fff",
+          },
+        }}
+      />
+      <div className="main__bannar">
+        <div className="main__child">
+          <div className="img__main__bannar">
+            <img loading="lazy" src="./imgs/bannar-picture.png" alt="" />
+          </div>
+          <div className="sub__main__bannar">
+            <h2>Subscribe to our news letter to stay updated</h2>
+            <form onSubmit={handleClick} className="cre__bannar">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                required
+              />
+              <button
+                className="primary-button"
+                disabled={loading}
+                type="submit"
+              >
+                {loading ? <span className="loader"></span> : <>Subscribe</>}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

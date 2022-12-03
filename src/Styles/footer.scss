@@ -97,3 +97,18 @@
     }
     
 }
+.Helpful__links__section__footer__sub, .Services__section__footer__sub{
+  display:flex;
+  flex-direction: column;
+  a{
+    color:white;
+    text-decoration: none;
+  }
+  p{
+    &:hover{
+      color:gray;
+      text-decoration: underline;
+
+    }
+  }
+}

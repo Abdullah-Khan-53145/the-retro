@@ -1,0 +1,63 @@
+@import 'imports';
+.privacy__policy__main{
+    min-height: 60vh;
+    font-family: $secondary_font;
+    color: white;
+    width: 100%;
+    margin-bottom: 50px;
+    
+    h1{
+        font-size: 5rem;
+    }
+    h2{
+        font-size: 2.5rem;
+    }
+    p,li, ul, a{
+        color:white;
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+    ul{
+        padding-left: 3rem;
+    }
+    a{
+        &:hover{
+            text-decoration: underline;
+            color:gray
+        }
+    }
+    .red{
+        color:red;
+    }
+    .black{
+        color:black
+    }
+  
+}
+.privacy__policy__child{
+    display:flex;
+    gap:2rem;
+    width: 89%;
+    margin: auto;
+
+    
+}
+.page_image_main{
+    flex: 1;
+    .page_image_child{
+        position: sticky;
+        height: 100vh;
+        display: flex;
+        
+        top:0;
+
+    }
+    img{
+        width: 100%;
+        object-fit: contain;
+    }
+    
+}
+.main_text{
+    width: 55vw;
+}

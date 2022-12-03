@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { setProductAPI, addToCartAPI } from "../actions";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ReactImageMagnify from "react-image-magnify";
 import "../Styles/product.css";
 import Loader from "./Loader";
 //component
@@ -17,7 +18,6 @@ function Product({
   user,
 }) {
   // States
-  const [position, setPosition] = useState({ position: "fixed", top: 0 });
   const [imgIndex, setImgIndex] = useState(0);
   const [relatedProductIndex, setRelatedProductIndex] = useState(0);
   const [imgColorIndex, setImgColorIndex] = useState(0);
@@ -81,29 +81,8 @@ function Product({
           });
         }
       }
-
-      if (
-        window.scrollY >=
-        document.querySelector(".product_main_child_images_section_parent")
-          .offsetTop
-      ) {
-        setPosition({ position: "fixed", top: 0 });
-      } else if (
-        window.scrollY <
-        document.querySelector(".product_main_child_images_section_parent")
-          .offsetTop
-      ) {
-        setPosition({ position: "fixed", top: 0 });
-      }
-      if (
-        window.scrollY >=
-        document.querySelector(".footer__main").offsetTop - window.innerHeight
-      ) {
-        setPosition({ position: "absolute", width: "100%", bottom: 0 });
-      }
     } else {
       console.log("run");
-      setPosition({ position: "static", top: "0" });
       setRatings(product.rating);
     }
   };
@@ -129,8 +108,6 @@ function Product({
       window.addEventListener("scroll", scrollAnimator);
       return () => window.removeEventListener("scroll", scrollAnimator);
     } else {
-      console.log("run");
-      setPosition({ position: "static", top: "0" });
       setRatings(product.rating);
     }
     // eslint-disable-next-line
@@ -141,10 +118,7 @@ function Product({
       {product ? (
         <div className="product_main_child">
           <div className="product_main_child_images_section_parent">
-            <div
-              className="product_main_child_images_section_child"
-              style={position}
-            >
+            <div className="product_main_child_images_section_child">
               <div className="product_main_child_images_section_child_image">
                 <div className="product_main_child_images_section_slider">
                   <button
@@ -167,12 +141,7 @@ function Product({
                     </svg>
                   </button>
                   <div className="main_product_image">
-                    <LazyLoadImage
-                      alt={product.imgs[imgColorIndex][imgIndex]}
-                      placeholderSrc={<Loader />}
-                      effect="blur"
-                      src={product.imgs[imgColorIndex][imgIndex]} // use normal <img> attributes as props
-                    />
+                    <img src={product.imgs[imgColorIndex][imgIndex]} alt="" />
                   </div>
                   <button
                     className="right_arrow arrow"
