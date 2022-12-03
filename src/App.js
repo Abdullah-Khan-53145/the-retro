@@ -12,17 +12,6 @@ const Cart = React.lazy(() => import("./Components/Cart"));
 const Checkout = React.lazy(() => import("./Components/Checkout"));
 const Home = React.lazy(() => import("./Components/Home"));
 function App({ cartItems }) {
-  useEffect(() => {
-    let sum = 0;
-    cartItems.forEach((item) => {
-      sum += item.qty;
-    });
-    if (sum !== 0) {
-      document.title = `The Retro (${sum})`;
-    } else {
-      document.title = `The Retro`;
-    }
-  }, [cartItems]);
   const router = createBrowserRouter([
     {
       path: "/",

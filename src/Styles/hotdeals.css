@@ -77,7 +77,6 @@
   background-color: #ffffff32;
   padding: 10px;
   height: 100%;
-  max-width: 600px;
   margin-left: 10px;
 }
 
@@ -252,12 +251,6 @@
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
-}
-
-@media (max-width: 800px) {
-  .hot_deals__products__card__row:nth-child(3) {
-    display: none;
-  }
 }
 
 .hot_deals__products__card__row:nth-child(2) {

@@ -51,7 +51,7 @@
   background-color: $bg-cards;
   padding: 10px;
   height: 100%;
-  max-width: 600px;
+  // max-width: 600px;
   margin-left: 10px;
   
   @media (max-width: 800px) {
@@ -161,7 +161,7 @@
  
   &:nth-child(3) {
     @media (max-width: 800px) {
-      display: none;
+      // display: none;
     }
   }
   &:nth-child(2) {

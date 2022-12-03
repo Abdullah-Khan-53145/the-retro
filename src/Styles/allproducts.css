@@ -149,7 +149,6 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  border: 1px solid gray;
   cursor: pointer;
   -webkit-transition: color .2s;
   transition: color .2s;

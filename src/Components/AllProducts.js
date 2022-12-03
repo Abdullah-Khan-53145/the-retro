@@ -223,7 +223,9 @@ function AllProducts({ allShoes, setProduct, brand, setBrand }) {
                     style={{
                       background: color === "All" ? "none" : color,
                       border:
-                        filter.color === color ? "2px solid gray" : "none",
+                        filter.color === color
+                          ? "2px solid gray"
+                          : "1px solid gray",
                     }}
                   >
                     {color === "All" && "All"}

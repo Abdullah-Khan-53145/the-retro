@@ -73,10 +73,7 @@ function Cart({
 
         <div className="cart_main_child_cart">
           <div className="cart_item cart_items_heading">
-            <div className="cart_product_img cart_item_detail">
-              <h3>Img</h3>
-            </div>
-            <div className="cart_product_name cart_item_detail">
+            <div className="cart_product_name_head cart_item_detail">
               <h3>Name</h3>
             </div>
             <div className="cart_product_color cart_item_detail">
@@ -183,9 +180,9 @@ function Cart({
               <h3>
                 Sub Total : <span>${totalPrice.toFixed(2)}</span>
               </h3>
-              
+
               <h3>
-                Shipping : <span>$20</span>
+                Shipping : <span>{cartItems.length === 0 ? "$0" : "$20"}</span>
               </h3>
 
               <button

@@ -147,6 +147,35 @@
   }
 }
 
+.cart_product_name_head {
+  width: 50%;
+}
+
+@media (min-width: 600px) {
+  .cart_product_name_head p {
+    text-align: start;
+    padding-left: 1rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart_product_name_head {
+    font-weight: 600;
+    font-size: 2rem;
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media (max-width: 450px) {
+  .cart_product_name_head {
+    font-size: 1.5rem;
+  }
+}
+
 .cart_product_color {
   width: 10%;
 }

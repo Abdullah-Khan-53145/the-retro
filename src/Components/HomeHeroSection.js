@@ -24,14 +24,14 @@ function HomeHeroSection() {
             </div>
             <div className="home__hero__main__description">
               <p>
-                Retro provide the best shoes for casual wear and sports. we
-                provide the authentic brand shoes in very cheap price
+                Retro provide the best shoes for casual wear and sports. We
+                provide the authentic brand's shoes in very cheap price.
               </p>
               <p>
                 We Sell the best sports shoes which are durable and long
-                lasting. another thing special about buying your foot wears from
-                us we provide your order as fast as possible straight from our
-                warehouse no matter from where you are ordering from
+                lasting. Another thing special about buying your foot wears from
+                us is we provide your order as fast as possible, Straight from
+                our warehouse no matter from where you are ordering from.
               </p>
             </div>
           </div>

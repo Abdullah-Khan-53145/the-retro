@@ -252,10 +252,7 @@ function Product({
               <h1>{product.name}</h1>
               <p>{product.description}</p>
             </div>
-            <div className="product_average_rating">
-              <h3>Average Rating</h3>
-              <p>⭐⭐⭐⭐⭐ {product.averageRating}</p>
-            </div>
+
             <div className="product_average_price">
               <h3>Price</h3>
               <h3
@@ -317,6 +314,12 @@ function Product({
             <button className="primary-button" onClick={handleAddToCart}>
               Add To Cart
             </button>
+            <div className="product_average_rating">
+              <h3>Average Rating</h3>
+              <span className="product_ratings">
+                ⭐⭐⭐⭐⭐ {product.averageRating}
+              </span>
+            </div>
             <div className="realted_products">
               <h3>Related product</h3>
               <div className="related_products_parent">
@@ -327,23 +330,16 @@ function Product({
                   ) {
                     return (
                       <div className="related_product" key={index}>
-                        <h4>
-                          {shoe.name.length > 40
-                            ? shoe.name.slice(0, 40) + " ..."
-                            : shoe.name}
-                        </h4>
                         <div className="product_details">
                           <div className="related_product_img">
                             <img loading="lazy" src={shoe.coverImg} alt="" />
                           </div>
                           <div className="product_info">
-                            <div className="product_description">
-                              <p>
-                                {shoe.description.length > 60
-                                  ? shoe.description.slice(0, 60) + " ..."
-                                  : shoe.description}
-                              </p>
-                            </div>
+                            <h4>
+                              {shoe.name.length > 40
+                                ? shoe.name.slice(0, 40) + " ..."
+                                : shoe.name}
+                            </h4>
                             <div className="rating">
                               ⭐⭐⭐⭐⭐<span>{shoe.averageRating}</span>
                             </div>
@@ -364,59 +360,10 @@ function Product({
                     );
                   }
                 })}
-
-                {/* <div className="related_product">
-                <h4>{product.name}</h4>
-                <div className="product_details">
-                  <div className="related_product_img">
-                    <img loading="lazy" src="./imgs/front-page-shoes/shoe_1.png" alt="" />
-                  </div>
-                  <div className="product_info">
-                    <div className="product_description">
-                      <p>
-                        {product.description.length > 60
-                          ? product.description.slice(0, 60) + " ..."
-                          : product.description}
-                      </p>
-                    </div>
-                    <div className="rating">
-                      ⭐⭐⭐⭐⭐<span>{product.averageRating}</span>
-                    </div>
-                    <div className="price">
-                      <h5>{product.price}</h5>
-                    </div>
-                    <button className="primary-button">Buy Product</button>
-                  </div>
-                </div>
-              </div>
-              <div className="related_product">
-                <h4>{product.name}</h4>
-                <div className="product_details">
-                  <div className="related_product_img">
-                    <img loading="lazy" src="./imgs/front-page-shoes/shoe_1.png" alt="" />
-                  </div>
-                  <div className="product_info">
-                    <div className="product_description">
-                      <p>
-                        {product.description.length > 60
-                          ? product.description.slice(0, 60) + " ..."
-                          : product.description}
-                      </p>
-                    </div>
-                    <div className="rating">
-                      ⭐⭐⭐⭐⭐<span>{product.averageRating}</span>
-                    </div>
-                    <div className="price">
-                      <h5>{product.price}</h5>
-                    </div>
-                    <button className="primary-button">Buy Product</button>
-                  </div>
-                </div>
-              </div> */}
               </div>
             </div>
             <div className="product_rating">
-              <h3>Costomer Reviews</h3>
+              <h3>Customer reviews</h3>
               <span className="product_ratings">
                 ⭐⭐⭐⭐⭐ {product.averageRating}
               </span>
@@ -468,7 +415,6 @@ function Product({
                 </div>
               </div>
             </div>
-            <button className="primary-button">Write a Review</button>
             {product.reviews.length !== 0 &&
               product.reviews.map((review, index) => (
                 <div className="costomer_reviews" key={index}>

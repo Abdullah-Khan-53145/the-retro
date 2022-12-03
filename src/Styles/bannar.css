@@ -71,10 +71,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -106,7 +108,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 55rem;
+  background-color: white;
+  min-width: 50rem;
 }
 
 @media (max-width: 400px) {
@@ -119,6 +122,9 @@
 .cre__bannar input {
   font-size: 1.5rem;
   padding: 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   width: 70%;
   outline: none;
   border: none;
@@ -128,5 +134,60 @@
   font-size: 1.5rem;
   padding: 1rem 2rem;
   border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 12rem;
+  height: 5rem;
+}
+
+.cre__bannar button:disabled, .cre__bannar button[disabled] {
+  background-color: red;
+}
+
+.message {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  bottom: 10rem;
+}
+
+.loader {
+  width: 4rem;
+  height: 4rem;
+  background: transparent;
+  border-radius: 50%;
+  position: relative;
+  -webkit-animation: skLinRotate 1s ease-in-out infinite alternate;
+          animation: skLinRotate 1s ease-in-out infinite alternate;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top-color: white;
+}
+
+@-webkit-keyframes skLinRotate {
+  95%, 100% {
+    -webkit-transform: rotate(840deg);
+            transform: rotate(840deg);
+  }
+}
+
+@keyframes skLinRotate {
+  95%, 100% {
+    -webkit-transform: rotate(840deg);
+            transform: rotate(840deg);
+  }
 }
 /*# sourceMappingURL=bannar.css.map */

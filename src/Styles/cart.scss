@@ -96,6 +96,27 @@
         font-size: 1.5rem;
     }
 }
+.cart_product_name_head{
+    width: 50%;
+
+    p{
+        @media (min-width:600px) {
+            text-align: start;
+        padding-left: 1rem;
+        width: 100%;
+        }
+        
+    }
+    @media (max-width:600px) {
+        font-weight: 600;
+        font-size: 2rem;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    @media (max-width:450px) {
+        font-size: 1.5rem;
+    }
+}
 .cart_product_color{
     width: 10%;
     @media (max-width:600px) {

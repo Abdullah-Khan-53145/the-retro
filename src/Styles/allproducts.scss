@@ -75,6 +75,7 @@
 }
 .all_products_filter_size_range{
     display:flex;
+    // flex-direction: column;
     flex-wrap: wrap;
     .size{
         font-size:1.5rem;
@@ -103,7 +104,6 @@
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
-        border:1px solid gray;
         cursor: pointer;
         transition: color .2s;
         &:hover{

@@ -11,15 +11,30 @@ import "../Styles/header.css";
 function Header({ cart, setProduct, allShoes, user, logIn, logOut }) {
   const [items, setItems] = useState(0);
   const [show, setShow] = useState(0);
+  const [result, setResult] = useState(false);
   const [dis, setDis] = useState("none");
   const [search, setSearch] = useState("");
   const location = useLocation();
   // Event Handlers
+
   const handleShow = (keyword) => {
     if (keyword !== "") {
+      let status = true;
+      allShoes.forEach((shoe) => {
+        if (
+          shoe.name.toLowerCase().includes(keyword.toLowerCase()) ||
+          shoe.brand.toLowerCase().includes(keyword.toLowerCase()) ||
+          shoe.description.toLowerCase().includes(keyword.toLowerCase())
+        ) {
+          status = false;
+        }
+      });
+      setResult(status ? true : false);
+      console.log(result);
       setDis("flex");
     } else {
       setDis("none");
+      setResult(false);
     }
   };
   const handleBlur = () => {
@@ -96,39 +111,46 @@ function Header({ cart, setProduct, allShoes, user, logIn, logOut }) {
           </Link>
 
           <div className="header__main__search">
-            <div className="search_components_main" style={{ display: dis }}>
-              {allShoes.map((shoe, index) => {
-                if (
-                  shoe.name.toLowerCase().includes(search.toLowerCase()) ||
-                  shoe.brand.toLowerCase().includes(search.toLowerCase()) ||
-                  shoe.description.toLowerCase().includes(search.toLowerCase())
-                )
-                  return (
-                    <Link
-                      style={{ color: "white", textDecoration: "none" }}
-                      to="/product"
-                      className="search_component_child"
-                      onClick={(e) => {
-                        handleClick(shoe);
-                      }}
-                      onMouseDown={(e) => {
-                        e.preventDefault();
-                      }}
-                      key={index}
-                    >
-                      <div className="search_component_child_img">
-                        <img src={shoe.coverImg} alt="" />
-                      </div>
-                      <div className="search_component_child_info">
-                        <h2>{shoe.name}</h2>
-                        <h3>{shoe.brand}</h3>
-                        <span>⭐⭐⭐⭐⭐ {shoe.averageRating}</span>
-                        <p>${shoe.price}</p>
-                      </div>
-                    </Link>
-                  );
-              })}
-            </div>
+            {result ? (
+              <div className="search_components_no" style={{ display: dis }}>
+                <h2>No Result Found</h2>
+              </div>
+            ) : (
+              <div className="search_components_main" style={{ display: dis }}>
+                {allShoes.map(
+                  (shoe, index) =>
+                    (shoe.name.toLowerCase().includes(search.toLowerCase()) ||
+                      shoe.brand.toLowerCase().includes(search.toLowerCase()) ||
+                      shoe.description
+                        .toLowerCase()
+                        .includes(search.toLowerCase())) &&
+                    search.length !== 0 && (
+                      <Link
+                        style={{ color: "white", textDecoration: "none" }}
+                        to="/product"
+                        className="search_component_child"
+                        onClick={(e) => {
+                          handleClick(shoe);
+                        }}
+                        onMouseDown={(e) => {
+                          e.preventDefault();
+                        }}
+                        key={index}
+                      >
+                        <div className="search_component_child_img">
+                          <img src={shoe.coverImg} alt="" />
+                        </div>
+                        <div className="search_component_child_info">
+                          <h2>{shoe.name}</h2>
+                          <h3>{shoe.brand}</h3>
+                          <span>⭐⭐⭐⭐⭐ {shoe.averageRating}</span>
+                          <p>${shoe.price}</p>
+                        </div>
+                      </Link>
+                    )
+                )}
+              </div>
+            )}
             <input
               type="text"
               name=""
