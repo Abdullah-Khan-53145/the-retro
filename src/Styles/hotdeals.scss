@@ -60,7 +60,7 @@
   @media (max-width: 500px) {
     font-size: 1.5rem;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 430px) {
     font-size: 1.2rem;
   }
   font-weight: 600;
@@ -101,6 +101,7 @@
 }
 .hot_deals__products__main__products {
   display: grid;
+  width: 100%;
   grid-template-columns: 1fr 1fr;
   gap:10px;
   position: relative;

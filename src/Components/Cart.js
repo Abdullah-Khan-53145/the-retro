@@ -63,6 +63,9 @@ function Cart({
     getTotalPrice();
     setRenderableCart(cartItems.sort((a, b) => a.index - b.index));
   }, [cartItems, user]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="cart_main">

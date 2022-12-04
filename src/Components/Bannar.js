@@ -35,7 +35,6 @@ function Bannar() {
     });
     setUsers(arr);
   };
-  const notify = () => toast("Wow so easy !");
   const addUserToDb = async (email) => {
     setLoading(true);
     if (!containsObject({ email }, users)) {
@@ -72,7 +71,18 @@ function Bannar() {
   };
   const handleClick = (e) => {
     e.preventDefault();
-    addUserToDb(email);
+    if (email.length === 0) {
+      toast.error("Please Enter the  Email");
+    } else {
+      if (
+        email.toLowerCase().includes("@") &&
+        email.toLowerCase().includes(".com")
+      ) {
+        addUserToDb(email);
+      } else {
+        toast.error("Please Enter the valid Email");
+      }
+    }
   };
   useEffect(() => {
     getUsersFromDb();
@@ -103,11 +113,10 @@ function Bannar() {
             <h2>Subscribe to our news letter to stay updated</h2>
             <form onSubmit={handleClick} className="cre__bannar">
               <input
-                type="email"
+                type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
-                required
               />
               <button
                 className="primary-button"

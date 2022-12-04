@@ -98,7 +98,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
   .hot_deals__products__card__heading {
     font-size: 1.2rem;
   }
@@ -159,6 +159,7 @@
 .hot_deals__products__main__products {
   display: -ms-grid;
   display: grid;
+  width: 100%;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   gap: 10px;
