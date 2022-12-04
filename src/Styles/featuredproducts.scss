@@ -201,8 +201,16 @@
     justify-content: flex-end;
     align-items: flex-start;
     }
-   
+   a{
+    &:hover{
+      color:white;
+    }
+   }
   .primary-button{
+    &hover{
+      color:white
+      
+    }
     @media (max-width: 756px) {
       font-size: 3rem;
     font-weight: 200;

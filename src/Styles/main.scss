@@ -65,3 +65,9 @@ html {
     background-color: #666666;
   }
 }
+a{
+  color:white;
+  &:hover{
+    color:white;
+  }
+}

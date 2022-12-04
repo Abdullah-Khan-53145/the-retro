@@ -80,6 +80,7 @@
         align-items: center;
         justify-content: center;
         width:40rem;
+        cursor :pointer;
         height: 40rem;
         @media (max-width:756px){
             width:50vw;
@@ -104,7 +105,7 @@
     justify-content: space-around;
     padding:5rem;
     .shoe_sample_image{
-      
+        cursor: pointer;
         background-color: $bg-cards;
         display: flex;
         align-items: center;

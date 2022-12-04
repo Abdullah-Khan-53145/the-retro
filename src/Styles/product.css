@@ -140,6 +140,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 40rem;
+  cursor: pointer;
   height: 40rem;
 }
 
@@ -176,6 +177,7 @@
 }
 
 .product_main_child_images_section_samples .shoe_sample_image {
+  cursor: pointer;
   background-color: #ffffff32;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -1,0 +1,76 @@
+@import 'imports';
+.crousal__main{
+    position: fixed;
+    z-index:100000;
+    inset: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.705);
+}
+.crousal_child{
+    position: relative;
+}
+.crousal_toggler{
+    position: absolute;
+    right: 3px;
+    top:3px;
+    z-index:100000000;
+    background-color: black;
+   
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    align-items: center;
+    .svg__here{
+        transition: color .2s ;
+        color:gray;
+       
+    }
+    &:hover{
+       
+        .svg__here{
+            color:white;
+           
+        }
+    }
+  
+    
+}
+.crousal{
+    background-color: black;
+    border: 1px solid gray;
+    padding: 5rem 8rem;
+    display: flex;
+    width: 50vw;
+    @media (max-width:800px) {
+        width: 100%;
+    }
+    align-items: center;
+    height: 60vh;
+    img{
+        @media (max-width:800px) {
+            padding: 0 5rem;
+        }
+        @media (max-width:500px) {
+            padding: 0 2rem;
+        }
+        height: 50vh;
+        object-fit: contain;
+    }
+}
+.croual__item{
+
+}
+.crousal__img{
+    height: 100%;
+}
+.carousel-control-prev{
+    span{
+        color:black;
+
+    }
+}

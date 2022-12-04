@@ -335,6 +335,14 @@
   }
 }
 
+.featured__products__card__info__text .buy__now__button a:hover {
+  color: white;
+}
+
+.featured__products__card__info__text .buy__now__button .primary-buttonhover {
+  color: white;
+}
+
 @media (max-width: 756px) {
   .featured__products__card__info__text .buy__now__button .primary-button {
     font-size: 3rem;

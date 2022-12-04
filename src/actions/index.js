@@ -8,6 +8,7 @@ import {
   TOGGLE_MODAL,
   LOG_IN,
   LOG_OUT,
+  TOGGLE_IMG,
   EMPTY_CART,
 } from "./actions";
 
@@ -74,6 +75,13 @@ export const logOut = (payload) => {
     payload: payload,
   };
 };
+// Action to toggle image modal on product page
+export const toggleImg = (payload) => {
+  return {
+    type: TOGGLE_IMG,
+    payload: payload,
+  };
+};
 
 export function setProductAPI(payload) {
   localStorage.setItem("product", JSON.stringify(payload));
@@ -127,5 +135,10 @@ export function logInAPI(payload) {
 export function logOutAPI() {
   return (dispatch) => {
     dispatch(logOut());
+  };
+}
+export function toggleImgAPI(payload) {
+  return (dispatch) => {
+    dispatch(toggleImg(payload));
   };
 }

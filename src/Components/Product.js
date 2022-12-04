@@ -3,11 +3,10 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { setProductAPI, addToCartAPI } from "../actions";
+import { setProductAPI, addToCartAPI, toggleImgAPI } from "../actions";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import ReactImageMagnify from "react-image-magnify";
+import ImgCrousal from "./ImgCrousal";
 import "../Styles/product.css";
-import Loader from "./Loader";
 //component
 function Product({
   allShoes,
@@ -16,12 +15,14 @@ function Product({
   setProduct,
   cartItems,
   user,
+  setImg,
 }) {
   // States
   const [imgIndex, setImgIndex] = useState(0);
   const [relatedProductIndex, setRelatedProductIndex] = useState(0);
   const [imgColorIndex, setImgColorIndex] = useState(0);
   const [sizeIndex, setSizeIndex] = useState(0);
+  const [status, setStatus] = useState(false);
   const [ratings, setRatings] = useState({
     five: "0%",
     four: "0%",
@@ -112,9 +113,13 @@ function Product({
     }
     // eslint-disable-next-line
   }, []);
+  const handleImgClick = () => {
+    setImg(true);
+  };
 
   return (
     <div className="main_product">
+      <ImgCrousal imgs={product.imgs[imgColorIndex]} Imgind={imgIndex} />
       {product ? (
         <div className="product_main_child">
           <div className="product_main_child_images_section_parent">
@@ -141,7 +146,11 @@ function Product({
                     </svg>
                   </button>
                   <div className="main_product_image">
-                    <img src={product.imgs[imgColorIndex][imgIndex]} alt="" />
+                    <img
+                      src={product.imgs[imgColorIndex][imgIndex]}
+                      onClick={handleImgClick}
+                      alt=""
+                    />
                   </div>
                   <button
                     className="right_arrow arrow"
@@ -283,12 +292,7 @@ function Product({
             <button className="primary-button" onClick={handleAddToCart}>
               Add To Cart
             </button>
-            <div className="product_average_rating">
-              <h3>Average Rating</h3>
-              <span className="product_ratings">
-                ⭐⭐⭐⭐⭐ {product.averageRating}
-              </span>
-            </div>
+
             <div className="realted_products">
               <h3>Related product</h3>
               <div className="related_products_parent">
@@ -415,6 +419,7 @@ const mapStateToProps = (state) => ({
 const dispatchStateToProps = (dispatch) => ({
   setProduct: (payload) => dispatch(setProductAPI(payload)),
   addToCart: (payload) => dispatch(addToCartAPI(payload)),
+  setImg: (payload) => dispatch(toggleImgAPI(payload)),
 });
 
 export default connect(mapStateToProps, dispatchStateToProps)(Product);

@@ -89,4 +89,12 @@ html {
   color: #cccccc;
   background-color: #666666;
 }
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
 /*# sourceMappingURL=main.css.map */
