@@ -20,14 +20,16 @@
 
 .main_product h1 {
   font-size: 4.5rem;
+  font-weight: 600;
 }
 
 .main_product h3 {
   font-size: 2.5rem;
+  font-weight: 600;
 }
 
 .main_product h4 {
-  font-size: 1.3rem;
+  font-size: 2rem;
 }
 
 .main_product p {

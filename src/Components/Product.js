@@ -392,7 +392,7 @@ function Product({
               product.reviews.map((review, index) => (
                 <div className="costomer_reviews" key={index}>
                   <div className="review">
-                    <h3>{review.name}</h3>
+                    <h4>{review.name}</h4>
                     <div className="rating">
                       ⭐⭐⭐⭐⭐<span>{review.rate}</span>
                     </div>

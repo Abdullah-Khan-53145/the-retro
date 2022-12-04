@@ -3,7 +3,7 @@
 // CSS RESET
 html {
   overflow-x: hidden;
-
+  font-family: $secondary_font;
   font-size: 65.2%;
   @media (max-width: 1700px) {
     font-size: 60%;
