@@ -9,6 +9,7 @@ import { auth, provider } from "../firebase";
 import "../Styles/header.css";
 
 function Header({ cart, setProduct, allShoes, user, logIn, logOut }) {
+// states
   const [items, setItems] = useState(0);
   const [show, setShow] = useState(0);
   const [dis, setDis] = useState("none");
@@ -66,7 +67,8 @@ function Header({ cart, setProduct, allShoes, user, logIn, logOut }) {
         });
     }
   };
-
+  
+//  use Effects
   useEffect(() => {
     let sum = 0;
     cart.forEach((item) => {

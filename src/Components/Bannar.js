@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
-import "../Styles/bannar.css";
 import { collection, addDoc, query, getDocs } from "firebase/firestore";
 import { Toaster, toast } from "react-hot-toast";
+import "../Styles/bannar.css";
 
 import { db } from "../firebase";
 function Bannar() {
+  // states
   const [users, setUsers] = useState([]);
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const [msg, setMsg] = useState({
-    status: false,
-    error: false,
-    message: "",
-  });
+  const [position, setPosition] = useState("");
+
   // funtions
   const containsObject = (obj, list) => {
     var i;
@@ -54,21 +52,20 @@ function Bannar() {
         });
     } else {
       toast.error("You've Already subscribed");
-      setMsg({
-        status: true,
-        error: true,
-        message: "Already subscribed",
-      });
+
       setLoading(false);
     }
-    setTimeout(() => {
-      setMsg({
-        status: false,
-        error: false,
-        message: "",
-      });
-    }, 3000);
   };
+
+  const positionSetter = () => {
+    if (window.innerWidth >= 756) {
+      setPosition("bottom-center");
+    } else {
+      setPosition("top-center");
+    }
+  };
+
+  // Click handlers
   const handleClick = (e) => {
     e.preventDefault();
     if (email.length === 0) {
@@ -84,13 +81,18 @@ function Bannar() {
       }
     }
   };
+
+  // use Effect
   useEffect(() => {
+    window.addEventListener("resize", positionSetter);
     getUsersFromDb();
+    return () => window.removeEventListener("resize", positionSetter);
   }, []);
+
   return (
     <>
       <Toaster
-        position="bottom-center"
+        position={position}
         reverseOrder={true}
         toastOptions={{
           className: "",

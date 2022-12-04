@@ -1,8 +1,8 @@
 import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import "../Styles/checkout.css";
 import { emptyCartAPI } from "../actions";
+import "../Styles/checkout.css";
 const countries = require("./countries.json");
 const countries_code = require("./PhoneCode.json");
 function Checkout({ user, cartItems, emptyCart }) {

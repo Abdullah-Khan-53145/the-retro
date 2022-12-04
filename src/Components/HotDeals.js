@@ -1,12 +1,12 @@
-import React from "react";
-import "../Styles/hotdeals.css";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { setProductAPI, logOutAPI, logInAPI } from "../actions";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
+import "../Styles/hotdeals.css";
 function HotDeals({ allShoes, setProduct, logIn, user }) {
+  // states
   const [shoes, setShoes] = useState([]);
   const [img, setImg] = useState(
     window.innerWidth >= 801
@@ -35,7 +35,7 @@ function HotDeals({ allShoes, setProduct, logIn, user }) {
   const handleLogIn = () => {
     signIn();
   };
-
+// use Effects
   useEffect(() => {
     let arr = [];
     allShoes.forEach((shoe) => {

@@ -59,6 +59,7 @@ function Cart({
     }
   });
 
+  // useEffect
   useEffect(() => {
     getTotalPrice();
     setRenderableCart(cartItems.sort((a, b) => a.index - b.index));
