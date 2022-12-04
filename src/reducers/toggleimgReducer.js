@@ -1,6 +1,6 @@
 import { TOGGLE_IMG } from "../actions/actions";
 
-const initialState = true;
+const initialState = false;
 
 const setToggleImg = (state = initialState, action) => {
   switch (action.type) {
