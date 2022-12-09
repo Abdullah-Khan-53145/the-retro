@@ -233,13 +233,14 @@ function Checkout({ user, cartItems, emptyCart }) {
                       <img loading="lazy" src={item.img} alt="" />
                     </div>
                     <div className="item__info">
-                      <h3>Under Armour Men's Charged Assert 9 Running Shoe</h3>
+                      <h3>{item.name}</h3>
                       <div className="item__size__color">
                         <span>
-                          <b>Size: </b> 10
+                          <b>Size: </b> {item.size}
                         </span>
                         <span>
-                          <b>Color: </b> lightgray
+                          <b>Color: </b>
+                          {item.color}
                         </span>
                       </div>
                       <div className="item_price">
@@ -272,7 +273,7 @@ function Checkout({ user, cartItems, emptyCart }) {
                 className="primary-button"
                 style={{ width: "100%" }}
               >
-                Confrim Order
+                Confirm Order
               </button>
             </div>
             <div className="costomer__details__form">

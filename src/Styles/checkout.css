@@ -54,12 +54,24 @@
   }
 }
 
+@media (max-width: 756px) {
+  .checkout__page__bill {
+    font-size: 2.5rem;
+  }
+}
+
 .checkout__page__bill h2 {
   border-bottom: 1px solid lightgray;
   padding: 1rem 0;
   padding-bottom: 1rem;
   width: 100%;
   text-align: start;
+}
+
+@media (max-width: 756px) {
+  .checkout__page__bill h2 {
+    font-size: 2.5rem;
+  }
 }
 
 .checkout__page__ordered__items {
@@ -109,6 +121,12 @@
   width: 100%;
 }
 
+@media (max-width: 756px) {
+  .checkout__page__ordered__item .item__info h3 {
+    font-size: 2.5rem;
+  }
+}
+
 .checkout__page__ordered__item .item__size__color {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -136,6 +154,18 @@
   color: white;
 }
 
+@media (max-width: 756px) {
+  .checkout__page__ordered__item .item_price span:nth-child(1) {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 756px) {
+  .checkout__page__ordered__item .item_price span {
+    font-size: 2rem;
+  }
+}
+
 .total_bill_calculations {
   border-top: 1px solid lightgray;
   display: -webkit-box;
@@ -159,6 +189,12 @@
           flex-direction: column;
   gap: 1rem;
   font-size: 1.2rem;
+}
+
+@media (max-width: 756px) {
+  .total_bill_calculations .total_bill_amount_titles {
+    font-size: 2.5rem;
+  }
 }
 
 .total_bill_calculations .total_bill_amount_values {
